@@ -1,0 +1,128 @@
+{
+  "name": "estif-home-ultimate",
+  "version": "3.0.0",
+  "description": "🏠 Enterprise Smart Home Platform - Multi-User, Real-time Sync, Bluetooth, PWA, Voice Control",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "start": "cd backend && npm start",
+    "start:prod": "NODE_ENV=production cd backend && node server.js",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && npm test",
+    "test:coverage": "npm run test:frontend:coverage && npm run test:backend:coverage",
+    "test:frontend:coverage": "cd frontend && npm run test:coverage",
+    "test:backend:coverage": "cd backend && npm run test:coverage",
+    "lint": "npm run lint:frontend && npm run lint:backend",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:fix": "npm run lint:frontend:fix && npm run lint:backend:fix",
+    "lint:frontend:fix": "cd frontend && npm run lint:fix",
+    "lint:backend:fix": "cd backend && npm run lint:fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "clean": "rimraf node_modules frontend/node_modules backend/node_modules",
+    "clean:cache": "rimraf .cache .turbo frontend/.cache backend/.cache",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build",
+    "docker:logs": "docker-compose logs -f",
+    "db:seed": "cd database/seeds && node index.js",
+    "db:migrate": "cd database/migrations && node migrate.js",
+    "db:reset": "npm run db:down && npm run db:migrate && npm run db:seed",
+    "deploy": "./scripts/deploy.sh",
+    "deploy:render": "git push origin main && echo \"✅ Deployed to Render\"",
+    "postinstall": "npm run build",
+    "prepare": "husky install",
+    "version:patch": "npm version patch --no-git-tag-version",
+    "version:minor": "npm version minor --no-git-tag-version",
+    "version:major": "npm version major --no-git-tag-version"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "dotenv": "^16.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.0",
+    "@commitlint/config-conventional": "^17.7.0",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-security": "^1.7.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.0",
+    "prettier": "^3.0.0",
+    "rimraf": "^5.0.0",
+    "turbo": "^1.10.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "packageManager": "npm@9.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnsonestiph13/estiph.git"
+  },
+  "keywords": [
+    "smart-home",
+    "iot",
+    "home-automation",
+    "esp32",
+    "pwa",
+    "voice-control",
+    "bluetooth",
+    "real-time",
+    "multi-user",
+    "mqtt",
+    "websocket",
+    "react",
+    "nodejs",
+    "mongodb",
+    "redis"
+  ],
+  "author": "Estifanos Yohannis <johnsonestiph01@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnsonestiph13/estiph/issues"
+  },
+  "homepage": "https://estif-home.com",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "turbo": {
+    "pipeline": {
+      "build": {
+        "dependsOn": ["^build"],
+        "outputs": ["dist/**"]
+      },
+      "test": {
+        "dependsOn": ["build"],
+        "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts"]
+      },
+      "lint": {
+        "inputs": ["src/**/*.tsx", "src/**/*.ts"]
+      },
+      "dev": {
+        "cache": false
+      }
+    }
+  }
+}

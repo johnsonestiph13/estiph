@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "version": "3.0.0",
+  "npmClient": "npm",
+  "packages": ["frontend", "backend"],
+  "command": {
+    "bootstrap": {
+      "hoist": true,
+      "strict": false
+    },
+    "run": {
+      "npmClient": "npm"
+    },
+    "version": {
+      "allowBranch": ["main", "develop"],
+      "conventionalCommits": true,
+      "message": "chore(release): publish %s"
+    }
+  },
+  "useWorkspaces": true
+}

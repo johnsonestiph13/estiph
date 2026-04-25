@@ -2,40 +2,31 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/estif_home', {
+        const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://johnsonestiph13_db_user:aV1uBQDRMUkzbApz@cluster0.jqodv6u.mongodb.net/estif_home_prod?retryWrites=true&w=majority&appName=Cluster0';
+        
+        const conn = await mongoose.connect(mongoURI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            maxPoolSize: 10,
             serverSelectionTimeoutMS: 5000,
             socketTimeoutMS: 45000,
-            family: 4
         });
         
-        console.log(`✅ MongoDB connected: ${conn.connection.host}`);
+        console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
         
-        mongoose.connection.on('error', (err) => {
+        // Handle connection events
+        mongoose.connection.on('error', err => {
             console.error('MongoDB connection error:', err);
         });
         
         mongoose.connection.on('disconnected', () => {
-            console.warn('MongoDB disconnected');
-        });
-        
-        process.on('SIGINT', async () => {
-            await mongoose.connection.close();
-            console.log('MongoDB connection closed');
-            process.exit(0);
+            console.log('MongoDB disconnected');
         });
         
         return conn;
     } catch (error) {
-        console.error('❌ MongoDB connection error:', error);
+        console.error('MongoDB connection failed:', error);
         process.exit(1);
     }
 };
 
-const disconnectDB = async () => {
-    await mongoose.disconnect();
-};
-
-module.exports = { connectDB, disconnectDB };
+module.exports = connectDB;
