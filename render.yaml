@@ -1,0 +1,57 @@
+services:
+  # Frontend Static Site
+  - type: web
+    name: estif-home-frontend
+    runtime: static
+    repo: https://github.com/johnsonestiph13/estiph
+    branch: main
+    buildCommand: |
+      cd frontend
+      npm install
+      npm run build
+    staticPublishPath: ./frontend/dist
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: VITE_API_URL
+        value: https://estif-home-backend.onrender.com
+      - key: VITE_WS_URL
+        value: wss://estif-home-backend.onrender.com
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /index.html
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+      - path: /sw.js
+        name: Cache-Control
+        value: no-cache
+
+  # Backend API Service
+  - type: web
+    name: estif-home-backend
+    runtime: node
+    repo: https://github.com/johnsonestiph13/estiph
+    branch: main
+    plan: starter
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: MONGODB_URI
+        value: mongodb+srv://johnsonestiph13_db_user:aV1uBQDRMUkzbApz@cluster0.jqodv6u.mongodb.net/estif_home_prod?retryWrites=true&w=majority
+      - key: GEMINI_API_KEY
+        value: AIzaSyBLaeNUSqi_w4Gs6JFrsLlOoZZpVahb5Pg
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: CORS_ORIGIN
+        value: https://estif-home-frontend.onrender.com
+      - key: REDIS_URL
+        value: redis://localhost:6379
