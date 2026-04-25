@@ -1,0 +1,492 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - EMERGENCY CARD COMPONENT
+   Specialized card for emergency contacts and alerts
+   ============================================ */
+
+/* ============================================
+   EMERGENCY CARD BASE
+   ============================================ */
+
+.emergency-card {
+    background: linear-gradient(135deg, var(--danger), var(--danger-dark));
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    cursor: pointer;
+    transition: all var(--transition);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    animation: pulse-emergency 2s infinite;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.emergency-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.emergency-card:hover::before {
+    left: 100%;
+}
+
+.emergency-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(239, 71, 111, 0.4);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.emergency-card:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   EMERGENCY CARD VARIANTS
+   ============================================ */
+
+/* Small emergency card */
+.emergency-card-sm {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+}
+
+.emergency-card-sm .emergency-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+}
+
+.emergency-card-sm .emergency-info h3 {
+    font-size: 0.85rem;
+}
+
+.emergency-card-sm .emergency-number {
+    font-size: 0.8rem;
+}
+
+/* Large emergency card */
+.emergency-card-lg {
+    padding: var(--spacing-lg);
+    gap: var(--spacing-lg);
+}
+
+.emergency-card-lg .emergency-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+}
+
+.emergency-card-lg .emergency-info h3 {
+    font-size: 1.2rem;
+}
+
+.emergency-card-lg .emergency-number {
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   EMERGENCY ICON
+   ============================================ */
+
+.emergency-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all var(--transition);
+}
+
+.emergency-card:hover .emergency-icon {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.emergency-icon i:first-child {
+    font-size: 1.5rem;
+    position: absolute;
+    animation: ring 1s infinite;
+}
+
+.emergency-icon i:last-child {
+    font-size: 0.8rem;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: white;
+    color: var(--danger);
+    border-radius: 50%;
+    padding: 3px;
+}
+
+/* No animation variant */
+.emergency-card-no-animation .emergency-icon i:first-child {
+    animation: none;
+}
+
+/* ============================================
+   EMERGENCY INFO
+   ============================================ */
+
+.emergency-info {
+    flex: 1;
+}
+
+.emergency-info h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: white;
+    font-weight: var(--font-semibold);
+}
+
+.emergency-info p {
+    font-size: 0.7rem;
+    opacity: 0.9;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.emergency-number {
+    font-size: 0.9rem;
+    font-weight: var(--font-bold);
+    letter-spacing: 1px;
+    font-family: var(--font-mono);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.emergency-number i {
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+
+/* ============================================
+   EMERGENCY ARROW
+   ============================================ */
+
+.emergency-arrow {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+}
+
+.emergency-card:hover .emergency-arrow {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================
+   EMERGENCY BUTTON
+   ============================================ */
+
+.emergency-button {
+    background: linear-gradient(135deg, var(--danger), var(--danger-dark));
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md) var(--spacing-xl);
+    color: white;
+    font-weight: var(--font-bold);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    animation: pulse-emergency 2s infinite;
+}
+
+.emergency-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(239, 71, 111, 0.4);
+}
+
+/* ============================================
+   EMERGENCY ALERT BANNER
+   ============================================ */
+
+.emergency-alert {
+    background: linear-gradient(135deg, var(--danger), var(--danger-dark));
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    color: white;
+    margin-bottom: var(--spacing-md);
+}
+
+.emergency-alert-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.emergency-alert-icon {
+    font-size: 1.2rem;
+    animation: ring 1s infinite;
+}
+
+.emergency-alert-message {
+    font-size: 0.85rem;
+}
+
+.emergency-alert-close {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    opacity: 0.8;
+    transition: opacity var(--transition);
+}
+
+.emergency-alert-close:hover {
+    opacity: 1;
+}
+
+/* ============================================
+   EMERGENCY CONTACT LIST
+   ============================================ */
+
+.emergency-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.emergency-contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.emergency-contact-item:hover {
+    transform: translateX(4px);
+    border-color: var(--danger);
+    box-shadow: var(--shadow-sm);
+}
+
+.emergency-contact-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--danger-soft);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--danger);
+    font-size: 1.2rem;
+}
+
+.emergency-contact-info {
+    flex: 1;
+}
+
+.emergency-contact-name {
+    font-weight: var(--font-semibold);
+    margin-bottom: 2px;
+}
+
+.emergency-contact-number {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+.emergency-contact-call {
+    background: var(--danger);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 6px 12px;
+    color: white;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.emergency-contact-call:hover {
+    background: var(--danger-dark);
+    transform: scale(1.05);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes pulse-emergency {
+    0% {
+        box-shadow: 0 0 0 0 rgba(239, 71, 111, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(239, 71, 111, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(239, 71, 111, 0);
+    }
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes emergencyFlash {
+    0%, 100% {
+        background: linear-gradient(135deg, var(--danger), var(--danger-dark));
+    }
+    50% {
+        background: linear-gradient(135deg, var(--danger-dark), var(--danger));
+    }
+}
+
+.emergency-flash {
+    animation: emergencyFlash 0.5s ease infinite;
+}
+
+/* ============================================
+   RESPONSIVE EMERGENCY CARD
+   ============================================ */
+
+@media (max-width: 768px) {
+    .emergency-card {
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .emergency-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .emergency-icon i:first-child {
+        font-size: 1.2rem;
+    }
+    
+    .emergency-info h3 {
+        font-size: 0.85rem;
+    }
+    
+    .emergency-number {
+        font-size: 0.8rem;
+    }
+    
+    .emergency-arrow {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .emergency-card-lg {
+        padding: 16px;
+    }
+    
+    .emergency-card-lg .emergency-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .emergency-card {
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .emergency-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .emergency-info {
+        flex: auto;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .emergency-arrow {
+        display: none;
+    }
+    
+    .emergency-contact-item {
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .emergency-contact-call {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   DARK MODE EMERGENCY CARD
+   ============================================ */
+[data-theme="dark"] .emergency-card {
+    background: linear-gradient(135deg, var(--danger), #a01a3a);
+}
+
+[data-theme="dark"] .emergency-contact-item {
+    background: var(--bg-secondary);
+}
+
+/* ============================================
+   PRINT EMERGENCY CARD STYLES
+   ============================================ */
+@media print {
+    .emergency-card {
+        background: white;
+        border: 2px solid red;
+        color: black;
+        animation: none;
+        box-shadow: none;
+    }
+    
+    .emergency-card .emergency-info h3,
+    .emergency-card .emergency-info p,
+    .emergency-card .emergency-number {
+        color: black;
+    }
+    
+    .emergency-icon {
+        background: #eee;
+        color: red;
+    }
+    
+    .emergency-arrow {
+        display: none;
+    }
+}

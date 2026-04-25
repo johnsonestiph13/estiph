@@ -1,0 +1,16 @@
+# Heroku / Cloud Native Procfile
+
+# Web server (API + WebSocket)
+web: node server.js
+
+# Background workers
+worker: node workers/sync-worker.js
+
+# Cron jobs
+cron: node cron/scheduler.js
+
+# Analytics worker
+analytics: node workers/analytics-worker.js
+
+# Notification worker
+notifications: node workers/notification-worker.js

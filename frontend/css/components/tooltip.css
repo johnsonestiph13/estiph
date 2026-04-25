@@ -1,0 +1,377 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - TOOLTIP COMPONENT
+   Informative tooltips for UI elements
+   ============================================ */
+
+/* ============================================
+   TOOLTIP BASE
+   ============================================ */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-trigger {
+    cursor: pointer;
+}
+
+/* Tooltip content */
+.tooltip-content {
+    position: absolute;
+    z-index: var(--z-tooltip);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    font-weight: var(--font-normal);
+    line-height: 1.4;
+    white-space: nowrap;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition);
+}
+
+/* Tooltip arrow */
+.tooltip-content::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+/* Show tooltip on hover */
+.tooltip:hover .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ============================================
+   TOOLTIP POSITIONS
+   ============================================ */
+
+/* Top position */
+.tooltip-top .tooltip-content {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: var(--spacing-xs);
+}
+
+.tooltip-top .tooltip-content::before {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px 6px 0 6px;
+    border-color: var(--border-color) transparent transparent transparent;
+}
+
+.tooltip-top .tooltip-content::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px 5px 0 5px;
+    border-style: solid;
+    border-color: var(--bg-primary) transparent transparent transparent;
+}
+
+/* Bottom position */
+.tooltip-bottom .tooltip-content {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: var(--spacing-xs);
+}
+
+.tooltip-bottom .tooltip-content::before {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 6px 6px 6px;
+    border-color: transparent transparent var(--border-color) transparent;
+}
+
+.tooltip-bottom .tooltip-content::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 5px 5px 5px;
+    border-style: solid;
+    border-color: transparent transparent var(--bg-primary) transparent;
+}
+
+/* Left position */
+.tooltip-left .tooltip-content {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: var(--spacing-xs);
+}
+
+.tooltip-left .tooltip-content::before {
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-color: transparent transparent transparent var(--border-color);
+}
+
+.tooltip-left .tooltip-content::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border-width: 5px 0 5px 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--bg-primary);
+}
+
+/* Right position */
+.tooltip-right .tooltip-content {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: var(--spacing-xs);
+}
+
+.tooltip-right .tooltip-content::before {
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    border-width: 6px 6px 6px 0;
+    border-color: transparent var(--border-color) transparent transparent;
+}
+
+.tooltip-right .tooltip-content::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    border-width: 5px 5px 5px 0;
+    border-style: solid;
+    border-color: transparent var(--bg-primary) transparent transparent;
+}
+
+/* ============================================
+   TOOLTIP VARIANTS
+   ============================================ */
+
+/* Dark tooltip */
+.tooltip-dark .tooltip-content {
+    background: var(--dark);
+    color: white;
+    border-color: var(--dark);
+}
+
+.tooltip-dark.tooltip-top .tooltip-content::after {
+    border-top-color: var(--dark);
+}
+
+.tooltip-dark.tooltip-bottom .tooltip-content::after {
+    border-bottom-color: var(--dark);
+}
+
+.tooltip-dark.tooltip-left .tooltip-content::after {
+    border-left-color: var(--dark);
+}
+
+.tooltip-dark.tooltip-right .tooltip-content::after {
+    border-right-color: var(--dark);
+}
+
+/* Primary tooltip */
+.tooltip-primary .tooltip-content {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.tooltip-primary.tooltip-top .tooltip-content::after {
+    border-top-color: var(--primary);
+}
+
+.tooltip-primary.tooltip-bottom .tooltip-content::after {
+    border-bottom-color: var(--primary);
+}
+
+.tooltip-primary.tooltip-left .tooltip-content::after {
+    border-left-color: var(--primary);
+}
+
+.tooltip-primary.tooltip-right .tooltip-content::after {
+    border-right-color: var(--primary);
+}
+
+/* Success tooltip */
+.tooltip-success .tooltip-content {
+    background: var(--success);
+    color: white;
+    border-color: var(--success);
+}
+
+.tooltip-success.tooltip-top .tooltip-content::after {
+    border-top-color: var(--success);
+}
+
+/* Danger tooltip */
+.tooltip-danger .tooltip-content {
+    background: var(--danger);
+    color: white;
+    border-color: var(--danger);
+}
+
+/* Warning tooltip */
+.tooltip-warning .tooltip-content {
+    background: var(--warning);
+    color: var(--text-dark);
+    border-color: var(--warning);
+}
+
+/* Info tooltip */
+.tooltip-info .tooltip-content {
+    background: var(--info);
+    color: white;
+    border-color: var(--info);
+}
+
+/* ============================================
+   TOOLTIP SIZES
+   ============================================ */
+
+/* Small tooltip */
+.tooltip-sm .tooltip-content {
+    padding: 2px 6px;
+    font-size: 0.65rem;
+}
+
+/* Large tooltip */
+.tooltip-lg .tooltip-content {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   TOOLTIP WITH MULTILINE
+   ============================================ */
+
+.tooltip-multiline .tooltip-content {
+    white-space: normal;
+    max-width: 250px;
+    text-align: center;
+}
+
+/* ============================================
+   TOOLTIP WITH ICON
+   ============================================ */
+
+.tooltip-icon {
+    margin-right: var(--spacing-xs);
+    font-size: 0.7rem;
+}
+
+/* ============================================
+   TOOLTIP ANIMATIONS
+   ============================================ */
+
+/* Fade animation */
+.tooltip-fade .tooltip-content {
+    transition: opacity var(--transition), visibility var(--transition);
+}
+
+/* Scale animation */
+.tooltip-scale .tooltip-content {
+    transform: scale(0.9);
+    transition: all var(--transition);
+}
+
+.tooltip-scale:hover .tooltip-content {
+    transform: scale(1);
+}
+
+/* Slide animation */
+.tooltip-slide-top .tooltip-content {
+    transform: translateX(-50%) translateY(-10px);
+}
+
+.tooltip-slide-top:hover .tooltip-content {
+    transform: translateX(-50%) translateY(0);
+}
+
+.tooltip-slide-bottom .tooltip-content {
+    transform: translateX(-50%) translateY(10px);
+}
+
+.tooltip-slide-bottom:hover .tooltip-content {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================
+   CUSTOM TOOLTIP TRIGGERS
+   ============================================ */
+
+/* Click trigger */
+.tooltip-click .tooltip-content {
+    display: none;
+}
+
+.tooltip-click.active .tooltip-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Focus trigger */
+.tooltip-focus:focus .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ============================================
+   RESPONSIVE TOOLTIP
+   ============================================ */
+
+@media (max-width: 768px) {
+    .tooltip-content {
+        white-space: normal;
+        max-width: 200px;
+        text-align: center;
+    }
+    
+    .tooltip-left .tooltip-content,
+    .tooltip-right .tooltip-content {
+        white-space: normal;
+        max-width: 180px;
+    }
+}
+
+/* ============================================
+   DARK MODE TOOLTIP
+   ============================================ */
+[data-theme="dark"] .tooltip-content {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .tooltip-dark .tooltip-content {
+    background: var(--dark);
+}
+
+/* ============================================
+   PRINT TOOLTIP STYLES
+   ============================================ */
+@media print {
+    .tooltip-content {
+        display: none !important;
+    }
+}

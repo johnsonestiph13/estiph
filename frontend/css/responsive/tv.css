@@ -1,0 +1,860 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - TV RESPONSIVE
+   Optimized for Large TV Screens & 4K Displays (1024px - 3840px+)
+   Perfect for Smart TV, Android TV, Apple TV Browsers
+   ============================================ */
+
+/* ============================================
+   TV BASE STYLES (1024px - 1920px)
+   Standard TV Resolution
+   ============================================ */
+@media screen and (min-width: 1024px) and (min-height: 600px) {
+    /* TV-specific optimizations */
+    body {
+        font-size: 18px;
+        cursor: default;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Focus visible for TV remote navigation */
+    :focus-visible {
+        outline: 4px solid var(--primary);
+        outline-offset: 4px;
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Button hover effects for TV remote */
+    button:hover,
+    .nav-item:hover,
+    .device-card:hover,
+    .control-btn:hover {
+        transform: scale(1.02);
+        transition: transform 0.2s ease;
+    }
+    
+    /* Active state for TV remote click */
+    button:active,
+    .nav-item:active,
+    .device-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* ============================================
+   FULL HD TV (1920px - 2560px)
+   Standard 1080p & 1440p TVs
+   ============================================ */
+@media screen and (min-width: 1920px) and (max-width: 2560px) {
+    /* Root font size for better readability */
+    html {
+        font-size: 18px;
+    }
+    
+    /* Layout spacing */
+    .main-content {
+        padding: 32px;
+    }
+    
+    /* Sidebar - wider for TV */
+    .sidebar {
+        width: 320px;
+    }
+    
+    .main-content {
+        margin-left: 320px;
+    }
+    
+    /* Stats grid - 4 columns with larger cards */
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+        margin-bottom: 32px;
+    }
+    
+    .stat-card {
+        padding: 24px;
+    }
+    
+    .stat-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .stat-value {
+        font-size: 2.2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+    }
+    
+    /* Device grid - 5-6 columns */
+    .device-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 28px;
+        margin-bottom: 32px;
+    }
+    
+    .device-card {
+        padding: 24px;
+    }
+    
+    .device-icon {
+        font-size: 3.5rem;
+    }
+    
+    .device-name {
+        font-size: 1.2rem;
+    }
+    
+    .device-room {
+        font-size: 0.9rem;
+    }
+    
+    .device-state {
+        font-size: 0.9rem;
+        padding: 6px 16px;
+    }
+    
+    .device-power {
+        font-size: 0.8rem;
+    }
+    
+    /* Welcome card */
+    .welcome-card {
+        padding: 32px;
+        margin-bottom: 32px;
+    }
+    
+    .welcome-card h2 {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-card p {
+        font-size: 1rem;
+    }
+    
+    /* Control buttons */
+    .control-buttons {
+        gap: 24px;
+        margin: 32px 0;
+    }
+    
+    .control-btn {
+        padding: 16px 28px;
+        font-size: 1.1rem;
+    }
+    
+    /* Voice card */
+    .voice-card {
+        padding: 28px;
+        margin: 28px 0;
+    }
+    
+    .voice-wave {
+        height: 70px;
+    }
+    
+    .wave-bar {
+        width: 6px;
+    }
+    
+    .voice-display {
+        padding: 16px 24px;
+        font-size: 1rem;
+    }
+    
+    /* Emergency card */
+    .emergency-card {
+        padding: 24px;
+        margin: 28px 0;
+    }
+    
+    .emergency-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    
+    .emergency-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .emergency-info p {
+        font-size: 0.9rem;
+    }
+    
+    .emergency-number {
+        font-size: 1rem;
+    }
+    
+    /* Activity log */
+    .activity-log {
+        max-height: 350px;
+        padding: 20px;
+    }
+    
+    .log-entry {
+        font-size: 0.9rem;
+        padding: 12px 0;
+    }
+    
+    .log-time {
+        min-width: 80px;
+    }
+    
+    /* Charts */
+    .chart-container {
+        height: 400px;
+    }
+    
+    .chart-card {
+        padding: 24px;
+    }
+    
+    .chart-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    
+    /* Settings */
+    .setting-item {
+        padding: 24px;
+    }
+    
+    .setting-label {
+        font-size: 1rem;
+    }
+    
+    .setting-desc {
+        font-size: 0.85rem;
+    }
+    
+    /* Modal */
+    .modal {
+        max-width: 600px;
+        padding: 32px;
+    }
+    
+    /* Toast */
+    .toast {
+        padding: 16px 24px;
+        font-size: 0.95rem;
+        min-width: 350px;
+    }
+}
+
+/* ============================================
+   4K ULTRA HD TV (2560px - 3840px)
+   4K Resolution TVs
+   ============================================ */
+@media screen and (min-width: 2560px) and (max-width: 3840px) {
+    /* Larger base font */
+    html {
+        font-size: 20px;
+    }
+    
+    /* More spacing */
+    .main-content {
+        padding: 48px;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+        width: 380px;
+    }
+    
+    .main-content {
+        margin-left: 380px;
+    }
+    
+    /* Stats grid */
+    .stats-grid {
+        gap: 36px;
+        margin-bottom: 48px;
+    }
+    
+    .stat-card {
+        padding: 32px;
+    }
+    
+    .stat-icon {
+        width: 85px;
+        height: 85px;
+        font-size: 2.5rem;
+    }
+    
+    .stat-value {
+        font-size: 2.8rem;
+    }
+    
+    .stat-label {
+        font-size: 1rem;
+    }
+    
+    /* Device grid - 6+ columns */
+    .device-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 36px;
+        margin-bottom: 48px;
+    }
+    
+    .device-card {
+        padding: 32px;
+    }
+    
+    .device-icon {
+        font-size: 4rem;
+    }
+    
+    .device-name {
+        font-size: 1.3rem;
+    }
+    
+    .device-room {
+        font-size: 1rem;
+    }
+    
+    .device-state {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+    
+    /* Welcome card */
+    .welcome-card {
+        padding: 40px;
+        margin-bottom: 40px;
+    }
+    
+    .welcome-card h2 {
+        font-size: 2rem;
+    }
+    
+    .welcome-card p {
+        font-size: 1.1rem;
+    }
+    
+    /* Control buttons */
+    .control-btn {
+        padding: 20px 32px;
+        font-size: 1.2rem;
+    }
+    
+    /* Voice card */
+    .voice-card {
+        padding: 36px;
+    }
+    
+    .voice-wave {
+        height: 80px;
+    }
+    
+    .wave-bar {
+        width: 8px;
+    }
+    
+    /* Charts */
+    .chart-container {
+        height: 500px;
+    }
+    
+    /* Activity log */
+    .activity-log {
+        max-height: 450px;
+    }
+}
+
+/* ============================================
+   8K ULTRA HD TV (3840px+)
+   Future-proof for 8K TVs
+   ============================================ */
+@media screen and (min-width: 3840px) {
+    /* Extreme large screens */
+    html {
+        font-size: 24px;
+    }
+    
+    .main-content {
+        padding: 64px;
+    }
+    
+    .sidebar {
+        width: 450px;
+    }
+    
+    .main-content {
+        margin-left: 450px;
+    }
+    
+    .stats-grid {
+        gap: 48px;
+    }
+    
+    .stat-card {
+        padding: 40px;
+    }
+    
+    .stat-icon {
+        width: 100px;
+        height: 100px;
+        font-size: 3rem;
+    }
+    
+    .stat-value {
+        font-size: 3.5rem;
+    }
+    
+    .device-grid {
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        gap: 48px;
+    }
+    
+    .device-card {
+        padding: 40px;
+    }
+    
+    .device-icon {
+        font-size: 5rem;
+    }
+    
+    .chart-container {
+        height: 600px;
+    }
+}
+
+/* ============================================
+   TV REMOTE CONTROL NAVIGATION
+   D-pad, Arrow Keys, Enter/Space Support
+   ============================================ */
+@media screen and (min-width: 1024px) and (min-height: 600px) {
+    /* Focusable elements for remote navigation */
+    a, button, .nav-item, .device-card, .control-btn, 
+    .setting-item, .auto-badge, .theme-toggle, .lang-btn,
+    input, select, textarea {
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    
+    /* Focus styles for remote control */
+    :focus {
+        outline: 3px solid var(--primary);
+        outline-offset: 4px;
+        position: relative;
+        z-index: 10;
+    }
+    
+    /* Active element indicator */
+    .focus-active {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 3px var(--primary), 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* TV remote hint */
+    .tv-remote-hint {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-family: monospace;
+        z-index: 1000;
+        pointer-events: none;
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* ============================================
+   TV DARK MODE OPTIMIZATIONS
+   Reduced eye strain for dark room viewing
+   ============================================ */
+@media screen and (min-width: 1024px) and (prefers-color-scheme: dark) {
+    /* Darker backgrounds for TV */
+    [data-theme="dark"] {
+        --bg-primary: #0a0a0a;
+        --bg-secondary: #141414;
+        --bg-tertiary: #1f1f1f;
+    }
+    
+    /* Reduce brightness for TV viewing */
+    [data-theme="dark"] .device-card,
+    [data-theme="dark"] .stat-card,
+    [data-theme="dark"] .voice-card {
+        background: rgba(20, 20, 20, 0.95);
+    }
+    
+    /* Soften bright elements */
+    [data-theme="dark"] .primary,
+    [data-theme="dark"] .stat-value {
+        color: #60a5fa;
+    }
+}
+
+/* ============================================
+   TV PERFORMANCE OPTIMIZATIONS
+   Smooth animations for TV browsers
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Use GPU acceleration */
+    .device-card,
+    .stat-card,
+    .control-btn {
+        transform: translateZ(0);
+        will-change: transform;
+    }
+    
+    /* Smooth transitions */
+    .sidebar,
+    .modal,
+    .toast {
+        will-change: transform, opacity;
+    }
+    
+    /* Reduce motion if preferred */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation: none !important;
+            transition: none !important;
+        }
+    }
+}
+
+/* ============================================
+   TV SCREEN SAVER & IDLE DETECTION
+   Optional: Dim UI when idle
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    .tv-idle {
+        opacity: 0.7;
+        transition: opacity 0.5s ease;
+    }
+    
+    .tv-idle .device-card,
+    .tv-idle .stat-card {
+        filter: brightness(0.9);
+    }
+    
+    .tv-idle:hover {
+        opacity: 1;
+    }
+    
+    .tv-idle .device-card:hover,
+    .tv-idle .stat-card:hover {
+        filter: brightness(1);
+    }
+}
+
+/* ============================================
+   TV SPECIFIC COMPONENT SIZING
+   Larger touch targets for remote control
+   ============================================ */
+@media screen and (min-width: 1920px) {
+    /* Larger buttons for TV remote */
+    .nav-item {
+        padding: 16px 24px;
+        margin: 8px 16px;
+    }
+    
+    .nav-item i {
+        width: 32px;
+        font-size: 1.4rem;
+    }
+    
+    .nav-item span {
+        font-size: 1rem;
+    }
+    
+    .user-profile {
+        padding: 20px;
+        margin: 16px;
+    }
+    
+    .user-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .user-info .name {
+        font-size: 1rem;
+    }
+    
+    .user-info .role {
+        font-size: 0.85rem;
+    }
+    
+    .theme-toggle {
+        padding: 14px;
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   TV GRID LAYOUT ENHANCEMENTS
+   Optimized for large screen viewing distance
+   ============================================ */
+@media screen and (min-width: 1920px) {
+    /* Dashboard layout */
+    .dashboard-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 32px;
+    }
+    
+    /* Analytics layout - 3 columns */
+    .analytics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+    
+    .analytics-full {
+        grid-column: span 3;
+    }
+    
+    /* Settings layout - 2 columns */
+    .settings-layout {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 40px;
+    }
+    
+    /* Automation layout - 2 columns */
+    .automation-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+}
+
+/* ============================================
+   TV TYPOGRAPHY
+   Larger text for distance viewing
+   ============================================ */
+@media screen and (min-width: 1920px) {
+    body {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+    
+    h1, .h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2, .h2 {
+        font-size: 2rem;
+    }
+    
+    h3, .h3 {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .text-muted {
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   TV ANIMATIONS
+   Subtle animations for TV interface
+   ============================================ */
+@media screen and (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+    /* Page transitions */
+    .page-container {
+        animation: tvFadeIn 0.3s ease;
+    }
+    
+    @keyframes tvFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Card hover animations */
+    .device-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .device-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Button pulse for attention */
+    @keyframes tvButtonPulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+    }
+    
+    .btn-primary:focus {
+        animation: tvButtonPulse 0.5s ease;
+    }
+}
+
+/* ============================================
+   TV ACCESSIBILITY
+   High contrast & large text options for TV
+   ============================================ */
+@media screen and (min-width: 1920px) {
+    /* High contrast mode for TV */
+    @media (prefers-contrast: high) {
+        :root {
+            --primary: #ffff00;
+            --border-color: #ffffff;
+        }
+        
+        .device-card,
+        .stat-card {
+            border: 3px solid white;
+        }
+        
+        .btn-primary {
+            background: #ffff00;
+            color: black;
+        }
+    }
+    
+    /* Large text mode */
+    @media (prefers-contrast: more) {
+        body {
+            font-size: 24px;
+        }
+        
+        .device-name,
+        .stat-value {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+/* ============================================
+   TV PRINT STYLES
+   ============================================ */
+@media print and (min-width: 1024px) {
+    .sidebar,
+    .top-actions,
+    .control-buttons,
+    .voice-card,
+    .emergency-card {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .device-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .device-card {
+        width: calc(33% - 14px);
+        border: 1px solid #ccc;
+    }
+}
+
+/* ============================================
+   TV LANDSCAPE & PORTRAIT
+   ============================================ */
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+    /* Landscape optimization */
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .device-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+}
+
+@media screen and (min-width: 1024px) and (orientation: portrait) {
+    /* Portrait optimization for vertical TV mounts */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .device-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   TV CUSTOM SCROLLBAR
+   Thicker scrollbar for TV remote control
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: var(--bg-tertiary);
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-light);
+    }
+}
+
+/* ============================================
+   TV REMOTE CONTROL KEYBOARD SHORTCUTS
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Shortcut hint for TV */
+    .shortcut-hint {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-family: monospace;
+        z-index: 1000;
+        pointer-events: none;
+    }
+    
+    /* Common TV remote shortcuts */
+    [data-shortcut="enter"]:focus::after {
+        content: "PRESS ENTER";
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 10px;
+        white-space: nowrap;
+        z-index: 100;
+    }
+}

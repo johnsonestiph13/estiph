@@ -1,0 +1,489 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - VOICE CARD COMPONENT
+   Specialized card for voice assistant functionality
+   ============================================ */
+
+/* ============================================
+   VOICE CARD BASE
+   ============================================ */
+
+.voice-card {
+    background: var(--gradient-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition);
+    cursor: pointer;
+}
+
+.voice-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.voice-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ============================================
+   VOICE CARD HEADER
+   ============================================ */
+
+.voice-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    z-index: 1;
+}
+
+.voice-header i {
+    font-size: 1.3rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.voice-header strong {
+    font-size: 1rem;
+    font-weight: var(--font-semibold);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* ============================================
+   VOICE WAVE ANIMATION
+   ============================================ */
+
+.voice-wave {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 60px;
+    margin: var(--spacing-md) 0;
+    position: relative;
+    z-index: 1;
+}
+
+.wave-bar {
+    width: 4px;
+    height: 25px;
+    background: white;
+    border-radius: 2px;
+    animation: wave 1s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+.wave-bar:nth-child(1) { animation-delay: 0s; height: 20px; }
+.wave-bar:nth-child(2) { animation-delay: 0.1s; height: 35px; }
+.wave-bar:nth-child(3) { animation-delay: 0.2s; height: 50px; }
+.wave-bar:nth-child(4) { animation-delay: 0.3s; height: 35px; }
+.wave-bar:nth-child(5) { animation-delay: 0.4s; height: 20px; }
+
+@keyframes wave {
+    0%, 100% {
+        transform: scaleY(0.5);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+}
+
+/* Active listening wave */
+.voice-card.listening .wave-bar {
+    animation: waveActive 0.8s ease-in-out infinite;
+}
+
+@keyframes waveActive {
+    0%, 100% {
+        transform: scaleY(0.5);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scaleY(1.2);
+        opacity: 1;
+    }
+}
+
+/* Processing wave */
+.voice-card.processing .wave-bar {
+    animation: waveProcessing 0.5s ease-in-out infinite;
+}
+
+@keyframes waveProcessing {
+    0%, 100% {
+        transform: scaleY(0.8);
+    }
+    50% {
+        transform: scaleY(1.5);
+    }
+}
+
+/* ============================================
+   VOICE DISPLAY
+   ============================================ */
+
+.voice-display {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin: var(--spacing-md) 0;
+    text-align: center;
+    font-size: 0.85rem;
+    backdrop-filter: blur(5px);
+    transition: all var(--transition);
+    position: relative;
+    z-index: 1;
+}
+
+.voice-display.listening {
+    background: rgba(0, 0, 0, 0.3);
+    animation: pulse 1.5s infinite;
+}
+
+.voice-display.processing {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.voice-display.error {
+    background: rgba(239, 71, 111, 0.5);
+    animation: shake 0.3s ease;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* Voice command text */
+.voice-command-text {
+    font-size: 0.9rem;
+    font-weight: var(--font-medium);
+    margin-bottom: var(--spacing-xs);
+}
+
+.voice-command-confidence {
+    font-size: 0.65rem;
+    opacity: 0.7;
+}
+
+/* ============================================
+   VOICE BUTTON
+   ============================================ */
+
+.voice-btn {
+    width: 100%;
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: var(--radius-lg);
+    color: white;
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    position: relative;
+    z-index: 1;
+}
+
+.voice-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.voice-btn:active {
+    transform: translateY(0);
+}
+
+.voice-btn.listening {
+    background: var(--danger);
+    animation: pulse 1.5s infinite;
+}
+
+/* ============================================
+   VOICE CARD VARIANTS
+   ============================================ */
+
+/* Compact voice card */
+.voice-card-compact {
+    padding: var(--spacing-md);
+}
+
+.voice-card-compact .voice-wave {
+    height: 40px;
+    margin: var(--spacing-sm) 0;
+}
+
+.voice-card-compact .wave-bar {
+    height: 15px;
+}
+
+.voice-card-compact .wave-bar:nth-child(3) {
+    height: 30px;
+}
+
+.voice-card-compact .voice-display {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.75rem;
+}
+
+/* Large voice card */
+.voice-card-large {
+    padding: var(--spacing-xl);
+}
+
+.voice-card-large .voice-header i {
+    font-size: 1.8rem;
+}
+
+.voice-card-large .voice-header strong {
+    font-size: 1.2rem;
+}
+
+.voice-card-large .voice-wave {
+    height: 80px;
+}
+
+.voice-card-large .wave-bar {
+    width: 6px;
+}
+
+.voice-card-large .wave-bar:nth-child(3) {
+    height: 70px;
+}
+
+.voice-card-large .voice-display {
+    padding: var(--spacing-lg);
+    font-size: 1rem;
+}
+
+/* Minimal voice card */
+.voice-card-minimal {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.voice-card-minimal::before {
+    display: none;
+}
+
+.voice-card-minimal .wave-bar {
+    background: var(--primary);
+}
+
+.voice-card-minimal .voice-display {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+/* ============================================
+   VOICE COMMAND HISTORY
+   ============================================ */
+
+.voice-history {
+    margin-top: var(--spacing-md);
+    max-height: 200px;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.voice-history-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    transition: background var(--transition);
+}
+
+.voice-history-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.voice-history-icon {
+    width: 24px;
+    font-size: 0.8rem;
+}
+
+.voice-history-command {
+    flex: 1;
+}
+
+.voice-history-time {
+    font-size: 0.65rem;
+    opacity: 0.7;
+}
+
+/* ============================================
+   VOICE STATUS INDICATOR
+   ============================================ */
+
+.voice-status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    background: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    z-index: 1;
+}
+
+.voice-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--success);
+    animation: pulse 1.5s infinite;
+}
+
+/* ============================================
+   RESPONSIVE VOICE CARD
+   ============================================ */
+
+@media (max-width: 768px) {
+    .voice-card {
+        padding: var(--spacing-md);
+    }
+    
+    .voice-wave {
+        height: 45px;
+    }
+    
+    .wave-bar {
+        width: 3px;
+    }
+    
+    .wave-bar:nth-child(3) {
+        height: 35px;
+    }
+    
+    .voice-display {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.75rem;
+    }
+    
+    .voice-card-large {
+        padding: var(--spacing-lg);
+    }
+    
+    .voice-card-large .voice-wave {
+        height: 60px;
+    }
+    
+    .voice-card-large .wave-bar:nth-child(3) {
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .voice-card {
+        padding: var(--spacing-sm);
+        margin: var(--spacing-md) 0;
+    }
+    
+    .voice-header i {
+        font-size: 1rem;
+    }
+    
+    .voice-header strong {
+        font-size: 0.85rem;
+    }
+    
+    .voice-wave {
+        height: 35px;
+        gap: 4px;
+    }
+    
+    .wave-bar {
+        width: 2px;
+    }
+    
+    .wave-bar:nth-child(3) {
+        height: 25px;
+    }
+    
+    .voice-display {
+        font-size: 0.7rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .voice-btn {
+        padding: var(--spacing-sm);
+        font-size: 0.8rem;
+    }
+}
+
+/* ============================================
+   DARK MODE VOICE CARD
+   ============================================ */
+[data-theme="dark"] .voice-card-minimal {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .voice-card-minimal .voice-display {
+    background: var(--bg-tertiary);
+}
+
+/* ============================================
+   PRINT VOICE CARD STYLES
+   ============================================ */
+@media print {
+    .voice-card {
+        background: white;
+        border: 1px solid #ccc;
+        color: black;
+    }
+    
+    .voice-wave,
+    .voice-btn,
+    .voice-history {
+        display: none;
+    }
+    
+    .voice-display {
+        background: #f0f0f0;
+        color: black;
+    }
+}

@@ -1,0 +1,797 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - MOBILE RESPONSIVE
+   Optimized for Smartphones & Small Devices (320px - 768px)
+   ============================================ */
+
+/* ============================================
+   SMALL MOBILE (320px - 375px)
+   iPhone SE, Galaxy Fold, etc.
+   ============================================ */
+@media screen and (min-width: 320px) and (max-width: 375px) {
+    /* Root font size adjustment */
+    html {
+        font-size: 14px;
+    }
+    
+    /* Layout adjustments */
+    .main-content {
+        padding: 12px;
+    }
+    
+    .sidebar {
+        width: 260px;
+    }
+    
+    /* Stats grid - 1 column on very small screens */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+    
+    .stat-card {
+        padding: 12px;
+    }
+    
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .stat-value {
+        font-size: 1.2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.65rem;
+    }
+    
+    /* Device grid - 1 column */
+    .device-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .device-card {
+        padding: 12px;
+    }
+    
+    .device-icon {
+        font-size: 2rem;
+    }
+    
+    .device-name {
+        font-size: 0.85rem;
+    }
+    
+    .device-room {
+        font-size: 0.7rem;
+    }
+    
+    .device-state {
+        font-size: 0.7rem;
+        padding: 3px 10px;
+    }
+    
+    /* Welcome card */
+    .welcome-card {
+        padding: 14px;
+        margin-bottom: 16px;
+    }
+    
+    .welcome-card h2 {
+        font-size: 1rem;
+    }
+    
+    .welcome-card p {
+        font-size: 0.7rem;
+    }
+    
+    /* Control buttons */
+    .control-buttons {
+        flex-direction: column;
+        gap: 8px;
+        margin: 12px 0;
+    }
+    
+    .control-btn {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+    
+    /* Voice card */
+    .voice-card {
+        padding: 14px;
+        margin: 12px 0;
+    }
+    
+    .voice-wave {
+        height: 35px;
+    }
+    
+    .wave-bar {
+        width: 3px;
+    }
+    
+    .voice-display {
+        padding: 8px 12px;
+        font-size: 0.7rem;
+    }
+    
+    /* Emergency card */
+    .emergency-card {
+        padding: 10px;
+        margin: 12px 0;
+    }
+    
+    .emergency-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .emergency-info h3 {
+        font-size: 0.8rem;
+    }
+    
+    .emergency-info p {
+        font-size: 0.6rem;
+    }
+    
+    .emergency-number {
+        font-size: 0.75rem;
+    }
+    
+    /* Activity log */
+    .activity-log {
+        padding: 10px;
+    }
+    
+    .log-entry {
+        font-size: 0.65rem;
+        padding: 6px 0;
+        gap: 8px;
+    }
+    
+    .log-time {
+        min-width: 45px;
+    }
+    
+    /* Top bar */
+    .top-bar {
+        padding: 8px 12px;
+    }
+    
+    .page-title {
+        font-size: 1rem;
+    }
+    
+    .voice-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+    
+    .lang-btn {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+    
+    /* Settings items */
+    .setting-item {
+        padding: 10px;
+    }
+    
+    .setting-label {
+        font-size: 0.8rem;
+    }
+    
+    .setting-desc {
+        font-size: 0.65rem;
+    }
+    
+    /* Charts */
+    .chart-container {
+        height: 180px;
+    }
+    
+    .chart-card {
+        padding: 12px;
+    }
+    
+    .chart-card h3 {
+        font-size: 0.85rem;
+    }
+    
+    /* Toast notifications */
+    .toast-container {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+    }
+    
+    .toast {
+        padding: 8px 12px;
+        font-size: 0.7rem;
+    }
+    
+    /* Modal */
+    .modal {
+        padding: 16px;
+        margin: 16px;
+        width: calc(100% - 32px);
+    }
+    
+    /* Login card */
+    .login-card {
+        padding: 20px;
+        margin: 16px;
+    }
+    
+    .login-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .input-group input {
+        padding: 10px 12px;
+    }
+}
+
+/* ============================================
+   MEDIUM MOBILE (375px - 425px)
+   iPhone 6/7/8, Pixel, Galaxy S8/S9
+   ============================================ */
+@media screen and (min-width: 375px) and (max-width: 425px) {
+    /* Stats grid - 2 columns */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    /* Device grid - 2 columns */
+    .device-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .device-card {
+        padding: 14px;
+    }
+    
+    /* Welcome card */
+    .welcome-card {
+        padding: 16px;
+    }
+    
+    .welcome-card h2 {
+        font-size: 1.1rem;
+    }
+    
+    /* Control buttons - row layout */
+    .control-buttons {
+        flex-direction: row;
+        gap: 12px;
+    }
+    
+    /* Stats cards */
+    .stat-card {
+        padding: 14px;
+    }
+    
+    .stat-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .stat-value {
+        font-size: 1.3rem;
+    }
+    
+    /* Charts */
+    .chart-container {
+        height: 200px;
+    }
+}
+
+/* ============================================
+   LARGE MOBILE (425px - 768px)
+   iPhone Plus, Galaxy Note, etc.
+   ============================================ */
+@media screen and (min-width: 425px) and (max-width: 768px) {
+    /* Stats grid - 2 columns */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    /* Device grid - 2 columns */
+    .device-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    /* Welcome card */
+    .welcome-card {
+        padding: 20px;
+    }
+    
+    .welcome-card h2 {
+        font-size: 1.2rem;
+    }
+    
+    /* Control buttons */
+    .control-buttons {
+        flex-direction: row;
+        gap: 16px;
+    }
+    
+    /* Charts */
+    .chart-container {
+        height: 220px;
+    }
+    
+    /* Settings */
+    .setting-item {
+        padding: 16px;
+    }
+}
+
+/* ============================================
+   ALL MOBILE DEVICES (320px - 768px)
+   Shared Styles
+   ============================================ */
+@media screen and (max-width: 768px) {
+    /* Sidebar - hidden by default, slide out */
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        width: 280px;
+        height: 100vh;
+        background: var(--bg-secondary);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    /* Overlay when sidebar is open */
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+    }
+    
+    .sidebar-overlay.active {
+        display: block;
+    }
+    
+    /* Main content - full width */
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        min-height: 100vh;
+    }
+    
+    /* Menu toggle button - visible */
+    .menu-toggle-btn {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.3rem;
+        color: var(--text-primary);
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 8px;
+    }
+    
+    /* Top bar adjustments */
+    .top-bar {
+        padding: 12px 16px;
+    }
+    
+    .page-title {
+        font-size: 1.1rem;
+    }
+    
+    /* Page container padding */
+    .page-container {
+        padding: 16px;
+    }
+    
+    /* Section headers */
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+    
+    .section-header h3 {
+        font-size: 1rem;
+    }
+    
+    /* Device card touch targets */
+    .device-card {
+        cursor: pointer;
+        touch-action: manipulation;
+    }
+    
+    /* Auto badge - larger touch area */
+    .auto-badge {
+        padding: 6px 10px;
+        font-size: 0.65rem;
+    }
+    
+    .auto-toggle {
+        padding: 6px 10px;
+        font-size: 0.65rem;
+    }
+    
+    /* Voice button enhancements */
+    .voice-btn {
+        width: 44px;
+        height: 44px;
+    }
+    
+    /* Language switcher */
+    .language-switcher {
+        gap: 8px;
+    }
+    
+    .lang-btn {
+        padding: 8px 12px;
+    }
+    
+    /* Form inputs - larger touch area */
+    input,
+    select,
+    textarea,
+    button {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+    }
+    
+    .input-group input {
+        padding: 12px 14px;
+    }
+    
+    /* Toast messages - full width on mobile */
+    .toast-container {
+        bottom: 16px;
+        left: 16px;
+        right: 16px;
+        transform: none;
+        width: auto;
+    }
+    
+    .toast {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    
+    /* Modal - full screen on mobile */
+    .modal-overlay {
+        align-items: flex-end;
+    }
+    
+    .modal {
+        width: 100%;
+        max-width: none;
+        border-radius: 20px 20px 0 0;
+        margin: 0;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    /* Charts - full width */
+    .chart-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+    
+    /* Tables - horizontal scroll */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    table {
+        min-width: 600px;
+    }
+    
+    /* Activity log */
+    .activity-log {
+        max-height: 300px;
+    }
+    
+    /* Emergency card */
+    .emergency-card {
+        padding: 14px;
+    }
+    
+    /* Voice wave */
+    .voice-wave {
+        height: 45px;
+    }
+    
+    /* Fix for sticky headers */
+    .top-bar {
+        position: sticky;
+        top: 0;
+        z-index: 99;
+    }
+    
+    /* Improve scrolling */
+    .sidebar,
+    .activity-log,
+    .device-grid {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Disable hover effects on touch devices */
+    @media (hover: none) and (pointer: coarse) {
+        .device-card:hover {
+            transform: none;
+        }
+        
+        .stat-card:hover {
+            transform: none;
+        }
+        
+        .nav-item:hover {
+            transform: none;
+        }
+    }
+}
+
+/* ============================================
+   MOBILE LANDSCAPE MODE
+   ============================================ */
+@media screen and (max-width: 896px) and (orientation: landscape) {
+    /* Adjust sidebar height */
+    .sidebar {
+        height: 100vh;
+        overflow-y: auto;
+    }
+    
+    /* Stats grid - 4 columns in landscape */
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+    
+    /* Device grid - 3 columns in landscape */
+    .device-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+    
+    /* Welcome card - compact */
+    .welcome-card {
+        padding: 12px;
+        margin-bottom: 16px;
+    }
+    
+    .welcome-card h2 {
+        font-size: 1rem;
+    }
+    
+    /* Top bar - compact */
+    .top-bar {
+        padding: 8px 16px;
+    }
+    
+    /* Voice card - compact */
+    .voice-card {
+        padding: 12px;
+    }
+    
+    .voice-wave {
+        height: 30px;
+    }
+    
+    /* Activity log - shorter */
+    .activity-log {
+        max-height: 150px;
+    }
+}
+
+/* ============================================
+   MOBILE TOUCH OPTIMIZATIONS
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets - minimum 44x44px */
+    .nav-item,
+    .device-card,
+    .control-btn,
+    .voice-btn,
+    .theme-toggle,
+    .lang-btn,
+    .auto-badge,
+    .auto-toggle,
+    .emergency-card,
+    .stat-card,
+    .setting-item,
+    .modal-close,
+    .toast-close {
+        min-height: 44px;
+    }
+    
+    /* Remove hover effects that might cause issues */
+    .nav-item:hover,
+    .device-card:hover,
+    .stat-card:hover,
+    .control-btn:hover {
+        transform: none;
+    }
+    
+    /* Active state feedback */
+    .nav-item:active,
+    .device-card:active,
+    .control-btn:active,
+    .voice-btn:active {
+        transform: scale(0.98);
+        transition: transform 0.05s;
+    }
+    
+    /* Prevent zoom on input focus */
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+}
+
+/* ============================================
+   MOBILE DARK MODE ADJUSTMENTS
+   ============================================ */
+@media screen and (max-width: 768px) and (prefers-color-scheme: dark) {
+    /* Reduce brightness on mobile dark mode */
+    .device-card,
+    .stat-card,
+    .setting-item {
+        background: var(--bg-secondary);
+    }
+    
+    /* Improve contrast */
+    .text-muted {
+        color: #94a3b8;
+    }
+}
+
+/* ============================================
+   MOBILE ACCESSIBILITY
+   ============================================ */
+@media screen and (max-width: 768px) {
+    /* Reduce motion for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+        .sidebar,
+        .modal,
+        .toast {
+            transition: none;
+        }
+        
+        .sidebar.open {
+            transform: translateX(0);
+        }
+    }
+    
+    /* High contrast mode on mobile */
+    @media (prefers-contrast: high) {
+        .sidebar {
+            border-right: 2px solid var(--border-color);
+        }
+        
+        .device-card,
+        .stat-card {
+            border: 2px solid var(--border-color);
+        }
+    }
+    
+    /* Better focus indicators for touch */
+    :focus-visible {
+        outline: 3px solid var(--primary);
+        outline-offset: 2px;
+    }
+}
+
+/* ============================================
+   MOBILE PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+@media screen and (max-width: 768px) {
+    /* Reduce animations on mobile for better performance */
+    .welcome-card::before {
+        animation: none;
+    }
+    
+    /* Simplify shadows on mobile */
+    .card,
+    .device-card,
+    .stat-card {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Disable backdrop filters on low-end devices */
+    @media (prefers-reduced-transparency: reduce) {
+        .glass,
+        .voice-display {
+            backdrop-filter: none;
+        }
+    }
+}
+
+/* ============================================
+   MOBILE NOTCH & SAFE AREA SUPPORT
+   ============================================ */
+@supports (padding: max(0px)) {
+    @media screen and (max-width: 768px) {
+        .sidebar {
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        
+        .top-bar {
+            padding-top: max(12px, env(safe-area-inset-top));
+            padding-left: max(16px, env(safe-area-inset-left));
+            padding-right: max(16px, env(safe-area-inset-right));
+        }
+        
+        .main-content {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    }
+}
+
+/* ============================================
+   MOBILE PRINT STYLES
+   ============================================ */
+@media print and (max-width: 768px) {
+    .sidebar,
+    .top-bar,
+    .control-buttons,
+    .voice-card,
+    .emergency-card {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .page-container {
+        padding: 0;
+    }
+}
+
+/* ============================================
+   MOBILE CUSTOM SCROLLBAR
+   ============================================ */
+@media screen and (max-width: 768px) {
+    /* Hide scrollbar on mobile for cleaner look */
+    .sidebar::-webkit-scrollbar {
+        width: 3px;
+    }
+    
+    .activity-log::-webkit-scrollbar {
+        width: 3px;
+    }
+    
+    /* But show on scroll */
+    .sidebar:hover::-webkit-scrollbar-thumb,
+    .activity-log:hover::-webkit-scrollbar-thumb {
+        background: var(--primary);
+    }
+}

@@ -1,0 +1,508 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - DEVICE CARD COMPONENT
+   Specialized card styles for smart home devices
+   ============================================ */
+
+/* ============================================
+   DEVICE CARD BASE
+   ============================================ */
+
+.device-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-md);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.device-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s;
+}
+
+.device-card:hover::before {
+    left: 100%;
+}
+
+.device-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+}
+
+.device-card.active {
+    background: linear-gradient(135deg, rgba(6, 214, 160, 0.05), rgba(67, 97, 238, 0.05));
+    border: 2px solid var(--success);
+}
+
+.device-card.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.device-card.disabled:hover {
+    transform: none;
+}
+
+/* ============================================
+   DEVICE CARD HEADER
+   ============================================ */
+
+.device-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+}
+
+.device-type-icon {
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+/* Auto Mode Badge */
+.auto-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 0.6rem;
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+    transition: all var(--transition);
+    z-index: 10;
+}
+
+.auto-badge.auto-on {
+    background: var(--warning);
+    color: var(--text-dark);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.auto-badge.auto-off {
+    background: var(--text-muted);
+    color: white;
+}
+
+.auto-badge:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ============================================
+   DEVICE CARD BODY
+   ============================================ */
+
+.device-card-body {
+    margin: var(--spacing-md) 0;
+}
+
+.device-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+    transition: transform var(--transition);
+}
+
+.device-card:hover .device-icon {
+    transform: scale(1.05);
+}
+
+.device-name {
+    font-weight: var(--font-semibold);
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.device-room {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+/* ============================================
+   DEVICE CARD FOOTER
+   ============================================ */
+
+.device-card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.device-state {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: var(--font-semibold);
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    transition: all var(--transition);
+}
+
+.device-card.active .device-state {
+    background: var(--success);
+    color: white;
+}
+
+.device-power {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+/* ============================================
+   DEVICE CARD VARIANTS
+   ============================================ */
+
+/* Compact device card */
+.device-card-compact {
+    padding: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: var(--spacing-md);
+}
+
+.device-card-compact .device-card-body {
+    margin: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.device-card-compact .device-icon {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.device-card-compact .device-info {
+    flex: 1;
+}
+
+.device-card-compact .device-name {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.device-card-compact .device-room {
+    margin-bottom: 0;
+    font-size: 0.65rem;
+}
+
+/* Large device card */
+.device-card-large {
+    padding: var(--spacing-lg);
+}
+
+.device-card-large .device-icon {
+    font-size: 4rem;
+}
+
+.device-card-large .device-name {
+    font-size: 1.2rem;
+}
+
+.device-card-large .device-room {
+    font-size: 0.85rem;
+}
+
+.device-card-large .device-state {
+    padding: 6px 16px;
+    font-size: 0.8rem;
+}
+
+/* ============================================
+   DEVICE STATUS INDICATORS
+   ============================================ */
+
+.device-status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.status-dot.online {
+    background: var(--success);
+    box-shadow: 0 0 5px var(--success);
+    animation: pulse 2s infinite;
+}
+
+.status-dot.offline {
+    background: var(--danger);
+}
+
+.status-dot.warning {
+    background: var(--warning);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* ============================================
+   DEVICE CONTROLS
+   ============================================ */
+
+.device-controls {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.device-control-btn {
+    flex: 1;
+    background: var(--bg-tertiary);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 6px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.device-control-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.device-control-btn.danger:hover {
+    background: var(--danger);
+}
+
+/* Auto Toggle Button */
+.auto-toggle {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-secondary);
+}
+
+.auto-toggle:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* ============================================
+   DEVICE ENERGY INFO
+   ============================================ */
+
+.device-energy {
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+}
+
+.energy-label {
+    color: var(--text-muted);
+}
+
+.energy-value {
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+}
+
+/* ============================================
+   DEVICE SCHEDULE INFO
+   ============================================ */
+
+.device-schedule {
+    margin-top: var(--spacing-sm);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+/* ============================================
+   DEVICE CARD GRID
+   ============================================ */
+
+.device-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ============================================
+   DEVICE CARD ANIMATIONS
+   ============================================ */
+
+@keyframes deviceAdded {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.device-card-new {
+    animation: deviceAdded 0.3s ease;
+}
+
+@keyframes deviceUpdated {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.device-updated {
+    animation: deviceUpdated 0.3s ease;
+}
+
+/* ============================================
+   RESPONSIVE DEVICE CARDS
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .device-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: var(--spacing-sm);
+    }
+    
+    .device-card {
+        padding: var(--spacing-sm);
+    }
+    
+    .device-icon {
+        font-size: 2.5rem;
+    }
+    
+    .device-name {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .device-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .device-card {
+        padding: 12px;
+    }
+    
+    .device-icon {
+        font-size: 2rem;
+    }
+    
+    .device-name {
+        font-size: 0.85rem;
+    }
+    
+    .device-card-compact {
+        padding: 10px;
+    }
+    
+    .device-card-compact .device-icon {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .device-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .device-card {
+        padding: 14px;
+    }
+    
+    .device-card-large {
+        padding: 16px;
+    }
+}
+
+/* ============================================
+   DARK MODE DEVICE CARDS
+   ============================================ */
+[data-theme="dark"] .device-card {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .device-control-btn {
+    background: var(--bg-tertiary);
+}
+
+/* ============================================
+   PRINT DEVICE CARD STYLES
+   ============================================ */
+@media print {
+    .device-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        border: 1px solid #ccc;
+    }
+    
+    .device-card:hover {
+        transform: none;
+    }
+    
+    .auto-badge,
+    .device-controls,
+    .auto-toggle {
+        display: none;
+    }
+}

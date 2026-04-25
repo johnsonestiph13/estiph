@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="theme-color" content="#4361ee">
+    <meta name="description" content="Estif Home Ultimate - Enterprise Smart Home Control System">
+    <meta name="keywords" content="smart home, home automation, IoT, ESP32, voice control, multi-user">
+    <meta name="author" content="Estifanos Yohannis">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Estif Home Ultimate">
+    <meta property="og:description" content="Complete Smart Home Control System">
+    <meta property="og:image" content="/assets/images/og-image.jpg">
+    <meta property="og:url" content="https://estif-home.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Estif Home Ultimate">
+    <meta name="twitter:description" content="Complete Smart Home Control System">
+    <meta name="twitter:image" content="/assets/images/og-image.jpg">
+    
+    <!-- PWA Icons -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Socket.IO Client -->
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <!-- CSS Modules -->
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/utilities.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/components/buttons.css">
+    <link rel="stylesheet" href="/css/components/cards.css">
+    <link rel="stylesheet" href="/css/components/modals.css">
+    <link rel="stylesheet" href="/css/components/forms.css">
+    <link rel="stylesheet" href="/css/components/tables.css">
+    <link rel="stylesheet" href="/css/components/charts.css">
+    <link rel="stylesheet" href="/css/components/device-card.css">
+    <link rel="stylesheet" href="/css/components/voice-card.css">
+    <link rel="stylesheet" href="/css/components/emergency-card.css">
+    <link rel="stylesheet" href="/css/components/toast.css">
+    <link rel="stylesheet" href="/css/components/dropdown.css">
+    <link rel="stylesheet" href="/css/components/tabs.css">
+    <link rel="stylesheet" href="/css/components/accordion.css">
+    <link rel="stylesheet" href="/css/components/badge.css">
+    <link rel="stylesheet" href="/css/components/tooltip.css">
+    <link rel="stylesheet" href="/css/components/skeleton.css">
+    <link rel="stylesheet" href="/css/layouts/sidebar.css">
+    <link rel="stylesheet" href="/css/layouts/header.css">
+    <link rel="stylesheet" href="/css/layouts/footer.css">
+    <link rel="stylesheet" href="/css/layouts/grid.css">
+    <link rel="stylesheet" href="/css/layouts/container.css">
+    <link rel="stylesheet" href="/css/layouts/flex.css">
+    <link rel="stylesheet" href="/css/pages/dashboard.css">
+    <link rel="stylesheet" href="/css/pages/analytics.css">
+    <link rel="stylesheet" href="/css/pages/devices.css">
+    <link rel="stylesheet" href="/css/pages/automation.css">
+    <link rel="stylesheet" href="/css/pages/settings.css">
+    <link rel="stylesheet" href="/css/pages/homes.css">
+    <link rel="stylesheet" href="/css/pages/members.css">
+    <link rel="stylesheet" href="/css/pages/profile.css">
+    <link rel="stylesheet" href="/css/themes/light.css">
+    <link rel="stylesheet" href="/css/themes/dark.css">
+    <link rel="stylesheet" href="/css/themes/amoled.css">
+    <link rel="stylesheet" href="/css/themes/high-contrast.css">
+    <link rel="stylesheet" href="/css/themes/sepia.css">
+    <link rel="stylesheet" href="/css/themes/colorblind.css">
+    <link rel="stylesheet" href="/css/responsive/mobile.css">
+    <link rel="stylesheet" href="/css/responsive/tablet.css">
+    <link rel="stylesheet" href="/css/responsive/desktop.css">
+    <link rel="stylesheet" href="/css/responsive/tv.css">
+    <link rel="stylesheet" href="/css/responsive/print.css">
+    <link rel="stylesheet" href="/css/responsive/dark-mode-support.css">
+    
+    <title>Estif Home Ultimate - Smart Control</title>
+</head>
+<body>
+    <div class="app">
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon">🏠</div>
+                <div class="logo-text">
+                    <h1>Estif Home</h1>
+                    <p>Ultimate Control</p>
+                </div>
+            </div>
+            
+            <div class="user-profile" onclick="window.showUserMenu && showUserMenu()">
+                <div class="user-avatar" id="userAvatar">EU</div>
+                <div class="user-info">
+                    <div class="name" id="userName">Estif User</div>
+                    <div class="role" id="userRole">Loading...</div>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <div class="nav-item" data-page="dashboard" onclick="navigateTo('dashboard')">
+                    <i class="fas fa-home"></i>
+                    <span data-i18n="dashboard">Dashboard</span>
+                </div>
+                <div class="nav-item" data-page="devices" onclick="navigateTo('devices')">
+                    <i class="fas fa-microchip"></i>
+                    <span data-i18n="devices">Devices</span>
+                    <span class="nav-badge" id="deviceCount">0</span>
+                </div>
+                <div class="nav-item" data-page="automation" onclick="navigateTo('automation')">
+                    <i class="fas fa-robot"></i>
+                    <span data-i18n="automation">Automation</span>
+                </div>
+                <div class="nav-item" data-page="analytics" onclick="navigateTo('analytics')">
+                    <i class="fas fa-chart-line"></i>
+                    <span data-i18n="analytics">Analytics</span>
+                </div>
+                <div class="nav-item" data-page="settings" onclick="navigateTo('settings')">
+                    <i class="fas fa-cog"></i>
+                    <span data-i18n="settings">Settings</span>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="theme-toggle" onclick="window.toggleTheme && toggleTheme()">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                    <span data-i18n="darkMode">Dark Mode</span>
+                </button>
+                <button class="theme-toggle logout-btn" onclick="window.logout && logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span data-i18n="logout">Logout</span>
+                </button>
+            </div>
+        </aside>
+        
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <div class="top-bar">
+                <button class="menu-toggle-btn" id="menuToggleBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="page-title" id="pageTitle">Dashboard</h1>
+                <div class="top-actions">
+                    <div class="connection-badge tooltip" data-tooltip="Connection Status">
+                        <span class="status-dot" id="statusDot"></span>
+                        <span id="connectionText">Connecting...</span>
+                    </div>
+                    <button class="voice-btn" id="voiceBtn" onclick="window.toggleVoice && toggleVoice()">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+                        <button class="lang-btn" data-lang="am" onclick="setLanguage('am')">አማ</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- LOGIN PAGE -->
+            <div class="page-container" id="login-page">
+                <div class="login-container">
+                    <div class="login-card">
+                        <div class="login-header">
+                            <div class="login-logo">🏠</div>
+                            <h2>Estif Home</h2>
+                            <p>Smart Home Control System</p>
+                        </div>
+                        
+                        <form id="loginForm" onsubmit="window.handleLogin && handleLogin(event)">
+                            <div class="input-group">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="loginEmail" placeholder="Email" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="loginPassword" placeholder="Password" required>
+                            </div>
+                            <button type="submit" class="login-btn">
+                                <i class="fas fa-sign-in-alt"></i> <span data-i18n="login">Login</span>
+                            </button>
+                        </form>
+                        
+                        <form id="registerForm" style="display: none;" onsubmit="window.handleRegister && handleRegister(event)">
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="regName" placeholder="Full Name" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="regEmail" placeholder="Email" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="regPassword" placeholder="Password" required>
+                            </div>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="regConfirmPassword" placeholder="Confirm Password" required>
+                            </div>
+                            <button type="submit" class="login-btn">
+                                <i class="fas fa-user-plus"></i> <span data-i18n="register">Register</span>
+                            </button>
+                        </form>
+                        
+                        <div class="login-footer switch-form">
+                            <p><span data-i18n="noAccount">Don't have an account?</span> <a href="#" onclick="window.showRegisterOnly && showRegisterOnly()"><span data-i18n="register">Register</span></a></p>
+                        </div>
+                        
+                        <div class="login-demo">
+                            <p>Owner: Estifanos Yohannis</p>
+                            <p>📧 johnsonestiph01@gmail.com</p>
+                            <p>📞 +251 987 713 787</p>
+                            <p>© 2026 Estif Smart Home. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- DASHBOARD PAGE -->
+            <div class="page-container" id="dashboard-page">
+                <div class="welcome-card">
+                    <h2 id="welcomeMsg">Welcome back!</h2>
+                    <p id="welcomeSub">Your smart home is running smoothly</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-microchip"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="statTotalDevices">0</div>
+                            <div class="stat-label" data-i18n="totalDevices">Total Devices</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-power-off"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="statActiveDevices">0</div>
+                            <div class="stat-label" data-i18n="activeNow">Active Now</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-robot"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="statAutoMode">0</div>
+                            <div class="stat-label" data-i18n="autoMode">Auto Mode</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-temperature-high"></i></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="statTemperature">--°C</div>
+                            <div class="stat-label" data-i18n="temperature">Temperature</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-header">
+                    <h3><i class="fas fa-microchip"></i> <span data-i18n="quickDevices">Quick Devices</span></h3>
+                </div>
+                
+                <div class="device-grid" id="deviceGrid"></div>
+                
+                <div class="control-buttons">
+                    <button class="control-btn btn-primary" onclick="window.masterAllOn && masterAllOn()">
+                        <i class="fas fa-power-off"></i> <span data-i18n="allOn">ALL ON</span>
+                    </button>
+                    <button class="control-btn btn-danger" onclick="window.masterAllOff && masterAllOff()">
+                        <i class="fas fa-stop-circle"></i> <span data-i18n="allOff">ALL OFF</span>
+                    </button>
+                </div>
+                
+                <!-- Voice Card -->
+                <div class="voice-card">
+                    <div class="voice-header">
+                        <i class="fas fa-microphone-alt"></i>
+                        <strong data-i18n="voiceAssistant">Voice Assistant</strong>
+                    </div>
+                    <div class="voice-wave">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                    </div>
+                    <div class="voice-display" id="voiceCommandText">
+                        <span data-i18n="wakeWord">Say "Hey Estiph" or "ሰላም እስቲፍ"</span>
+                    </div>
+                    <button class="voice-btn-full control-btn btn-primary" onclick="window.toggleVoice && toggleVoice()">
+                        <i class="fas fa-microphone"></i> <span data-i18n="startListening">Start Listening</span>
+                    </button>
+                </div>
+                
+                <!-- Emergency Card -->
+                <div class="emergency-card" onclick="window.makeEmergencyCall && makeEmergencyCall()">
+                    <div class="emergency-icon">
+                        <i class="fas fa-phone-alt"></i>
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="emergency-info">
+                        <h3 data-i18n="emergencyContact">Emergency Contact</h3>
+                        <p data-i18n="emergencyDesc">Click to call for immediate assistance</p>
+                        <div class="emergency-number">📞 +251 987 713 787</div>
+                    </div>
+                    <div class="emergency-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <div class="section-header">
+                    <h3><i class="fas fa-history"></i> <span data-i18n="recentActivity">Recent Activity</span></h3>
+                </div>
+                
+                <div class="activity-log" id="activityLog">
+                    <div class="log-entry">
+                        <span class="log-time">--:--</span>
+                        <span class="log-message">System ready</span>
+                        <span class="log-source">system</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- DEVICES PAGE -->
+            <div class="page-container" id="devices-page">
+                <div class="section-header">
+                    <h3><i class="fas fa-microchip"></i> <span data-i18n="allDevices">All Connected Devices</span></h3>
+                    <button class="add-device-btn" onclick="showAddDeviceModal()">
+                        <i class="fas fa-plus"></i> Add Device
+                    </button>
+                </div>
+                <div class="all-devices-grid device-grid" id="allDevicesGrid"></div>
+            </div>
+            
+            <!-- AUTOMATION PAGE -->
+            <div class="page-container" id="automation-page">
+                <div class="section-header">
+                    <h3><i class="fas fa-robot"></i> <span data-i18n="automationRules">Automation Rules</span></h3>
+                    <button class="add-rule-btn" onclick="showAddRuleModal()">
+                        <i class="fas fa-plus"></i> Add Rule
+                    </button>
+                </div>
+                <div class="automation-list" id="automationList">
+                    <div class="automation-card">
+                        <div class="automation-header">
+                            <div class="automation-info">
+                                <div class="automation-name">Temperature Control (AC)</div>
+                                <div class="automation-desc">Auto on when temp > 26°C</div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="autoAC" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="automation-card">
+                        <div class="automation-header">
+                            <div class="automation-info">
+                                <div class="automation-name">Temperature Control (Heater)</div>
+                                <div class="automation-desc">Auto on when temp < 18°C</div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="autoHeater" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="automation-card">
+                        <div class="automation-header">
+                            <div class="automation-info">
+                                <div class="automation-name">Morning Light</div>
+                                <div class="automation-desc">Light ON at 6:30 AM (Weekdays)</div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="morningLight" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="automation-card">
+                        <div class="automation-header">
+                            <div class="automation-info">
+                                <div class="automation-name">Night Light</div>
+                                <div class="automation-desc">Light OFF at 10:00 PM</div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="nightLight" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ANALYTICS PAGE -->
+            <div class="page-container" id="analytics-page">
+                <div class="analytics-grid">
+                    <div class="chart-card">
+                        <h3><i class="fas fa-chart-line"></i> <span data-i18n="energyConsumption">Energy Consumption</span></h3>
+                        <div class="chart-container">
+                            <canvas id="energyChart" style="width:100%; height:100%"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3><i class="fas fa-chart-pie"></i> <span data-i18n="deviceBreakdown">Device Usage Stats</span></h3>
+                        <div class="stats-list" id="usageStats"></div>
+                    </div>
+                    <div class="chart-card">
+                        <h3><i class="fas fa-clock"></i> <span data-i18n="peakHours">Peak Hours</span></h3>
+                        <div class="stats-list" id="peakHours"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SETTINGS PAGE -->
+            <div class="page-container" id="settings-page">
+                <div class="settings-list">
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label" data-i18n="darkMode">Dark Mode</div>
+                            <div class="setting-desc" data-i18n="darkModeDesc">Switch between light and dark theme</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="darkModeToggle" onchange="window.toggleTheme && toggleTheme()">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label" data-i18n="notifications">Notifications</div>
+                            <div class="setting-desc" data-i18n="notificationsDesc">Receive device notifications</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="notificationsToggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label" data-i18n="soundEffects">Sound Effects</div>
+                            <div class="setting-desc" data-i18n="soundEffectsDesc">Play sounds for actions</div>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="soundToggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <div>
+                            <div class="setting-label" data-i18n="temperatureUnit">Temperature Unit</div>
+                            <div class="setting-desc" data-i18n="temperatureUnitDesc">Celsius or Fahrenheit</div>
+                        </div>
+                        <select id="tempUnit" onchange="updateTempUnit(this.value)">
+                            <option value="c">Celsius (°C)</option>
+                            <option value="f">Fahrenheit (°F)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+    
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalTitle">Modal Title</h3>
+                    <button class="modal-close" onclick="closeModal()">&times;</button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <p id="modalMessage">Modal message</p>
+                </div>
+                <div class="modal-footer" id="modalFooter">
+                    <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                    <button class="btn btn-primary" id="modalConfirmBtn">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Application Script -->
+    <script src="/js/app.js"></script>
+    
+    <script>
+        // Helper functions for settings
+        function updateTempUnit(unit) {
+            localStorage.setItem('tempUnit', unit);
+            const tempElement = document.getElementById('statTemperature');
+            if (tempElement && window.AppState?.systemStats?.temperature) {
+                const celsius = window.AppState.systemStats.temperature;
+                if (unit === 'f') {
+                    const fahrenheit = (celsius * 9/5) + 32;
+                    tempElement.textContent = `${Math.round(fahrenheit)}°F`;
+                } else {
+                    tempElement.textContent = `${Math.round(celsius)}°C`;
+                }
+            }
+        }
+        
+        function showAddDeviceModal() {
+            showToast('Add device feature coming soon', 'info');
+        }
+        
+        function showAddRuleModal() {
+            showToast('Add automation rule feature coming soon', 'info');
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('modalOverlay');
+            if (modal) modal.classList.remove('active');
+        }
+        
+        // Load saved settings
+        const savedUnit = localStorage.getItem('tempUnit');
+        if (savedUnit && document.getElementById('tempUnit')) {
+            document.getElementById('tempUnit').value = savedUnit;
+            updateTempUnit(savedUnit);
+        }
+        
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' && document.getElementById('darkModeToggle')) {
+            document.getElementById('darkModeToggle').checked = true;
+        }
+        
+        // Initialize charts after app.js loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                if (typeof initCharts === 'function') {
+                    initCharts();
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>

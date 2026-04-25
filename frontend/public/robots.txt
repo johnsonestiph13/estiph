@@ -1,0 +1,165 @@
+# ============================================
+# ESTIF HOME ULTIMATE - ROBOTS.TXT
+# Search Engine Crawler Instructions
+# ============================================
+
+User-agent: *
+Allow: /
+Allow: /dashboard
+Allow: /devices
+Allow: /automation
+Allow: /analytics
+Allow: /settings
+Allow: /profile
+Allow: /homes
+Allow: /members
+Allow: /about
+Allow: /contact
+Allow: /help
+Allow: /faq
+Allow: /blog
+Allow: /docs
+Allow: /download
+
+# Disallow authentication pages
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
+Disallow: /reset-password
+
+# Disallow API endpoints
+Disallow: /api/
+Disallow: /socket.io/
+
+# Disallow admin pages
+Disallow: /admin/
+Disallow: /super-admin/
+
+# Disallow temporary files
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /cache/
+
+# Disallow private user data
+Disallow: /user/
+Disallow: /account/
+
+# Sitemap location
+Sitemap: https://estif-home.com/sitemap.xml
+
+# Crawl delay for slower crawlers
+Crawl-delay: 1
+
+# Host directive
+Host: https://estif-home.com
+
+# ============================================
+# SPECIFIC CRAWLER RULES
+# ============================================
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+Allow: /dashboard
+Allow: /devices
+Allow: /automation
+Allow: /analytics
+Allow: /blog
+Allow: /docs
+Disallow: /login
+Disallow: /register
+Disallow: /api/
+Crawl-delay: 0.5
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Allow: /dashboard
+Allow: /devices
+Allow: /automation
+Allow: /blog
+Disallow: /login
+Disallow: /register
+Disallow: /api/
+Crawl-delay: 1
+
+# Yahoo
+User-agent: Yahoo
+Allow: /
+Allow: /dashboard
+Allow: /devices
+Allow: /blog
+Disallow: /login
+Disallow: /register
+Disallow: /api/
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Allow: /dashboard
+Allow: /devices
+Allow: /automation
+Allow: /blog
+Disallow: /login
+Disallow: /register
+Disallow: /api/
+
+# Baidu (Chinese search engine)
+User-agent: Baiduspider
+Allow: /
+Allow: /dashboard
+Allow: /devices
+Allow: /blog
+Disallow: /login
+Disallow: /register
+Disallow: /api/
+Crawl-delay: 2
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Allow: /dashboard
+Allow: /devices
+Allow: /blog
+Disallow: /login
+Disallow: /register
+Disallow: /api/
+Crawl-delay: 1
+
+# ============================================
+# BOT CRAWLER RESTRICTIONS
+# ============================================
+
+# Block malicious bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MegaIndex
+Disallow: /
+
+# ============================================
+# IMAGE CRAWLING
+# ============================================
+
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /assets/icons/
+Allow: /uploads/
+Disallow: /private/
+
+# ============================================
+# VIDEO CRAWLING
+# ============================================
+
+User-agent: Googlebot-Video
+Allow: /assets/videos/
+Disallow: /private/

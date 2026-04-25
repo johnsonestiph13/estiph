@@ -1,0 +1,734 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - COLORBLIND FRIENDLY THEME
+   Accessible for All Types of Color Vision Deficiency
+   Supports: Protanopia, Deuteranopia, Tritanopia
+   ============================================ */
+
+[data-theme="colorblind"] {
+    /* ===== PRIMARY COLOR (Blue - Safe for All Colorblind Types) ===== */
+    --primary: #2c7da0;
+    --primary-rgb: 44, 125, 160;
+    --primary-dark: #236b8a;
+    --primary-darker: #1b5570;
+    --primary-light: #4a9bc0;
+    --primary-lighter: #6eb5d4;
+    --primary-soft: rgba(44, 125, 160, 0.15);
+    
+    /* ===== SECONDARY COLOR (Teal - Distinguishable) ===== */
+    --secondary: #2a9d8f;
+    --secondary-rgb: 42, 157, 143;
+    --secondary-dark: #218377;
+    --secondary-darker: #196b61;
+    --secondary-light: #4bbaaa;
+    --secondary-lighter: #75cdbf;
+    --secondary-soft: rgba(42, 157, 143, 0.15);
+    
+    /* ===== SUCCESS COLOR (Green with Blue Tint - Safer) ===== */
+    --success: #2a9d8f;
+    --success-rgb: 42, 157, 143;
+    --success-dark: #218377;
+    --success-darker: #196b61;
+    --success-light: #4bbaaa;
+    --success-lighter: #75cdbf;
+    --success-soft: rgba(42, 157, 143, 0.15);
+    
+    /* ===== DANGER/ERROR COLOR (Orange-Red - Better Distinction) ===== */
+    --danger: #e76f51;
+    --danger-rgb: 231, 111, 81;
+    --danger-dark: #d45a3a;
+    --danger-darker: #c14a2a;
+    --danger-light: #f08a6a;
+    --danger-lighter: #f5a58a;
+    --danger-soft: rgba(231, 111, 81, 0.15);
+    
+    /* ===== WARNING COLOR (Amber - Visible to All) ===== */
+    --warning: #e9c46a;
+    --warning-rgb: 233, 196, 106;
+    --warning-dark: #e0b04a;
+    --warning-darker: #d6a02e;
+    --warning-light: #f0d48a;
+    --warning-lighter: #f5e0aa;
+    --warning-soft: rgba(233, 196, 106, 0.15);
+    
+    /* ===== INFO COLOR (Light Blue - Safe) ===== */
+    --info: #61a5c2;
+    --info-rgb: 97, 165, 194;
+    --info-dark: #4a8faa;
+    --info-darker: #3a7892;
+    --info-light: #85bbd4;
+    --info-lighter: #a8d0e8;
+    --info-soft: rgba(97, 165, 194, 0.15);
+    
+    /* ===== BACKGROUND COLORS (High Contrast) ===== */
+    --bg-primary: #faf9f6;
+    --bg-secondary: #f0efea;
+    --bg-tertiary: #e5e4df;
+    --bg-quaternary: #dad9d4;
+    --bg-card: #ffffff;
+    --bg-hover: rgba(44, 125, 160, 0.08);
+    --bg-active: rgba(44, 125, 160, 0.12);
+    --bg-overlay: rgba(0, 0, 0, 0.6);
+    --bg-glass: rgba(250, 249, 246, 0.9);
+    
+    /* ===== TEXT COLORS (High Contrast) ===== */
+    --text-primary: #1e2a3e;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --text-disabled: #a0aec0;
+    --text-light: #ffffff;
+    --text-dark: #1e2a3e;
+    --text-link: #2c7da0;
+    --text-link-hover: #236b8a;
+    
+    /* ===== BORDER COLORS ===== */
+    --border-color: #cbd5e0;
+    --border-light: #e2e8f0;
+    --border-dark: #a0aec0;
+    --border-focus: #2c7da0;
+    --border-error: #e76f51;
+    --border-success: #2a9d8f;
+    
+    /* ===== GRADIENTS (Subtle) ===== */
+    --gradient-primary: linear-gradient(135deg, #2c7da0, #2a9d8f);
+    --gradient-primary-reverse: linear-gradient(135deg, #2a9d8f, #2c7da0);
+    --gradient-success: linear-gradient(135deg, #2a9d8f, #61a5c2);
+    --gradient-danger: linear-gradient(135deg, #e76f51, #e9c46a);
+    --gradient-dark: linear-gradient(135deg, #1e2a3e, #2d3748);
+    --gradient-light: linear-gradient(135deg, #faf9f6, #f0efea);
+    
+    /* ===== SHADOWS (Subtle) ===== */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+    --shadow-primary: 0 4px 14px 0 rgba(44, 125, 160, 0.25);
+    --shadow-success: 0 4px 14px 0 rgba(42, 157, 143, 0.25);
+    --shadow-danger: 0 4px 14px 0 rgba(231, 111, 81, 0.25);
+    
+    /* ===== COLORBLIND SPECIFIC PATTERNS ===== */
+    --pattern-stripe: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(0, 0, 0, 0.05) 10px,
+        rgba(0, 0, 0, 0.05) 20px
+    );
+    --pattern-dots: radial-gradient(circle at 2px 2px, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    --pattern-crosshatch: repeating-linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.1) 0px,
+        rgba(0, 0, 0, 0.1) 2px,
+        transparent 2px,
+        transparent 8px
+    );
+}
+
+/* ============================================
+   COLORBLIND THEME SPECIFIC STYLES
+   ============================================ */
+
+/* Body background */
+[data-theme="colorblind"] body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Card styling */
+[data-theme="colorblind"] .card,
+[data-theme="colorblind"] .device-card,
+[data-theme="colorblind"] .stat-card,
+[data-theme="colorblind"] .voice-card,
+[data-theme="colorblind"] .chart-card,
+[data-theme="colorblind"] .settings-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Welcome card */
+[data-theme="colorblind"] .welcome-card {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+/* Stat card */
+[data-theme="colorblind"] .stat-icon {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="colorblind"] .stat-value {
+    color: var(--primary);
+}
+
+/* Device card - Add patterns for better distinction */
+[data-theme="colorblind"] .device-card.active {
+    background: var(--bg-active);
+    border: 2px solid var(--success);
+    position: relative;
+}
+
+[data-theme="colorblind"] .device-card.active::after {
+    content: '✓';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--success);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Auto badge with patterns */
+[data-theme="colorblind"] .auto-badge {
+    font-weight: bold;
+}
+
+[data-theme="colorblind"] .auto-badge.auto-on {
+    background: var(--warning);
+    color: var(--text-dark);
+    position: relative;
+    background-image: var(--pattern-dots);
+}
+
+[data-theme="colorblind"] .auto-badge.auto-off {
+    background: var(--text-muted);
+    color: white;
+    background-image: var(--pattern-stripe);
+}
+
+/* Buttons with clear visual indicators */
+[data-theme="colorblind"] .btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    font-weight: bold;
+}
+
+[data-theme="colorblind"] .btn-primary:hover {
+    background: var(--gradient-primary-reverse);
+    transform: translateY(-2px);
+}
+
+[data-theme="colorblind"] .btn-danger {
+    background: var(--danger);
+    color: white;
+    font-weight: bold;
+    position: relative;
+}
+
+[data-theme="colorblind"] .btn-danger::before {
+    content: '⚠';
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+/* Voice card */
+[data-theme="colorblind"] .voice-card {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="colorblind"] .voice-display {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Emergency card - High visibility pattern */
+[data-theme="colorblind"] .emergency-card {
+    background: var(--danger);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="colorblind"] .emergency-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--pattern-crosshatch);
+    pointer-events: none;
+}
+
+[data-theme="colorblind"] .emergency-icon {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+}
+
+/* Input fields */
+[data-theme="colorblind"] input,
+[data-theme="colorblind"] textarea,
+[data-theme="colorblind"] select {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-dark);
+    color: var(--text-primary);
+}
+
+[data-theme="colorblind"] input:focus,
+[data-theme="colorblind"] textarea:focus,
+[data-theme="colorblind"] select:focus {
+    border-color: var(--primary);
+    outline: 2px solid var(--primary-light);
+    outline-offset: 2px;
+}
+
+/* Input groups */
+[data-theme="colorblind"] .input-group {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="colorblind"] .input-group:focus-within {
+    border-color: var(--primary);
+    outline: 2px solid var(--primary-light);
+    outline-offset: 2px;
+}
+
+/* Toggle switch with visual labels */
+[data-theme="colorblind"] .switch {
+    position: relative;
+}
+
+[data-theme="colorblind"] .switch::before {
+    content: 'OFF';
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--text-secondary);
+}
+
+[data-theme="colorblind"] .switch::after {
+    content: 'ON';
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--text-secondary);
+}
+
+[data-theme="colorblind"] .slider {
+    background-color: var(--border-dark);
+}
+
+[data-theme="colorblind"] input:checked + .slider {
+    background-color: var(--success);
+}
+
+/* Progress bar with pattern */
+[data-theme="colorblind"] .progress {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="colorblind"] .progress-bar {
+    background: var(--gradient-primary);
+    position: relative;
+    background-image: var(--pattern-stripe);
+}
+
+/* Toast notifications with icons */
+[data-theme="colorblind"] .toast {
+    background: var(--bg-card);
+    border-left: 4px solid var(--primary);
+    box-shadow: var(--shadow-lg);
+}
+
+[data-theme="colorblind"] .toast::before {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+[data-theme="colorblind"] .toast.success::before {
+    content: '\f00c';
+    color: var(--success);
+}
+
+[data-theme="colorblind"] .toast.error::before {
+    content: '\f00d';
+    color: var(--danger);
+}
+
+[data-theme="colorblind"] .toast.warning::before {
+    content: '\f071';
+    color: var(--warning);
+}
+
+[data-theme="colorblind"] .toast.info::before {
+    content: '\f05a';
+    color: var(--info);
+}
+
+/* Modal */
+[data-theme="colorblind"] .modal {
+    background: var(--bg-card);
+    border: 2px solid var(--primary);
+}
+
+[data-theme="colorblind"] .modal-header {
+    background: var(--bg-tertiary);
+    padding: var(--spacing-md);
+}
+
+/* Activity log */
+[data-theme="colorblind"] .activity-log {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="colorblind"] .log-entry {
+    border-bottom: 1px solid var(--border-light);
+    padding: var(--spacing-sm);
+}
+
+[data-theme="colorblind"] .log-entry:hover {
+    background: var(--bg-hover);
+}
+
+/* Sidebar */
+[data-theme="colorblind"] .sidebar {
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+}
+
+[data-theme="colorblind"] .user-profile {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+}
+
+[data-theme="colorblind"] .user-profile:hover {
+    background: var(--gradient-primary);
+}
+
+[data-theme="colorblind"] .user-avatar {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+/* Navigation with icons (colorblind friendly) */
+[data-theme="colorblind"] .nav-item {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+[data-theme="colorblind"] .nav-item i {
+    width: 24px;
+    font-size: 1.1rem;
+}
+
+[data-theme="colorblind"] .nav-item.active {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="colorblind"] .nav-item.active i {
+    color: white;
+}
+
+[data-theme="colorblind"] .nav-badge {
+    background: var(--warning);
+    color: var(--text-dark);
+    font-weight: bold;
+}
+
+/* Top bar */
+[data-theme="colorblind"] .top-bar {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="colorblind"] .page-title {
+    color: var(--primary);
+}
+
+/* Voice button */
+[data-theme="colorblind"] .voice-btn {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--primary);
+}
+
+[data-theme="colorblind"] .voice-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+[data-theme="colorblind"] .voice-btn.listening {
+    background: var(--danger);
+    color: white;
+    animation: pulse 1.5s infinite;
+}
+
+/* Language switcher */
+[data-theme="colorblind"] .language-switcher {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+}
+
+[data-theme="colorblind"] .lang-btn {
+    font-weight: 600;
+}
+
+[data-theme="colorblind"] .lang-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Theme toggle */
+[data-theme="colorblind"] .theme-toggle {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+[data-theme="colorblind"] .theme-toggle:hover {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+/* Scrollbar */
+[data-theme="colorblind"] ::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="colorblind"] ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+/* Selection */
+[data-theme="colorblind"] ::selection {
+    background: var(--primary);
+    color: white;
+}
+
+/* Links with underline for clarity */
+[data-theme="colorblind"] a {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+[data-theme="colorblind"] a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+/* Login card */
+[data-theme="colorblind"] .login-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-xl);
+}
+
+[data-theme="colorblind"] .login-logo {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="colorblind"] .login-btn {
+    background: var(--gradient-primary);
+    color: white;
+    font-weight: bold;
+}
+
+/* Settings items with icons */
+[data-theme="colorblind"] .setting-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="colorblind"] .setting-item:hover {
+    border-color: var(--primary);
+    background: var(--bg-hover);
+}
+
+[data-theme="colorblind"] .setting-label {
+    font-weight: 600;
+}
+
+/* Tables with zebra striping */
+[data-theme="colorblind"] thead {
+    background: var(--bg-tertiary);
+    border-bottom: 2px solid var(--border-color);
+}
+
+[data-theme="colorblind"] th {
+    font-weight: bold;
+    padding: var(--spacing-sm);
+}
+
+[data-theme="colorblind"] td {
+    padding: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-light);
+}
+
+[data-theme="colorblind"] tbody tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+[data-theme="colorblind"] tbody tr:hover {
+    background: var(--bg-hover);
+}
+
+/* Chart colors for colorblind accessibility */
+[data-theme="colorblind"] .chart-container canvas {
+    filter: saturate(1.2);
+}
+
+/* Colorblind-friendly chart palette */
+[data-theme="colorblind"] .chart-color-1 { background: #2c7da0; }
+[data-theme="colorblind"] .chart-color-2 { background: #2a9d8f; }
+[data-theme="colorblind"] .chart-color-3 { background: #e76f51; }
+[data-theme="colorblind"] .chart-color-4 { background: #e9c46a; }
+[data-theme="colorblind"] .chart-color-5 { background: #61a5c2; }
+
+/* ============================================
+   COLORBLIND RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    [data-theme="colorblind"] .sidebar {
+        border-right: 1px solid var(--border-color);
+    }
+}
+
+/* ============================================
+   COLORBLIND PRINT STYLES
+   ============================================ */
+@media print {
+    [data-theme="colorblind"] body {
+        background: white;
+        color: black;
+    }
+    
+    [data-theme="colorblind"] .device-card.active::after {
+        content: '✓';
+        background: black;
+        color: white;
+    }
+}
+
+/* ============================================
+   COLORBLIND ACCESSIBILITY
+   ============================================ */
+
+/* Ensure all status indicators have icons or patterns */
+[data-theme="colorblind"] .status-icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+[data-theme="colorblind"] .status-icon.online {
+    background: var(--success);
+    box-shadow: 0 0 0 2px rgba(42, 157, 143, 0.3);
+}
+
+[data-theme="colorblind"] .status-icon.offline {
+    background: var(--danger);
+    box-shadow: 0 0 0 2px rgba(231, 111, 81, 0.3);
+}
+
+/* Focus indicators */
+[data-theme="colorblind"] :focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Skip to content link */
+[data-theme="colorblind"] .skip-to-content {
+    background: var(--primary);
+    color: white;
+}
+
+[data-theme="colorblind"] .skip-to-content:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    [data-theme="colorblind"] *,
+    [data-theme="colorblind"] *::before,
+    [data-theme="colorblind"] *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   COLORBLIND THEME ANIMATIONS
+   ============================================ */
+
+@keyframes colorblindPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(44, 125, 160, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(44, 125, 160, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(44, 125, 160, 0);
+    }
+}
+
+[data-theme="colorblind"] .pulse-primary {
+    animation: colorblindPulse 2s infinite;
+}
+
+/* ============================================
+   SPECIFIC COLORBLIND SIMULATIONS
+   ============================================ */
+
+/* Protanopia (red-blind) adjustments */
+[data-theme="colorblind"][data-cvd="protanopia"] {
+    --danger: #e09d32;
+    --danger-dark: #c8892a;
+}
+
+/* Deuteranopia (green-blind) adjustments */
+[data-theme="colorblind"][data-cvd="deuteranopia"] {
+    --success: #2c7da0;
+    --success-dark: #236b8a;
+}
+
+/* Tritanopia (blue-blind) adjustments */
+[data-theme="colorblind"][data-cvd="tritanopia"] {
+    --primary: #e76f51;
+    --info: #e9c46a;
+}
+
+/* ============================================
+   HIGH CONTRAST WITHIN COLORBLIND THEME
+   ============================================ */
+
+@media (prefers-contrast: high) {
+    [data-theme="colorblind"] {
+        --bg-primary: #000000;
+        --bg-secondary: #1a1a1a;
+        --text-primary: #ffffff;
+        --border-color: #ffffff;
+    }
+    
+    [data-theme="colorblind"] .card,
+    [data-theme="colorblind"] .device-card {
+        border: 2px solid white;
+    }
+}

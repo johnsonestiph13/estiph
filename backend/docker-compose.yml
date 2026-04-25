@@ -1,0 +1,111 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7
+    container_name: estif-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+      MONGO_INITDB_DATABASE: estif_home
+    volumes:
+      - mongodb_data:/data/db
+      - ./database/mongodb/init.js:/docker-entrypoint-initdb.d/init.js
+    networks:
+      - estif-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: estif-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --requirepass redis123
+    volumes:
+      - redis_data:/data
+    networks:
+      - estif-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend API
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: estif-backend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      MONGODB_URI: mongodb://admin:admin123@mongodb:27017/estif_home?authSource=admin
+      REDIS_URL: redis://:redis123@redis:6379
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./logs:/app/logs
+      - ./backups:/app/backups
+      - ./uploads:/app/uploads
+    networks:
+      - estif-network
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/api/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # MQTT Broker
+  mqtt:
+    image: eclipse-mosquitto:2
+    container_name: estif-mqtt
+    restart: unless-stopped
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mqtt/config:/mosquitto/config
+      - ./mqtt/data:/mosquitto/data
+      - ./mqtt/log:/mosquitto/log
+    networks:
+      - estif-network
+
+  # Nginx Reverse Proxy (optional)
+  nginx:
+    image: nginx:alpine
+    container_name: estif-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ../frontend/dist:/usr/share/nginx/html
+    depends_on:
+      - backend
+    networks:
+      - estif-network
+
+networks:
+  estif-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+  redis_data:

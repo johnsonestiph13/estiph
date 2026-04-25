@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square70x70logo src="/assets/icons/icon-72.png"/>
+            <square150x150logo src="/assets/icons/icon-144.png"/>
+            <wide310x150logo src="/assets/icons/icon-152.png"/>
+            <square310x310logo src="/assets/icons/icon-192.png"/>
+            <TileColor>#4361ee</TileColor>
+            <TileImage src="/assets/icons/icon-144.png"/>
+        </tile>
+        <notification>
+            <polling-uri src="/api/notifications/poll"/>
+            <polling-interval>3600</polling-interval>
+        </notification>
+    </msapplication>
+</browserconfig>

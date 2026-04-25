@@ -1,0 +1,764 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - FLEX LAYOUTS
+   Complete Flexbox utilities for modern layouts
+   ============================================ */
+
+/* ============================================
+   DISPLAY FLEX
+   ============================================ */
+
+.flex {
+    display: flex;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+/* ============================================
+   FLEX DIRECTION
+   ============================================ */
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
+/* ============================================
+   FLEX WRAP
+   ============================================ */
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+/* ============================================
+   JUSTIFY CONTENT (Main Axis)
+   ============================================ */
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+/* ============================================
+   ALIGN ITEMS (Cross Axis)
+   ============================================ */
+
+.items-start {
+    align-items: flex-start;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-baseline {
+    align-items: baseline;
+}
+
+.items-stretch {
+    align-items: stretch;
+}
+
+/* ============================================
+   ALIGN CONTENT (Multi-line)
+   ============================================ */
+
+.content-start {
+    align-content: flex-start;
+}
+
+.content-end {
+    align-content: flex-end;
+}
+
+.content-center {
+    align-content: center;
+}
+
+.content-between {
+    align-content: space-between;
+}
+
+.content-around {
+    align-content: space-around;
+}
+
+.content-stretch {
+    align-content: stretch;
+}
+
+/* ============================================
+   ALIGN SELF (Individual Items)
+   ============================================ */
+
+.self-start {
+    align-self: flex-start;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.self-baseline {
+    align-self: baseline;
+}
+
+.self-stretch {
+    align-self: stretch;
+}
+
+/* ============================================
+   FLEX GROW & SHRINK
+   ============================================ */
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-3 {
+    flex: 3;
+}
+
+.flex-4 {
+    flex: 4;
+}
+
+.flex-auto {
+    flex: auto;
+}
+
+.flex-none {
+    flex: none;
+}
+
+.flex-initial {
+    flex: 0 1 auto;
+}
+
+/* Grow */
+.grow-0 {
+    flex-grow: 0;
+}
+
+.grow-1 {
+    flex-grow: 1;
+}
+
+.grow-2 {
+    flex-grow: 2;
+}
+
+.grow-3 {
+    flex-grow: 3;
+}
+
+/* Shrink */
+.shrink-0 {
+    flex-shrink: 0;
+}
+
+.shrink-1 {
+    flex-shrink: 1;
+}
+
+.shrink-2 {
+    flex-shrink: 2;
+}
+
+.shrink-3 {
+    flex-shrink: 3;
+}
+
+/* Basis */
+.basis-auto {
+    flex-basis: auto;
+}
+
+.basis-0 {
+    flex-basis: 0;
+}
+
+.basis-full {
+    flex-basis: 100%;
+}
+
+.basis-half {
+    flex-basis: 50%;
+}
+
+/* ============================================
+   GAP UTILITIES
+   ============================================ */
+
+.gap-0 {
+    gap: 0;
+}
+
+.gap-1 {
+    gap: var(--spacing-xs);
+}
+
+.gap-2 {
+    gap: var(--spacing-sm);
+}
+
+.gap-3 {
+    gap: var(--spacing-md);
+}
+
+.gap-4 {
+    gap: var(--spacing-lg);
+}
+
+.gap-5 {
+    gap: var(--spacing-xl);
+}
+
+.gap-6 {
+    gap: var(--spacing-2xl);
+}
+
+.gap-7 {
+    gap: var(--spacing-3xl);
+}
+
+.gap-8 {
+    gap: var(--spacing-4xl);
+}
+
+/* Row Gap */
+.row-gap-0 {
+    row-gap: 0;
+}
+
+.row-gap-1 {
+    row-gap: var(--spacing-xs);
+}
+
+.row-gap-2 {
+    row-gap: var(--spacing-sm);
+}
+
+.row-gap-3 {
+    row-gap: var(--spacing-md);
+}
+
+.row-gap-4 {
+    row-gap: var(--spacing-lg);
+}
+
+.row-gap-5 {
+    row-gap: var(--spacing-xl);
+}
+
+/* Column Gap */
+.col-gap-0 {
+    column-gap: 0;
+}
+
+.col-gap-1 {
+    column-gap: var(--spacing-xs);
+}
+
+.col-gap-2 {
+    column-gap: var(--spacing-sm);
+}
+
+.col-gap-3 {
+    column-gap: var(--spacing-md);
+}
+
+.col-gap-4 {
+    column-gap: var(--spacing-lg);
+}
+
+.col-gap-5 {
+    column-gap: var(--spacing-xl);
+}
+
+/* ============================================
+   ORDER UTILITIES
+   ============================================ */
+
+.order-first {
+    order: -9999;
+}
+
+.order-last {
+    order: 9999;
+}
+
+.order-0 {
+    order: 0;
+}
+
+.order-1 {
+    order: 1;
+}
+
+.order-2 {
+    order: 2;
+}
+
+.order-3 {
+    order: 3;
+}
+
+.order-4 {
+    order: 4;
+}
+
+.order-5 {
+    order: 5;
+}
+
+/* ============================================
+   FLEX LAYOUT PATTERNS
+   ============================================ */
+
+/* Common layout patterns */
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-around {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flex-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flex-start {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-column-between {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ============================================
+   RESPONSIVE FLEX UTILITIES
+   ============================================ */
+
+/* Small devices (640px+) */
+@media (min-width: 640px) {
+    .sm\:flex {
+        display: flex;
+    }
+    
+    .sm\:flex-row {
+        flex-direction: row;
+    }
+    
+    .sm\:flex-column {
+        flex-direction: column;
+    }
+    
+    .sm\:justify-start {
+        justify-content: flex-start;
+    }
+    
+    .sm\:justify-center {
+        justify-content: center;
+    }
+    
+    .sm\:justify-between {
+        justify-content: space-between;
+    }
+    
+    .sm\:items-center {
+        align-items: center;
+    }
+    
+    .sm\:gap-3 {
+        gap: var(--spacing-md);
+    }
+    
+    .sm\:flex-1 {
+        flex: 1;
+    }
+}
+
+/* Medium devices (768px+) */
+@media (min-width: 768px) {
+    .md\:flex {
+        display: flex;
+    }
+    
+    .md\:flex-row {
+        flex-direction: row;
+    }
+    
+    .md\:flex-column {
+        flex-direction: column;
+    }
+    
+    .md\:justify-start {
+        justify-content: flex-start;
+    }
+    
+    .md\:justify-center {
+        justify-content: center;
+    }
+    
+    .md\:justify-between {
+        justify-content: space-between;
+    }
+    
+    .md\:items-center {
+        align-items: center;
+    }
+    
+    .md\:gap-4 {
+        gap: var(--spacing-lg);
+    }
+    
+    .md\:flex-2 {
+        flex: 2;
+    }
+}
+
+/* Large devices (1024px+) */
+@media (min-width: 1024px) {
+    .lg\:flex {
+        display: flex;
+    }
+    
+    .lg\:flex-row {
+        flex-direction: row;
+    }
+    
+    .lg\:flex-column {
+        flex-direction: column;
+    }
+    
+    .lg\:justify-start {
+        justify-content: flex-start;
+    }
+    
+    .lg\:justify-center {
+        justify-content: center;
+    }
+    
+    .lg\:justify-between {
+        justify-content: space-between;
+    }
+    
+    .lg\:items-center {
+        align-items: center;
+    }
+    
+    .lg\:gap-5 {
+        gap: var(--spacing-xl);
+    }
+}
+
+/* Extra large devices (1280px+) */
+@media (min-width: 1280px) {
+    .xl\:flex {
+        display: flex;
+    }
+    
+    .xl\:flex-row {
+        flex-direction: row;
+    }
+    
+    .xl\:gap-6 {
+        gap: var(--spacing-2xl);
+    }
+}
+
+/* ============================================
+   FLEX UTILITIES WITH SPACING
+   ============================================ */
+
+/* Margin auto utilities */
+.ml-auto {
+    margin-left: auto;
+}
+
+.mr-auto {
+    margin-right: auto;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+.mb-auto {
+    margin-bottom: auto;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* ============================================
+   FLEX CONTAINER VARIANTS
+   ============================================ */
+
+/* Card container */
+.flex-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.flex-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.flex-card-body {
+    flex: 1;
+    padding: var(--spacing-lg);
+}
+
+.flex-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+    gap: var(--spacing-sm);
+}
+
+/* Toolbar container */
+.flex-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Form row */
+.flex-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.flex-form-group {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Stats row */
+.flex-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.flex-stat {
+    flex: 1;
+    min-width: 120px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+/* Action buttons */
+.flex-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+/* ============================================
+   FLEX GRID ALTERNATIVE
+   ============================================ */
+
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc(-1 * var(--spacing-md));
+}
+
+.flex-col {
+    flex: 1;
+    padding: 0 var(--spacing-md);
+    min-width: 0;
+}
+
+.flex-col-auto {
+    flex: 0 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Width variants */
+.flex-col-1 { flex: 0 0 8.333333%; }
+.flex-col-2 { flex: 0 0 16.666667%; }
+.flex-col-3 { flex: 0 0 25%; }
+.flex-col-4 { flex: 0 0 33.333333%; }
+.flex-col-5 { flex: 0 0 41.666667%; }
+.flex-col-6 { flex: 0 0 50%; }
+.flex-col-7 { flex: 0 0 58.333333%; }
+.flex-col-8 { flex: 0 0 66.666667%; }
+.flex-col-9 { flex: 0 0 75%; }
+.flex-col-10 { flex: 0 0 83.333333%; }
+.flex-col-11 { flex: 0 0 91.666667%; }
+.flex-col-12 { flex: 0 0 100%; }
+
+/* Responsive flex columns */
+@media (max-width: 768px) {
+    .flex-col {
+        flex: 0 0 100%;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .flex-col-3, .flex-col-4, .flex-col-6 {
+        flex: 0 0 100%;
+    }
+}
+
+/* ============================================
+   FLEX OVERFLOW UTILITIES
+   ============================================ */
+
+.flex-overflow {
+    overflow: auto;
+}
+
+.flex-overflow-x {
+    overflow-x: auto;
+}
+
+.flex-overflow-y {
+    overflow-y: auto;
+}
+
+.flex-scroll {
+    scrollbar-width: thin;
+}
+
+/* ============================================
+   DARK MODE FLEX CONTAINERS
+   ============================================ */
+[data-theme="dark"] .flex-card,
+[data-theme="dark"] .flex-stat {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .flex-card-header,
+[data-theme="dark"] .flex-card-footer,
+[data-theme="dark"] .flex-toolbar {
+    background: var(--bg-tertiary);
+}
+
+/* ============================================
+   PRINT FLEX UTILITIES
+   ============================================ */
+@media print {
+    .flex,
+    .flex-card,
+    .flex-toolbar,
+    .flex-stats {
+        display: block;
+    }
+    
+    .flex-col {
+        padding: 0;
+        margin-bottom: var(--spacing-md);
+    }
+}

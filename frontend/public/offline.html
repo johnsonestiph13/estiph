@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Estif Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #4361ee, #7209b7);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .offline-container {
+            text-align: center;
+            padding: 40px;
+            max-width: 500px;
+        }
+        
+        .offline-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+        
+        p {
+            font-size: 16px;
+            margin-bottom: 24px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .retry-btn {
+            background: white;
+            color: #4361ee;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .retry-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .device-list {
+            margin-top: 30px;
+            text-align: left;
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 20px;
+        }
+        
+        .device-list h3 {
+            margin-bottom: 12px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .device-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-size: 14px;
+        }
+        
+        .device-name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .device-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        
+        .device-status.online { background: #06d6a0; }
+        .device-status.offline { background: #ef476f; }
+        
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">📡</div>
+        <h1>You're Offline</h1>
+        <p>Your internet connection is not available. Don't worry, you can still control your devices that are on the same network.</p>
+        
+        <button class="retry-btn" onclick="location.reload()">
+            🔄 Try Again
+        </button>
+        
+        <div class="device-list">
+            <h3>📱 Available Offline Devices</h3>
+            <div class="device-item">
+                <span class="device-name">💡 Light</span>
+                <span class="device-status online"></span>
+            </div>
+            <div class="device-item">
+                <span class="device-name">🌀 Fan</span>
+                <span class="device-status online"></span>
+            </div>
+            <div class="device-item">
+                <span class="device-name">❄️ AC</span>
+                <span class="device-status offline"></span>
+            </div>
+            <div class="device-item">
+                <span class="device-name">📺 TV</span>
+                <span class="device-status offline"></span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Estif Home Ultimate • Offline Mode</p>
+            <p>Changes will sync when you're back online</p>
+        </div>
+    </div>
+    
+    <script>
+        // Check if we're really offline or just a connection issue
+        window.addEventListener('load', () => {
+            if (navigator.onLine) {
+                // Try to reload after 3 seconds if we're actually online
+                setTimeout(() => {
+                    if (navigator.onLine) {
+                        location.reload();
+                    }
+                }, 3000);
+            }
+        });
+        
+        // Listen for online event
+        window.addEventListener('online', () => {
+            location.reload();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,832 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - HOMES PAGE STYLES
+   Complete styling for multi-home management interface
+   ============================================ */
+
+/* ============================================
+   HOMES LAYOUT
+   ============================================ */
+
+.homes-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    animation: homesFadeIn 0.5s ease;
+}
+
+@keyframes homesFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   HOMES HEADER
+   ============================================ */
+
+.homes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.homes-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.homes-title i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.homes-title h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
+
+.homes-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.create-home-btn {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.create-home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+/* ============================================
+   CURRENT HOME BANNER
+   ============================================ */
+
+.current-home-banner {
+    background: var(--gradient-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.current-home-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.current-home-icon {
+    font-size: 2rem;
+}
+
+.current-home-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+    color: white;
+}
+
+.current-home-details p {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+    color: rgba(255,255,255,0.95);
+}
+
+.current-home-stats {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.current-home-stat {
+    text-align: center;
+}
+
+.current-home-stat-value {
+    font-size: 1.3rem;
+    font-weight: var(--font-bold);
+}
+
+.current-home-stat-label {
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+
+.switch-home-btn {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 8px 16px;
+    color: white;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.switch-home-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   HOMES GRID
+   ============================================ */
+
+.homes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Home Card */
+.home-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all var(--transition);
+    cursor: pointer;
+    position: relative;
+}
+
+.home-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.home-card.active {
+    border: 2px solid var(--success);
+    background: linear-gradient(135deg, var(--bg-card), var(--success-soft));
+}
+
+/* Home Card Header */
+.home-card-header {
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-type-icon {
+    font-size: 1.5rem;
+}
+
+.home-status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: var(--font-semibold);
+}
+
+.home-status-badge.active {
+    background: var(--success);
+    color: white;
+}
+
+.home-status-badge.inactive {
+    background: var(--warning);
+    color: var(--text-dark);
+}
+
+/* Home Card Body */
+.home-card-body {
+    padding: var(--spacing-md);
+}
+
+.home-name {
+    font-size: 1.1rem;
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.home-name i {
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.home-address {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.home-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: var(--spacing-sm) 0;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: var(--spacing-md);
+}
+
+.home-stat {
+    text-align: center;
+}
+
+.home-stat-value {
+    font-size: 1rem;
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+}
+
+.home-stat-label {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+}
+
+.home-members {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.member-avatars {
+    display: flex;
+    align-items: center;
+}
+
+.member-avatar {
+    width: 32px;
+    height: 32px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: var(--font-semibold);
+    color: white;
+    margin-left: -8px;
+    border: 2px solid var(--bg-card);
+}
+
+.member-avatar:first-child {
+    margin-left: 0;
+}
+
+.member-count {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-left: var(--spacing-sm);
+}
+
+/* Home Card Footer */
+.home-card-footer {
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.home-action-btn {
+    background: none;
+    border: none;
+    padding: 6px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition);
+    color: var(--text-muted);
+}
+
+.home-action-btn:hover {
+    color: var(--primary);
+    background: var(--bg-hover);
+}
+
+.home-action-btn.danger:hover {
+    color: var(--danger);
+}
+
+/* ============================================
+   CREATE/EDIT HOME MODAL
+   ============================================ */
+
+.home-modal {
+    max-width: 500px;
+    width: 90%;
+}
+
+.home-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.form-label {
+    font-weight: var(--font-semibold);
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.form-label i {
+    color: var(--primary);
+    width: 20px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: all var(--transition);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Location Picker */
+.location-picker {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.location-picker input {
+    flex: 1;
+}
+
+.location-btn {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0 12px;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.location-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* ============================================
+   MEMBERS MANAGEMENT
+   ============================================ */
+
+.members-section {
+    margin-top: var(--spacing-xl);
+}
+
+.members-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.members-title {
+    font-size: 1rem;
+    font-weight: var(--font-semibold);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.invite-member-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.members-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.member-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all var(--transition);
+}
+
+.member-item:hover {
+    transform: translateX(4px);
+    border-color: var(--primary);
+}
+
+.member-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.member-avatar-large {
+    width: 48px;
+    height: 48px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: var(--font-bold);
+    color: white;
+}
+
+.member-details {
+    flex: 1;
+}
+
+.member-name {
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-xs);
+}
+
+.member-email {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+.member-role {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.role-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: var(--font-semibold);
+}
+
+.role-badge.owner {
+    background: var(--warning);
+    color: var(--text-dark);
+}
+
+.role-badge.admin {
+    background: var(--primary);
+    color: white;
+}
+
+.role-badge.member {
+    background: var(--info);
+    color: white;
+}
+
+.member-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.member-action-btn {
+    background: none;
+    border: none;
+    padding: 6px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition);
+    color: var(--text-muted);
+}
+
+.member-action-btn:hover {
+    color: var(--primary);
+}
+
+.member-action-btn.danger:hover {
+    color: var(--danger);
+}
+
+/* ============================================
+   INVITE MEMBER MODAL
+   ============================================ */
+
+.invite-modal {
+    max-width: 450px;
+    width: 90%;
+}
+
+.invite-link-container {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.invite-link {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.invite-link input {
+    flex: 1;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+}
+
+.copy-link-btn {
+    background: var(--primary);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 0 16px;
+    color: white;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.copy-link-btn:hover {
+    background: var(--primary-dark);
+}
+
+.invite-expiry {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* ============================================
+   HOME SETTINGS
+   ============================================ */
+
+.home-settings-section {
+    margin-top: var(--spacing-xl);
+}
+
+.settings-group {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    margin-bottom: var(--spacing-md);
+}
+
+.settings-group-header {
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-light);
+    font-weight: var(--font-semibold);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.settings-group-body {
+    padding: var(--spacing-md);
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.setting-row:last-child {
+    border-bottom: none;
+}
+
+.setting-label {
+    font-size: 0.85rem;
+}
+
+.setting-value {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   RESPONSIVE HOMES PAGE
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .homes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .homes-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .homes-actions {
+        justify-content: center;
+    }
+    
+    .current-home-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .current-home-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .current-home-stats {
+        justify-content: center;
+    }
+    
+    .homes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .member-item {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+    
+    .member-info {
+        flex-direction: column;
+    }
+    
+    .member-role {
+        flex-direction: column;
+    }
+    
+    .home-stats {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .home-card-footer {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .home-actions {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .current-home-stats {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .member-actions {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .invite-link {
+        flex-direction: column;
+    }
+    
+    .setting-row {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: flex-start;
+    }
+}
+
+/* ============================================
+   DARK MODE HOMES PAGE
+   ============================================ */
+[data-theme="dark"] .home-card,
+[data-theme="dark"] .member-item,
+[data-theme="dark"] .settings-group {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .home-card-header {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .invite-link-container {
+    background: var(--bg-tertiary);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes homeAdded {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.home-card-new {
+    animation: homeAdded 0.3s ease;
+}
+
+@keyframes memberAdded {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.member-item-new {
+    animation: memberAdded 0.3s ease;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    .homes-actions,
+    .create-home-btn,
+    .switch-home-btn,
+    .home-actions,
+    .member-actions,
+    .invite-member-btn,
+    .home-action-btn {
+        display: none;
+    }
+    
+    .home-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        border: 1px solid #ccc;
+    }
+    
+    .member-item {
+        break-inside: avoid;
+    }
+}

@@ -1,0 +1,874 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - DESKTOP RESPONSIVE
+   Optimized for Desktop & Large Screens (1024px+)
+   ============================================ */
+
+/* ============================================
+   LARGE DESKTOP (1200px - 1440px)
+   ============================================ */
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+    /* Container width adjustment */
+    .container {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+    
+    /* Sidebar width */
+    .sidebar {
+        width: 260px;
+    }
+    
+    .main-content {
+        margin-left: 260px;
+    }
+    
+    /* Stats grid - 4 columns */
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    
+    /* Device grid - 4 columns */
+    .device-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+    }
+    
+    /* Font size adjustments */
+    .stat-value {
+        font-size: 1.8rem;
+    }
+    
+    .device-name {
+        font-size: 1rem;
+    }
+    
+    /* Chart container height */
+    .chart-container {
+        height: 350px;
+    }
+    
+    /* Welcome card padding */
+    .welcome-card {
+        padding: 28px;
+    }
+    
+    .welcome-card h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* ============================================
+   EXTRA LARGE DESKTOP (1440px - 1920px)
+   ============================================ */
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+    /* Container width */
+    .container {
+        max-width: 1320px;
+        margin: 0 auto;
+    }
+    
+    /* Sidebar width */
+    .sidebar {
+        width: 280px;
+    }
+    
+    .main-content {
+        margin-left: 280px;
+        padding: 32px;
+    }
+    
+    /* Stats grid - 4 columns with more space */
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin-bottom: 32px;
+    }
+    
+    .stat-card {
+        padding: 24px;
+    }
+    
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    
+    .stat-value {
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.85rem;
+    }
+    
+    /* Device grid - 5 columns */
+    .device-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 24px;
+    }
+    
+    .device-card {
+        padding: 20px;
+    }
+    
+    .device-icon {
+        font-size: 3rem;
+    }
+    
+    .device-name {
+        font-size: 1.1rem;
+    }
+    
+    .device-room {
+        font-size: 0.85rem;
+    }
+    
+    .device-state {
+        font-size: 0.85rem;
+        padding: 6px 14px;
+    }
+    
+    /* Section headers */
+    .section-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Chart containers */
+    .chart-container {
+        height: 400px;
+    }
+    
+    .chart-card {
+        padding: 24px;
+    }
+    
+    /* Voice card */
+    .voice-card {
+        padding: 28px;
+    }
+    
+    .voice-display {
+        font-size: 1rem;
+        padding: 16px 24px;
+    }
+    
+    /* Control buttons */
+    .control-btn {
+        padding: 14px 24px;
+        font-size: 1rem;
+    }
+    
+    /* Activity log */
+    .activity-log {
+        max-height: 300px;
+    }
+    
+    .log-entry {
+        font-size: 0.85rem;
+        padding: 12px 0;
+    }
+    
+    /* Settings items */
+    .setting-item {
+        padding: 20px;
+    }
+    
+    .setting-label {
+        font-size: 1rem;
+    }
+    
+    .setting-desc {
+        font-size: 0.85rem;
+    }
+    
+    /* Top bar */
+    .top-bar {
+        padding: 20px 32px;
+    }
+    
+    .page-title {
+        font-size: 1.6rem;
+    }
+    
+    /* Welcome card */
+    .welcome-card {
+        padding: 32px;
+        margin-bottom: 32px;
+    }
+    
+    .welcome-card h2 {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-card p {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   ULTRA WIDE DESKTOP (1920px+)
+   ============================================ */
+@media screen and (min-width: 1920px) {
+    /* Container width */
+    .container {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+    
+    /* Sidebar width */
+    .sidebar {
+        width: 300px;
+    }
+    
+    .main-content {
+        margin-left: 300px;
+        padding: 40px;
+    }
+    
+    /* Stats grid - 4 columns with more content */
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        margin-bottom: 40px;
+    }
+    
+    .stat-card {
+        padding: 28px;
+    }
+    
+    .stat-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+    
+    .stat-value {
+        font-size: 2.2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+    }
+    
+    /* Device grid - 6 columns */
+    .device-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 28px;
+    }
+    
+    .device-card {
+        padding: 24px;
+    }
+    
+    .device-icon {
+        font-size: 3.5rem;
+    }
+    
+    .device-name {
+        font-size: 1.2rem;
+    }
+    
+    /* Chart containers - larger */
+    .chart-container {
+        height: 450px;
+    }
+    
+    /* Two-column layout for analytics */
+    .analytics-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+    
+    /* Voice card */
+    .voice-card {
+        padding: 32px;
+    }
+    
+    .voice-wave {
+        height: 60px;
+    }
+    
+    .wave-bar {
+        width: 6px;
+    }
+    
+    /* Emergency card */
+    .emergency-card {
+        padding: 24px;
+    }
+    
+    .emergency-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    
+    .emergency-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .emergency-number {
+        font-size: 1.1rem;
+    }
+    
+    /* Settings page */
+    .settings-list {
+        gap: 24px;
+    }
+    
+    .setting-item {
+        padding: 24px;
+    }
+    
+    /* Activity log */
+    .activity-log {
+        max-height: 350px;
+    }
+}
+
+/* ============================================
+   DESKTOP SIDEBAR ENHANCEMENTS
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Sidebar hover effects */
+    .sidebar {
+        transition: width 0.3s ease;
+    }
+    
+    /* Collapsible sidebar option */
+    .sidebar.collapsed {
+        width: 80px;
+    }
+    
+    .sidebar.collapsed .logo-text,
+    .sidebar.collapsed .user-info,
+    .sidebar.collapsed .nav-item span,
+    .sidebar.collapsed .theme-toggle span,
+    .sidebar.collapsed .logout-btn span {
+        display: none;
+    }
+    
+    .sidebar.collapsed .nav-item {
+        justify-content: center;
+        padding: 16px;
+    }
+    
+    .sidebar.collapsed .nav-item i {
+        margin: 0;
+        font-size: 1.4rem;
+    }
+    
+    .sidebar.collapsed .user-profile {
+        justify-content: center;
+    }
+    
+    .sidebar.collapsed .user-avatar {
+        margin: 0;
+    }
+    
+    /* Sidebar expand on hover */
+    .sidebar.collapsed:hover {
+        width: 280px;
+    }
+    
+    .sidebar.collapsed:hover .logo-text,
+    .sidebar.collapsed:hover .user-info,
+    .sidebar.collapsed:hover .nav-item span,
+    .sidebar.collapsed:hover .theme-toggle span,
+    .sidebar.collapsed:hover .logout-btn span {
+        display: inline-block;
+    }
+    
+    .sidebar.collapsed:hover .nav-item {
+        justify-content: flex-start;
+        padding: 12px 20px;
+    }
+    
+    .sidebar.collapsed:hover .nav-item i {
+        margin-right: 12px;
+        font-size: 1.2rem;
+    }
+    
+    .sidebar.collapsed:hover .user-profile {
+        justify-content: flex-start;
+    }
+}
+
+/* ============================================
+   DESKTOP NAVIGATION ENHANCEMENTS
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Keyboard shortcuts indicator */
+    .nav-item[data-shortcut]::after {
+        content: attr(data-shortcut);
+        position: absolute;
+        right: 20px;
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+    }
+    
+    .nav-item.active[data-shortcut]::after {
+        color: white;
+    }
+    
+    /* Tooltips on hover */
+    .nav-item:hover::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--bg-tertiary);
+        color: var(--text-primary);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        margin-left: 10px;
+        z-index: 100;
+        box-shadow: var(--shadow-sm);
+    }
+}
+
+/* ============================================
+   DESKTOP DEVICE CARD ENHANCEMENTS
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Device card hover effects */
+    .device-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .device-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    /* Device card quick actions on hover */
+    .device-card .quick-actions {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .device-card:hover .quick-actions {
+        opacity: 1;
+    }
+    
+    .quick-actions button {
+        background: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        padding: 4px 12px;
+        font-size: 0.7rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    
+    .quick-actions button:hover {
+        background: var(--primary);
+        color: white;
+    }
+}
+
+/* ============================================
+   DESKTOP CHART ENHANCEMENTS
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Chart interaction */
+    .chart-card {
+        transition: transform 0.3s ease;
+    }
+    
+    .chart-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+    }
+    
+    /* Chart tooltip improvements */
+    .chartjs-tooltip {
+        background: var(--bg-card) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 8px !important;
+        padding: 8px 12px !important;
+        box-shadow: var(--shadow-md) !important;
+    }
+}
+
+/* ============================================
+   DESKTOP TABLE ENHANCEMENTS
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Table row hover */
+    .data-table tbody tr {
+        transition: background-color 0.2s ease;
+    }
+    
+    .data-table tbody tr:hover {
+        background: var(--bg-hover);
+    }
+    
+    /* Table sticky header */
+    .data-table thead th {
+        position: sticky;
+        top: 0;
+        background: var(--bg-secondary);
+        z-index: 10;
+    }
+    
+    /* Sortable columns */
+    .sortable {
+        cursor: pointer;
+        user-select: none;
+    }
+    
+    .sortable:hover {
+        background: var(--bg-tertiary);
+    }
+    
+    .sortable::after {
+        content: '↕';
+        margin-left: 8px;
+        opacity: 0.5;
+        font-size: 0.8rem;
+    }
+    
+    .sortable.asc::after {
+        content: '↑';
+        opacity: 1;
+    }
+    
+    .sortable.desc::after {
+        content: '↓';
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   DESKTOP MODAL ENHANCEMENTS
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Modal animations */
+    .modal {
+        animation: modalSlideIn 0.3s ease;
+    }
+    
+    @keyframes modalSlideIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95) translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+    
+    /* Modal size variants */
+    .modal-sm {
+        max-width: 400px;
+    }
+    
+    .modal-md {
+        max-width: 600px;
+    }
+    
+    .modal-lg {
+        max-width: 800px;
+    }
+    
+    .modal-xl {
+        max-width: 1140px;
+    }
+}
+
+/* ============================================
+   DESKTOP DROPDOWN ENHANCEMENTS
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Dropdown animations */
+    .dropdown-content {
+        animation: dropdownFadeIn 0.2s ease;
+    }
+    
+    @keyframes dropdownFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* ============================================
+   DESKTOP NOTIFICATION ENHANCEMENTS
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Toast positioning */
+    .toast-container {
+        top: 20px;
+        right: 20px;
+        bottom: auto;
+    }
+    
+    /* Toast animations */
+    .toast {
+        animation: toastSlideIn 0.3s ease;
+    }
+    
+    @keyframes toastSlideIn {
+        from {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    /* Toast stack */
+    .toast:hover {
+        transform: translateX(-4px);
+    }
+}
+
+/* ============================================
+   DESKTOP FORM ENHANCEMENTS
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Form field focus effects */
+    .input-field {
+        transition: all 0.2s ease;
+    }
+    
+    .input-field:focus {
+        transform: translateY(-1px);
+    }
+    
+    /* Checkbox and radio enhancements */
+    .custom-checkbox,
+    .custom-radio {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    
+    .custom-checkbox:hover,
+    .custom-radio:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* ============================================
+   DESKTOP SCROLLBAR ENHANCEMENTS
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Thinner scrollbar for desktop */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* ============================================
+   DESKTOP KEYBOARD NAVIGATION
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Focus indicators for keyboard navigation */
+    .nav-item:focus-visible,
+    .device-card:focus-visible,
+    button:focus-visible,
+    a:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+    }
+    
+    /* Skip navigation link */
+    .skip-nav {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--primary);
+        color: white;
+        padding: 8px 16px;
+        z-index: 1000;
+        transition: top 0.2s ease;
+    }
+    
+    .skip-nav:focus {
+        top: 0;
+    }
+}
+
+/* ============================================
+   DESKTOP GRID LAYOUTS
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Dashboard layout */
+    .dashboard-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 24px;
+    }
+    
+    .dashboard-main {
+        grid-column: 1;
+    }
+    
+    .dashboard-sidebar {
+        grid-column: 2;
+    }
+    
+    /* Analytics layout */
+    .analytics-layout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    
+    .analytics-full {
+        grid-column: span 2;
+    }
+    
+    /* Settings layout */
+    .settings-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 32px;
+    }
+    
+    .settings-sidebar {
+        position: sticky;
+        top: 20px;
+        height: fit-content;
+    }
+    
+    .settings-content {
+        grid-column: 2;
+    }
+}
+
+/* ============================================
+   DESKTOP TYPOGRAPHY ENHANCEMENTS
+   ============================================ */
+@media screen and (min-width: 1024px) {
+    /* Better line heights for readability */
+    body {
+        line-height: 1.6;
+    }
+    
+    /* Improved contrast for text */
+    .text-secondary {
+        letter-spacing: 0.01em;
+    }
+    
+    /* Heading spacing */
+    h1, h2, h3, h4, h5, h6 {
+        letter-spacing: -0.02em;
+    }
+}
+
+/* ============================================
+   DESKTOP ANIMATIONS & TRANSITIONS
+   ============================================ */
+@media screen and (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+    /* Page transitions */
+    .page-container {
+        animation: pageFadeIn 0.4s ease;
+    }
+    
+    @keyframes pageFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Loading animations */
+    .loading-pulse {
+        animation: loadingPulse 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes loadingPulse {
+        0%, 100% {
+            opacity: 0.6;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+}
+
+/* ============================================
+   DESKTOP PRINT STYLES
+   ============================================ */
+@media print and (min-width: 1024px) {
+    /* Hide sidebar and navigation when printing */
+    .sidebar,
+    .top-actions,
+    .control-buttons,
+    .voice-card,
+    .emergency-card {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Ensure charts print properly */
+    .chart-container canvas {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* ============================================
+   DESKTOP HIGH DPI SCREENS (Retina)
+   ============================================ */
+@media screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2),
+       screen and (min-width: 1024px) and (min-resolution: 192dpi) {
+    /* Sharper text on Retina displays */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Sharper icons */
+    i, .icon {
+        font-weight: 500;
+    }
+}
+
+/* ============================================
+   DESKTOP DARK MODE ADJUSTMENTS
+   ============================================ */
+@media screen and (min-width: 1024px) and (prefers-color-scheme: dark) {
+    /* Reduce brightness on hover in dark mode */
+    .device-card:hover {
+        filter: brightness(1.05);
+    }
+}

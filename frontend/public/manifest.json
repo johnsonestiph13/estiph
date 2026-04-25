@@ -1,0 +1,291 @@
+{
+  "name": "Estif Home Ultimate",
+  "short_name": "Estif Home",
+  "description": "Enterprise Smart Home Control System - Control your home from anywhere",
+  "start_url": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "theme_color": "#4361ee",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "id": "estif-home-ultimate",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["home", "automation", "iot", "productivity", "utilities"],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e45b7",
+  
+  "icons": [
+    {
+      "src": "/assets/icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  
+  "screenshots": [
+    {
+      "src": "/assets/screenshots/dashboard-mobile.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "platform": "android",
+      "label": "Dashboard View - Control all your devices"
+    },
+    {
+      "src": "/assets/screenshots/devices-mobile.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "platform": "android",
+      "label": "Device Management - Toggle devices with one tap"
+    },
+    {
+      "src": "/assets/screenshots/voice-mobile.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "platform": "android",
+      "label": "Voice Assistant - Control with your voice"
+    },
+    {
+      "src": "/assets/screenshots/dashboard-desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Dashboard on Desktop"
+    }
+  ],
+  
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Home",
+      "description": "View your smart home dashboard",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "/assets/icons/icon-72.png",
+          "sizes": "72x72",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Devices",
+      "short_name": "Devices",
+      "description": "Control all your devices",
+      "url": "/devices",
+      "icons": [
+        {
+          "src": "/assets/icons/icon-72.png",
+          "sizes": "72x72",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Automation",
+      "short_name": "Auto",
+      "description": "Manage automation rules",
+      "url": "/automation",
+      "icons": [
+        {
+          "src": "/assets/icons/icon-72.png",
+          "sizes": "72x72",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Voice Control",
+      "short_name": "Voice",
+      "description": "Use voice commands",
+      "url": "/dashboard?voice=true",
+      "icons": [
+        {
+          "src": "/assets/icons/icon-72.png",
+          "sizes": "72x72",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Emergency",
+      "short_name": "SOS",
+      "description": "Emergency contact",
+      "url": "/emergency",
+      "icons": [
+        {
+          "src": "/assets/icons/icon-72.png",
+          "sizes": "72x72",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  
+  "share_target": {
+    "action": "/share-target",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "file",
+          "accept": ["image/*", "video/*"]
+        }
+      ]
+    }
+  },
+  
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.estif.home",
+      "id": "com.estif.home"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/app/estif-home/id1234567890"
+    },
+    {
+      "platform": "webapp",
+      "url": "https://estif-home.com/manifest.json"
+    }
+  ],
+  
+  "prefer_related_applications": false,
+  
+  "launch_handler": {
+    "client_mode": ["focus-existing", "auto"]
+  },
+  
+  "edge_side_panel": {
+    "preferred_width": 480
+  },
+  
+  "note_taking": {
+    "new_note_url": "/notes/new"
+  },
+  
+  "file_handlers": [
+    {
+      "action": "/open-file",
+      "accept": {
+        "text/plain": [".txt"],
+        "application/json": [".json"],
+        "image/*": [".png", ".jpg", ".jpeg", ".gif"]
+      }
+    }
+  ],
+  
+  "protocol_handlers": [
+    {
+      "protocol": "web+estif",
+      "url": "/handle-protocol?url=%s"
+    }
+  ],
+  
+  "url_handlers": [
+    {
+      "origin": "https://estif-home.com"
+    }
+  ],
+  
+  "background_color": "#4361ee",
+  
+  "features": [
+    "Cross-platform",
+    "Offline-ready",
+    "Voice Commands",
+    "Real-time Updates",
+    "Multi-user Support",
+    "Multi-home Support",
+    "Bluetooth Control",
+    "Wi-Fi Control",
+    "Energy Monitoring",
+    "Automation Rules",
+    "Push Notifications",
+    "Dark Mode",
+    "Amharic Language",
+    "Emergency Contact"
+  ],
+  
+  "theme_color": "#4361ee",
+  
+  "serviceworker": {
+    "src": "/sw.js",
+    "scope": "/",
+    "type": "classic",
+    "update_via_cache": "all"
+  },
+  
+  "gcm_sender_id": "482941778795",
+  "gcm_user_visible_only": true,
+  
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  
+  "handle_links": "preferred",
+  
+  "scope_extensions": [
+    {
+      "origin": "https://api.estif-home.com"
+    }
+  ]
+}

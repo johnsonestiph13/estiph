@@ -1,0 +1,492 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - SEPIA THEME
+   Eye-Friendly Warm Tone Theme
+   ============================================ */
+
+[data-theme="sepia"] {
+    /* ===== PRIMARY COLOR (Warm Brown) ===== */
+    --primary: #8b6914;
+    --primary-rgb: 139, 105, 20;
+    --primary-dark: #6b4f0e;
+    --primary-darker: #4f3a0a;
+    --primary-light: #b88a2e;
+    --primary-lighter: #d4a84a;
+    --primary-soft: rgba(139, 105, 20, 0.1);
+    
+    /* ===== SECONDARY COLOR (Terra Cotta) ===== */
+    --secondary: #a0522d;
+    --secondary-rgb: 160, 82, 45;
+    --secondary-dark: #7a3e22;
+    --secondary-darker: #5a2e18;
+    --secondary-light: #c4784a;
+    --secondary-lighter: #e09a6e;
+    --secondary-soft: rgba(160, 82, 45, 0.1);
+    
+    /* ===== SUCCESS COLOR (Olive Green) ===== */
+    --success: #2d5a27;
+    --success-rgb: 45, 90, 39;
+    --success-dark: #1f3e1b;
+    --success-darker: #142a11;
+    --success-light: #4a7e42;
+    --success-lighter: #6ea363;
+    --success-soft: rgba(45, 90, 39, 0.1);
+    
+    /* ===== DANGER/ERROR COLOR (Rust Red) ===== */
+    --danger: #8b3a3a;
+    --danger-rgb: 139, 58, 58;
+    --danger-dark: #6b2c2c;
+    --danger-darker: #4b1f1f;
+    --danger-light: #b85a5a;
+    --danger-lighter: #d47a7a;
+    --danger-soft: rgba(139, 58, 58, 0.1);
+    
+    /* ===== WARNING COLOR (Amber/Gold) ===== */
+    --warning: #d4a017;
+    --warning-rgb: 212, 160, 23;
+    --warning-dark: #a87c12;
+    --warning-darker: #7d5a0d;
+    --warning-light: #e8bc4a;
+    --warning-lighter: #f2d47a;
+    --warning-soft: rgba(212, 160, 23, 0.1);
+    
+    /* ===== INFO COLOR (Dusty Blue) ===== */
+    --info: #4a6b8b;
+    --info-rgb: 74, 107, 139;
+    --info-dark: #38526b;
+    --info-darker: #263a4b;
+    --info-light: #6e8faf;
+    --info-lighter: #92b3d3;
+    --info-soft: rgba(74, 107, 139, 0.1);
+    
+    /* ===== BACKGROUND COLORS (Warm Cream/Tan) ===== */
+    --bg-primary: #f4ecd8;
+    --bg-secondary: #e8dcc8;
+    --bg-tertiary: #dcccb8;
+    --bg-quaternary: #d0bca8;
+    --bg-card: #f0e8d4;
+    --bg-hover: rgba(139, 105, 20, 0.05);
+    --bg-active: rgba(139, 105, 20, 0.1);
+    --bg-overlay: rgba(0, 0, 0, 0.6);
+    --bg-glass: rgba(244, 236, 216, 0.9);
+    
+    /* ===== TEXT COLORS (Dark Brown) ===== */
+    --text-primary: #3b2a1a;
+    --text-secondary: #5c4633;
+    --text-muted: #7a634d;
+    --text-disabled: #a68f75;
+    --text-light: #f4ecd8;
+    --text-dark: #2a1e10;
+    --text-link: #8b6914;
+    --text-link-hover: #6b4f0e;
+    
+    /* ===== BORDER COLORS (Warm Brown) ===== */
+    --border-color: #c4b59a;
+    --border-light: #d4c8b0;
+    --border-dark: #b0a080;
+    --border-focus: #8b6914;
+    --border-error: #8b3a3a;
+    --border-success: #2d5a27;
+    
+    /* ===== GRADIENTS (Warm Tones) ===== */
+    --gradient-primary: linear-gradient(135deg, #8b6914, #a0522d);
+    --gradient-primary-reverse: linear-gradient(135deg, #a0522d, #8b6914);
+    --gradient-success: linear-gradient(135deg, #2d5a27, #4a6b8b);
+    --gradient-danger: linear-gradient(135deg, #8b3a3a, #d4a017);
+    --gradient-dark: linear-gradient(135deg, #3b2a1a, #2a1e10);
+    --gradient-light: linear-gradient(135deg, #f4ecd8, #e8dcc8);
+    --gradient-warm: linear-gradient(135deg, #d4a84a, #e09a6e);
+    
+    /* ===== SHADOWS (Warm Tone Shadows) ===== */
+    --shadow-xs: 0 1px 2px rgba(59, 42, 26, 0.05);
+    --shadow-sm: 0 1px 3px rgba(59, 42, 26, 0.08);
+    --shadow-md: 0 4px 6px -1px rgba(59, 42, 26, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(59, 42, 26, 0.12);
+    --shadow-xl: 0 20px 25px -5px rgba(59, 42, 26, 0.15);
+    --shadow-2xl: 0 25px 50px -12px rgba(59, 42, 26, 0.2);
+    --shadow-inner: inset 0 2px 4px 0 rgba(59, 42, 26, 0.04);
+    --shadow-primary: 0 4px 14px 0 rgba(139, 105, 20, 0.3);
+    --shadow-success: 0 4px 14px 0 rgba(45, 90, 39, 0.3);
+    --shadow-danger: 0 4px 14px 0 rgba(139, 58, 58, 0.3);
+    
+    /* ===== SEPIA SPECIFIC STYLES ===== */
+    --sepia-intensity: 0.8;
+    --warmth: 1.1;
+}
+
+/* ============================================
+   SEPIA THEME SPECIFIC STYLES
+   ============================================ */
+
+/* Body background with warm filter */
+[data-theme="sepia"] body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Card styling for sepia theme */
+[data-theme="sepia"] .card,
+[data-theme="sepia"] .device-card,
+[data-theme="sepia"] .stat-card,
+[data-theme="sepia"] .voice-card,
+[data-theme="sepia"] .chart-card,
+[data-theme="sepia"] .settings-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Welcome card sepia styling */
+[data-theme="sepia"] .welcome-card {
+    background: var(--gradient-warm);
+    color: var(--text-light);
+}
+
+[data-theme="sepia"] .welcome-card h2,
+[data-theme="sepia"] .welcome-card p {
+    color: var(--text-light);
+}
+
+/* Device card active state */
+[data-theme="sepia"] .device-card.active {
+    background: linear-gradient(135deg, rgba(139, 105, 20, 0.08), rgba(160, 82, 45, 0.08));
+    border-color: var(--primary);
+}
+
+/* Auto badge styling */
+[data-theme="sepia"] .auto-badge.auto-on {
+    background: var(--warning);
+    color: var(--text-dark);
+}
+
+[data-theme="sepia"] .auto-badge.auto-off {
+    background: var(--text-muted);
+    color: var(--text-light);
+}
+
+/* Button hover effects */
+[data-theme="sepia"] .btn-primary {
+    background: var(--gradient-primary);
+}
+
+[data-theme="sepia"] .btn-primary:hover {
+    background: var(--gradient-primary-reverse);
+    box-shadow: var(--shadow-primary);
+}
+
+/* Voice card in sepia */
+[data-theme="sepia"] .voice-card {
+    background: var(--gradient-warm);
+}
+
+/* Emergency card in sepia (keeping red for urgency) */
+[data-theme="sepia"] .emergency-card {
+    background: linear-gradient(135deg, #8b3a3a, #6b2c2c);
+}
+
+/* Input focus in sepia */
+[data-theme="sepia"] input:focus,
+[data-theme="sepia"] textarea:focus,
+[data-theme="sepia"] select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(139, 105, 20, 0.15);
+}
+
+/* Toggle switch in sepia */
+[data-theme="sepia"] .slider {
+    background-color: var(--border-dark);
+}
+
+[data-theme="sepia"] input:checked + .slider {
+    background-color: var(--success);
+}
+
+/* Progress bar in sepia */
+[data-theme="sepia"] .progress-bar {
+    background: var(--gradient-primary);
+}
+
+/* Chart colors in sepia */
+[data-theme="sepia"] .chart-container canvas {
+    filter: sepia(0.3) saturate(0.9);
+}
+
+/* Toast notifications in sepia */
+[data-theme="sepia"] .toast {
+    background: var(--bg-card);
+    border-left-color: var(--primary);
+}
+
+[data-theme="sepia"] .toast.success {
+    border-left-color: var(--success);
+}
+
+[data-theme="sepia"] .toast.error {
+    border-left-color: var(--danger);
+}
+
+[data-theme="sepia"] .toast.warning {
+    border-left-color: var(--warning);
+}
+
+/* Modal in sepia */
+[data-theme="sepia"] .modal {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+/* Activity log in sepia */
+[data-theme="sepia"] .activity-log {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+
+[data-theme="sepia"] .log-entry {
+    border-bottom-color: var(--border-light);
+}
+
+[data-theme="sepia"] .log-source {
+    color: var(--primary);
+}
+
+/* Sidebar in sepia */
+[data-theme="sepia"] .sidebar {
+    background: var(--bg-secondary);
+    border-right-color: var(--border-color);
+}
+
+[data-theme="sepia"] .user-profile {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="sepia"] .user-profile:hover {
+    background: var(--gradient-primary);
+}
+
+[data-theme="sepia"] .nav-item.active {
+    background: var(--gradient-primary);
+}
+
+[data-theme="sepia"] .nav-item:hover:not(.active) {
+    background: var(--bg-tertiary);
+    color: var(--primary);
+}
+
+/* Top bar in sepia */
+[data-theme="sepia"] .top-bar {
+    background: var(--bg-secondary);
+    border-bottom-color: var(--border-color);
+}
+
+/* Language switcher in sepia */
+[data-theme="sepia"] .language-switcher {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="sepia"] .lang-btn.active {
+    background: var(--primary);
+}
+
+/* Theme toggle in sepia */
+[data-theme="sepia"] .theme-toggle {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+[data-theme="sepia"] .theme-toggle:hover {
+    background: var(--gradient-primary);
+    color: var(--text-light);
+}
+
+/* Scrollbar in sepia */
+[data-theme="sepia"] ::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="sepia"] ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+}
+
+[data-theme="sepia"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Selection color in sepia */
+[data-theme="sepia"] ::selection {
+    background: var(--primary);
+    color: var(--text-light);
+}
+
+/* Link colors in sepia */
+[data-theme="sepia"] a {
+    color: var(--primary);
+}
+
+[data-theme="sepia"] a:hover {
+    color: var(--primary-dark);
+}
+
+/* Stat card value in sepia */
+[data-theme="sepia"] .stat-value {
+    color: var(--primary);
+}
+
+/* Device name in sepia */
+[data-theme="sepia"] .device-name {
+    color: var(--text-primary);
+}
+
+/* Device state active in sepia */
+[data-theme="sepia"] .device-card.active .device-state {
+    background: var(--success);
+    color: var(--text-light);
+}
+
+/* Setting item hover in sepia */
+[data-theme="sepia"] .setting-item:hover {
+    border-color: var(--primary);
+}
+
+/* Dropdown in sepia */
+[data-theme="sepia"] select {
+    background-color: var(--bg-primary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Button outline in sepia */
+[data-theme="sepia"] .button-outline {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+[data-theme="sepia"] .button-outline:hover {
+    background: var(--primary);
+    color: var(--text-light);
+}
+
+/* Table styling in sepia */
+[data-theme="sepia"] thead {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="sepia"] th,
+[data-theme="sepia"] td {
+    border-bottom-color: var(--border-light);
+}
+
+[data-theme="sepia"] tbody tr:hover {
+    background: var(--bg-hover);
+}
+
+/* Badge styling in sepia */
+[data-theme="sepia"] .badge-primary {
+    background: var(--primary);
+}
+
+[data-theme="sepia"] .badge-success {
+    background: var(--success);
+}
+
+[data-theme="sepia"] .badge-danger {
+    background: var(--danger);
+}
+
+[data-theme="sepia"] .badge-warning {
+    background: var(--warning);
+    color: var(--text-dark);
+}
+
+/* Tooltip in sepia */
+[data-theme="sepia"] .tooltip::after {
+    background: var(--text-primary);
+    color: var(--text-light);
+}
+
+/* ============================================
+   SEPIA THEME RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    [data-theme="sepia"] .sidebar {
+        background: var(--bg-secondary);
+    }
+    
+    [data-theme="sepia"] .sidebar.open {
+        box-shadow: var(--shadow-lg);
+    }
+}
+
+/* ============================================
+   SEPIA THEME PRINT STYLES
+   ============================================ */
+@media print {
+    [data-theme="sepia"] body {
+        background: white;
+        color: black;
+    }
+    
+    [data-theme="sepia"] .card,
+    [data-theme="sepia"] .device-card {
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+}
+
+/* ============================================
+   SEPIA THEME ACCESSIBILITY
+   ============================================ */
+
+/* High contrast within sepia */
+@media (prefers-contrast: high) {
+    [data-theme="sepia"] {
+        --primary: #6b4f0e;
+        --border-color: #3b2a1a;
+        --text-primary: #2a1e10;
+        --bg-primary: #f4ecd8;
+    }
+}
+
+/* Reduced motion in sepia */
+@media (prefers-reduced-motion: reduce) {
+    [data-theme="sepia"] *,
+    [data-theme="sepia"] *::before,
+    [data-theme="sepia"] *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   SEPIA THEME ANIMATIONS
+   ============================================ */
+
+/* Warm pulse animation for sepia */
+@keyframes sepiaPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(139, 105, 20, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(139, 105, 20, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(139, 105, 20, 0);
+    }
+}
+
+[data-theme="sepia"] .pulse-primary {
+    animation: sepiaPulse 2s infinite;
+}
+
+/* Warm glow for sepia */
+@keyframes sepiaGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(139, 105, 20, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(139, 105, 20, 0.6);
+    }
+}
+
+[data-theme="sepia"] .glow-primary {
+    animation: sepiaGlow 1s ease-in-out infinite alternate;
+}

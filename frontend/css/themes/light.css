@@ -1,0 +1,630 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - LIGHT THEME
+   Clean & Modern Default Theme
+   ============================================ */
+
+[data-theme="light"] {
+    /* ===== PRIMARY COLOR (Vibrant Blue) ===== */
+    --primary: #4361ee;
+    --primary-rgb: 67, 97, 238;
+    --primary-dark: #3a56d4;
+    --primary-darker: #2b46b5;
+    --primary-light: #6c8cff;
+    --primary-lighter: #8ba5ff;
+    --primary-soft: rgba(67, 97, 238, 0.1);
+    
+    /* ===== SECONDARY COLOR (Purple) ===== */
+    --secondary: #7209b7;
+    --secondary-rgb: 114, 9, 183;
+    --secondary-dark: #5a0793;
+    --secondary-darker: #450572;
+    --secondary-light: #9d4edd;
+    --secondary-lighter: #b97fe8;
+    --secondary-soft: rgba(114, 9, 183, 0.1);
+    
+    /* ===== SUCCESS COLOR (Green) ===== */
+    --success: #06d6a0;
+    --success-rgb: 6, 214, 160;
+    --success-dark: #05b386;
+    --success-darker: #048e68;
+    --success-light: #4efcce;
+    --success-lighter: #7ffde0;
+    --success-soft: rgba(6, 214, 160, 0.1);
+    
+    /* ===== DANGER/ERROR COLOR (Red) ===== */
+    --danger: #ef476f;
+    --danger-rgb: 239, 71, 111;
+    --danger-dark: #dc2f58;
+    --danger-darker: #c41e45;
+    --danger-light: #ff7b9c;
+    --danger-lighter: #ffa3bb;
+    --danger-soft: rgba(239, 71, 111, 0.1);
+    
+    /* ===== WARNING COLOR (Yellow/Orange) ===== */
+    --warning: #ffd166;
+    --warning-rgb: 255, 209, 102;
+    --warning-dark: #f5c04a;
+    --warning-darker: #e0a800;
+    --warning-light: #ffe28c;
+    --warning-lighter: #ffedb3;
+    --warning-soft: rgba(255, 209, 102, 0.1);
+    
+    /* ===== INFO COLOR (Cyan/Blue) ===== */
+    --info: #4cc9f0;
+    --info-rgb: 76, 201, 240;
+    --info-dark: #3ab0d4;
+    --info-darker: #2894b5;
+    --info-light: #7dd8f5;
+    --info-lighter: #a3e4f9;
+    --info-soft: rgba(76, 201, 240, 0.1);
+    
+    /* ===== BACKGROUND COLORS (White/Light Gray) ===== */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #f1f3f5;
+    --bg-quaternary: #e9ecef;
+    --bg-card: #ffffff;
+    --bg-hover: rgba(0, 0, 0, 0.02);
+    --bg-active: rgba(67, 97, 238, 0.05);
+    --bg-overlay: rgba(0, 0, 0, 0.5);
+    --bg-glass: rgba(255, 255, 255, 0.9);
+    
+    /* ===== TEXT COLORS (Dark Gray) ===== */
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-muted: #adb5bd;
+    --text-disabled: #ced4da;
+    --text-light: #ffffff;
+    --text-dark: #212529;
+    --text-link: #4361ee;
+    --text-link-hover: #3a56d4;
+    
+    /* ===== BORDER COLORS ===== */
+    --border-color: #dee2e6;
+    --border-light: #e9ecef;
+    --border-dark: #ced4da;
+    --border-focus: #4361ee;
+    --border-error: #ef476f;
+    --border-success: #06d6a0;
+    
+    /* ===== GRADIENTS (Vibrant) ===== */
+    --gradient-primary: linear-gradient(135deg, #4361ee, #7209b7);
+    --gradient-primary-reverse: linear-gradient(135deg, #7209b7, #4361ee);
+    --gradient-success: linear-gradient(135deg, #06d6a0, #4cc9f0);
+    --gradient-danger: linear-gradient(135deg, #ef476f, #ffd166);
+    --gradient-dark: linear-gradient(135deg, #212529, #343a40);
+    --gradient-light: linear-gradient(135deg, #f8f9fa, #ffffff);
+    --gradient-vibrant: linear-gradient(135deg, #4361ee, #06d6a0, #ffd166);
+    
+    /* ===== SHADOWS (Subtle) ===== */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.12);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.03);
+    --shadow-primary: 0 4px 14px 0 rgba(67, 97, 238, 0.25);
+    --shadow-success: 0 4px 14px 0 rgba(6, 214, 160, 0.25);
+    --shadow-danger: 0 4px 14px 0 rgba(239, 71, 111, 0.25);
+    
+    /* ===== LIGHT THEME SPECIFIC ===== */
+    --card-border: 1px solid #e9ecef;
+    --input-bg: #ffffff;
+    --input-border: #dee2e6;
+    --button-text: #ffffff;
+    --link-color: #4361ee;
+    --icon-color: #6c757d;
+}
+
+/* ============================================
+   LIGHT THEME SPECIFIC STYLES
+   ============================================ */
+
+/* Body background */
+[data-theme="light"] body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Card styling */
+[data-theme="light"] .card,
+[data-theme="light"] .device-card,
+[data-theme="light"] .stat-card,
+[data-theme="light"] .voice-card,
+[data-theme="light"] .chart-card,
+[data-theme="light"] .settings-card {
+    background: var(--bg-card);
+    border: var(--card-border);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+}
+
+[data-theme="light"] .card:hover,
+[data-theme="light"] .device-card:hover,
+[data-theme="light"] .stat-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+/* Welcome card */
+[data-theme="light"] .welcome-card {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="light"] .welcome-card h2,
+[data-theme="light"] .welcome-card p {
+    color: white;
+}
+
+/* Stat card */
+[data-theme="light"] .stat-icon {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="light"] .stat-value {
+    color: var(--primary);
+}
+
+/* Device card */
+[data-theme="light"] .device-card.active {
+    background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(114, 9, 183, 0.05));
+    border: 2px solid var(--success);
+}
+
+[data-theme="light"] .device-card.active .device-state {
+    background: var(--success);
+    color: white;
+}
+
+/* Auto badge */
+[data-theme="light"] .auto-badge.auto-on {
+    background: var(--warning);
+    color: var(--text-dark);
+}
+
+[data-theme="light"] .auto-badge.auto-off {
+    background: var(--text-muted);
+    color: white;
+}
+
+/* Buttons */
+[data-theme="light"] .btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="light"] .btn-primary:hover {
+    background: var(--gradient-primary-reverse);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+[data-theme="light"] .btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+[data-theme="light"] .btn-danger:hover {
+    background: var(--danger-dark);
+    transform: translateY(-2px);
+}
+
+/* Voice card */
+[data-theme="light"] .voice-card {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="light"] .voice-display {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+/* Emergency card */
+[data-theme="light"] .emergency-card {
+    background: linear-gradient(135deg, #ef476f, #d9042b);
+    color: white;
+}
+
+/* Input fields */
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] input:focus,
+[data-theme="light"] textarea:focus,
+[data-theme="light"] select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+/* Input groups */
+[data-theme="light"] .input-group {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .input-group:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+/* Toggle switch */
+[data-theme="light"] .slider {
+    background-color: var(--border-dark);
+}
+
+[data-theme="light"] input:checked + .slider {
+    background-color: var(--success);
+}
+
+/* Progress bar */
+[data-theme="light"] .progress-bar {
+    background: var(--gradient-primary);
+}
+
+/* Toast notifications */
+[data-theme="light"] .toast {
+    background: white;
+    border-left-color: var(--primary);
+    box-shadow: var(--shadow-lg);
+}
+
+[data-theme="light"] .toast.success {
+    border-left-color: var(--success);
+}
+
+[data-theme="light"] .toast.error {
+    border-left-color: var(--danger);
+}
+
+[data-theme="light"] .toast.warning {
+    border-left-color: var(--warning);
+}
+
+/* Modal */
+[data-theme="light"] .modal {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-2xl);
+}
+
+/* Activity log */
+[data-theme="light"] .activity-log {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="light"] .log-entry {
+    border-bottom-color: var(--border-light);
+}
+
+[data-theme="light"] .log-source {
+    color: var(--primary);
+}
+
+/* Sidebar */
+[data-theme="light"] .sidebar {
+    background: var(--bg-secondary);
+    border-right-color: var(--border-color);
+}
+
+[data-theme="light"] .user-profile {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="light"] .user-profile:hover {
+    background: var(--gradient-primary);
+}
+
+[data-theme="light"] .user-profile:hover .user-info .name,
+[data-theme="light"] .user-profile:hover .user-info .role {
+    color: white;
+}
+
+/* Navigation */
+[data-theme="light"] .nav-item {
+    color: var(--text-secondary);
+}
+
+[data-theme="light"] .nav-item:hover {
+    background: var(--bg-tertiary);
+    color: var(--primary);
+}
+
+[data-theme="light"] .nav-item.active {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+/* Top bar */
+[data-theme="light"] .top-bar {
+    background: var(--bg-secondary);
+    border-bottom-color: var(--border-color);
+}
+
+/* Language switcher */
+[data-theme="light"] .language-switcher {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="light"] .lang-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Theme toggle */
+[data-theme="light"] .theme-toggle {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+/* Scrollbar */
+[data-theme="light"] ::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Selection */
+[data-theme="light"] ::selection {
+    background: var(--primary);
+    color: white;
+}
+
+/* Links */
+[data-theme="light"] a {
+    color: var(--link-color);
+}
+
+[data-theme="light"] a:hover {
+    color: var(--primary-dark);
+}
+
+/* Login card */
+[data-theme="light"] .login-card {
+    background: white;
+    box-shadow: var(--shadow-2xl);
+}
+
+[data-theme="light"] .login-logo {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="light"] .login-btn {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="light"] .login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+/* Settings items */
+[data-theme="light"] .setting-item {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="light"] .setting-item:hover {
+    border-color: var(--primary);
+    transform: translateX(4px);
+}
+
+/* Dropdown */
+[data-theme="light"] select {
+    background-color: var(--bg-primary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Button outline */
+[data-theme="light"] .button-outline {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+[data-theme="light"] .button-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Tables */
+[data-theme="light"] thead {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="light"] th,
+[data-theme="light"] td {
+    border-bottom-color: var(--border-light);
+}
+
+[data-theme="light"] tbody tr:hover {
+    background: var(--bg-hover);
+}
+
+/* Badges */
+[data-theme="light"] .badge-primary {
+    background: var(--primary);
+    color: white;
+}
+
+[data-theme="light"] .badge-success {
+    background: var(--success);
+    color: white;
+}
+
+[data-theme="light"] .badge-danger {
+    background: var(--danger);
+    color: white;
+}
+
+[data-theme="light"] .badge-warning {
+    background: var(--warning);
+    color: var(--text-dark);
+}
+
+/* Tooltips */
+[data-theme="light"] .tooltip::after {
+    background: var(--text-primary);
+    color: white;
+}
+
+/* ============================================
+   LIGHT THEME RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    [data-theme="light"] .sidebar {
+        background: var(--bg-secondary);
+    }
+    
+    [data-theme="light"] .sidebar.open {
+        box-shadow: var(--shadow-lg);
+    }
+}
+
+/* ============================================
+   LIGHT THEME PRINT STYLES
+   ============================================ */
+@media print {
+    [data-theme="light"] body {
+        background: white;
+        color: black;
+    }
+    
+    [data-theme="light"] .card,
+    [data-theme="light"] .device-card {
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+    
+    [data-theme="light"] .sidebar,
+    [data-theme="light"] .top-actions,
+    [data-theme="light"] .voice-card,
+    [data-theme="light"] .emergency-card {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   LIGHT THEME ACCESSIBILITY
+   ============================================ */
+
+/* High contrast in light theme */
+@media (prefers-contrast: high) {
+    [data-theme="light"] {
+        --primary: #0000ff;
+        --border-color: #000000;
+        --text-primary: #000000;
+        --bg-primary: #ffffff;
+    }
+    
+    [data-theme="light"] .card,
+    [data-theme="light"] .device-card,
+    [data-theme="light"] .stat-card {
+        border: 2px solid #000000;
+    }
+}
+
+/* Reduced motion in light theme */
+@media (prefers-reduced-motion: reduce) {
+    [data-theme="light"] *,
+    [data-theme="light"] *::before,
+    [data-theme="light"] *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   LIGHT THEME ANIMATIONS
+   ============================================ */
+
+/* Pulse animation for light theme */
+@keyframes lightPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(67, 97, 238, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(67, 97, 238, 0);
+    }
+}
+
+[data-theme="light"] .pulse-primary {
+    animation: lightPulse 2s infinite;
+}
+
+/* Glow animation for light theme */
+@keyframes lightGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(67, 97, 238, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(67, 97, 238, 0.6);
+    }
+}
+
+[data-theme="light"] .glow-primary {
+    animation: lightGlow 1s ease-in-out infinite alternate;
+}
+
+/* Skeleton loading for light theme */
+[data-theme="light"] .skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--bg-tertiary) 25%,
+        var(--bg-secondary) 50%,
+        var(--bg-tertiary) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeletonLoading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeletonLoading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ============================================
+   LIGHT THEME UTILITY OVERRIDES
+   ============================================ */
+
+/* Glass morphism in light theme */
+[data-theme="light"] .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Neumorphism in light theme */
+[data-theme="light"] .neumorph {
+    background: var(--bg-secondary);
+    box-shadow: 9px 9px 16px rgba(0, 0, 0, 0.05), -9px -9px 16px rgba(255, 255, 255, 0.5);
+}

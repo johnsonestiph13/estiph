@@ -1,0 +1,400 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - TABS COMPONENT
+   Tab navigation for content organization
+   ============================================ */
+
+/* ============================================
+   TABS BASE
+   ============================================ */
+
+.tabs {
+    width: 100%;
+}
+
+.tabs-header {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+.tab-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition);
+    position: relative;
+    white-space: nowrap;
+}
+
+.tab-btn:hover {
+    color: var(--primary);
+    background: var(--bg-hover);
+}
+
+.tab-btn.active {
+    color: var(--primary);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary);
+}
+
+.tab-content {
+    display: none;
+    animation: tabFadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes tabFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   TABS VARIANTS
+   ============================================ */
+
+/* Pills tabs */
+.tabs-pills .tabs-header {
+    border-bottom: none;
+    gap: var(--spacing-sm);
+}
+
+.tabs-pills .tab-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+}
+
+.tabs-pills .tab-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+.tabs-pills .tab-btn.active::after {
+    display: none;
+}
+
+/* Underline tabs (different color) */
+.tabs-underline-primary .tab-btn.active::after {
+    background: var(--primary);
+}
+
+.tabs-underline-success .tab-btn.active::after {
+    background: var(--success);
+}
+
+.tabs-underline-danger .tab-btn.active::after {
+    background: var(--danger);
+}
+
+.tabs-underline-warning .tab-btn.active::after {
+    background: var(--warning);
+}
+
+/* Bordered tabs */
+.tabs-bordered {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.tabs-bordered .tabs-header {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 0;
+    background: var(--bg-secondary);
+}
+
+.tabs-bordered .tab-content {
+    padding: var(--spacing-lg);
+}
+
+/* Vertical tabs */
+.tabs-vertical {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.tabs-vertical .tabs-header {
+    flex-direction: column;
+    border-bottom: none;
+    border-right: 1px solid var(--border-color);
+    margin-bottom: 0;
+    min-width: 200px;
+}
+
+.tabs-vertical .tab-btn {
+    text-align: left;
+    border-radius: var(--radius-md);
+    margin-right: -1px;
+}
+
+.tabs-vertical .tab-btn.active::after {
+    bottom: 0;
+    top: 0;
+    right: -1px;
+    left: auto;
+    width: 2px;
+    height: auto;
+}
+
+.tabs-vertical .tab-content {
+    flex: 1;
+}
+
+/* Centered tabs */
+.tabs-centered .tabs-header {
+    justify-content: center;
+}
+
+/* Right-aligned tabs */
+.tabs-right .tabs-header {
+    justify-content: flex-end;
+}
+
+/* Full width tabs */
+.tabs-full .tab-btn {
+    flex: 1;
+    text-align: center;
+}
+
+/* ============================================
+   TABS SIZES
+   ============================================ */
+
+/* Small tabs */
+.tabs-sm .tab-btn {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 0.75rem;
+}
+
+/* Large tabs */
+.tabs-lg .tab-btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1rem;
+}
+
+/* ============================================
+   TABS WITH ICONS
+   ============================================ */
+
+.tab-icon {
+    margin-right: var(--spacing-xs);
+    font-size: 0.9rem;
+}
+
+.tab-icon-only .tab-btn {
+    padding: var(--spacing-sm);
+}
+
+.tab-icon-only .tab-icon {
+    margin-right: 0;
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   TABS WITH BADGES
+   ============================================ */
+
+.tab-badge {
+    margin-left: var(--spacing-xs);
+    padding: 2px 6px;
+    background: var(--danger);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.6rem;
+    font-weight: var(--font-semibold);
+}
+
+/* ============================================
+   TABS WITH COUNTS
+   ============================================ */
+
+.tab-count {
+    margin-left: var(--spacing-xs);
+    padding: 2px 6px;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border-radius: 20px;
+    font-size: 0.6rem;
+    font-weight: var(--font-semibold);
+}
+
+.tab-btn.active .tab-count {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+/* ============================================
+   SCROLLABLE TABS
+   ============================================ */
+
+.tabs-scrollable {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.tabs-scrollable .tabs-header {
+    flex-wrap: nowrap;
+    min-width: max-content;
+}
+
+.tabs-scrollable .tabs-header::-webkit-scrollbar {
+    height: 4px;
+}
+
+.tabs-scrollable .tabs-header::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+    border-radius: 2px;
+}
+
+.tabs-scrollable .tabs-header::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* ============================================
+   DYNAMIC TABS (Add/Remove)
+   ============================================ */
+
+.tabs-dynamic .tabs-header {
+    position: relative;
+    padding-right: 40px;
+}
+
+.tabs-add-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background: var(--bg-tertiary);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition);
+    color: var(--text-secondary);
+}
+
+.tabs-add-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.tab-close {
+    margin-left: var(--spacing-sm);
+    padding: 2px 6px;
+    background: none;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    transition: all var(--transition);
+}
+
+.tab-close:hover {
+    background: var(--danger);
+    color: white;
+}
+
+/* ============================================
+   RESPONSIVE TABS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .tabs-header {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .tab-btn {
+        white-space: nowrap;
+    }
+    
+    .tabs-vertical {
+        flex-direction: column;
+    }
+    
+    .tabs-vertical .tabs-header {
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        overflow-x: auto;
+    }
+    
+    .tabs-vertical .tab-btn.active::after {
+        bottom: -1px;
+        top: auto;
+        right: 0;
+        width: auto;
+        height: 2px;
+    }
+    
+    .tabs-bordered .tab-content {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-btn {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: 0.75rem;
+    }
+    
+    .tabs-lg .tab-btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.85rem;
+    }
+}
+
+/* ============================================
+   DARK MODE TABS
+   ============================================ */
+[data-theme="dark"] .tabs-bordered {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .tabs-bordered .tabs-header {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .tab-count {
+    background: var(--bg-tertiary);
+}
+
+/* ============================================
+   PRINT TABS STYLES
+   ============================================ */
+@media print {
+    .tabs-header {
+        display: none;
+    }
+    
+    .tab-content {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+}

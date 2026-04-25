@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: estif-mongodb-prod
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    volumes:
+      - mongodb_prod_data:/data/db
+    networks:
+      - estif-prod-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  redis:
+    image: redis:7-alpine
+    container_name: estif-redis-prod
+    restart: always
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis_prod_data:/data
+    networks:
+      - estif-prod-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    container_name: estif-backend-prod
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      MONGODB_URI: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@mongodb:27017/estif_home_prod?authSource=admin
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379
+    depends_on:
+      - mongodb
+      - redis
+    networks:
+      - estif-prod-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+
+networks:
+  estif-prod-network:
+    driver: bridge
+
+volumes:
+  mongodb_prod_data:
+  redis_prod_data:

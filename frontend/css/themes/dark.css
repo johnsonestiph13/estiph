@@ -1,0 +1,805 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - DARK THEME
+   Modern Dark Mode for Night Use
+   ============================================ */
+
+[data-theme="dark"] {
+    /* ===== PRIMARY COLOR (Vibrant Blue - Brighter for Dark) ===== */
+    --primary: #4895ef;
+    --primary-rgb: 72, 149, 239;
+    --primary-dark: #3a7bd5;
+    --primary-darker: #2e62b8;
+    --primary-light: #6caeff;
+    --primary-lighter: #8fc4ff;
+    --primary-soft: rgba(72, 149, 239, 0.15);
+    
+    /* ===== SECONDARY COLOR (Purple - Brighter for Dark) ===== */
+    --secondary: #b5179e;
+    --secondary-rgb: 181, 23, 158;
+    --secondary-dark: #9a1385;
+    --secondary-darker: #7a0f6a;
+    --secondary-light: #d44bc0;
+    --secondary-lighter: #e47ad4;
+    --secondary-soft: rgba(181, 23, 158, 0.15);
+    
+    /* ===== SUCCESS COLOR (Teal/Green) ===== */
+    --success: #06d6a0;
+    --success-rgb: 6, 214, 160;
+    --success-dark: #05b386;
+    --success-darker: #048e68;
+    --success-light: #4efcce;
+    --success-lighter: #7ffde0;
+    --success-soft: rgba(6, 214, 160, 0.15);
+    
+    /* ===== DANGER/ERROR COLOR (Red) ===== */
+    --danger: #ef476f;
+    --danger-rgb: 239, 71, 111;
+    --danger-dark: #dc2f58;
+    --danger-darker: #c41e45;
+    --danger-light: #ff7b9c;
+    --danger-lighter: #ffa3bb;
+    --danger-soft: rgba(239, 71, 111, 0.15);
+    
+    /* ===== WARNING COLOR (Amber/Yellow) ===== */
+    --warning: #ffd166;
+    --warning-rgb: 255, 209, 102;
+    --warning-dark: #f5c04a;
+    --warning-darker: #e0a800;
+    --warning-light: #ffe28c;
+    --warning-lighter: #ffedb3;
+    --warning-soft: rgba(255, 209, 102, 0.15);
+    
+    /* ===== INFO COLOR (Cyan) ===== */
+    --info: #4cc9f0;
+    --info-rgb: 76, 201, 240;
+    --info-dark: #3ab0d4;
+    --info-darker: #2894b5;
+    --info-light: #7dd8f5;
+    --info-lighter: #a3e4f9;
+    --info-soft: rgba(76, 201, 240, 0.15);
+    
+    /* ===== BACKGROUND COLORS (Dark Slate) ===== */
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --bg-quaternary: #475569;
+    --bg-card: #1e293b;
+    --bg-hover: rgba(255, 255, 255, 0.05);
+    --bg-active: rgba(72, 149, 239, 0.1);
+    --bg-overlay: rgba(0, 0, 0, 0.8);
+    --bg-glass: rgba(30, 41, 59, 0.9);
+    
+    /* ===== TEXT COLORS (Light Gray) ===== */
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --text-disabled: #64748b;
+    --text-light: #ffffff;
+    --text-dark: #0f172a;
+    --text-link: #4895ef;
+    --text-link-hover: #6caeff;
+    
+    /* ===== BORDER COLORS ===== */
+    --border-color: #334155;
+    --border-light: #475569;
+    --border-dark: #1e293b;
+    --border-focus: #4895ef;
+    --border-error: #ef476f;
+    --border-success: #06d6a0;
+    
+    /* ===== GRADIENTS (Vibrant for Dark) ===== */
+    --gradient-primary: linear-gradient(135deg, #4895ef, #b5179e);
+    --gradient-primary-reverse: linear-gradient(135deg, #b5179e, #4895ef);
+    --gradient-success: linear-gradient(135deg, #06d6a0, #4cc9f0);
+    --gradient-danger: linear-gradient(135deg, #ef476f, #ffd166);
+    --gradient-dark: linear-gradient(135deg, #1e293b, #0f172a);
+    --gradient-light: linear-gradient(135deg, #334155, #475569);
+    --gradient-vibrant: linear-gradient(135deg, #4895ef, #06d6a0, #ffd166);
+    
+    /* ===== SHADOWS (Darker for Dark Mode) ===== */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    --shadow-primary: 0 4px 14px 0 rgba(72, 149, 239, 0.3);
+    --shadow-success: 0 4px 14px 0 rgba(6, 214, 160, 0.3);
+    --shadow-danger: 0 4px 14px 0 rgba(239, 71, 111, 0.3);
+    
+    /* ===== DARK THEME SPECIFIC ===== */
+    --card-border: 1px solid #334155;
+    --input-bg: #1e293b;
+    --input-border: #334155;
+    --button-text: #ffffff;
+    --link-color: #4895ef;
+    --icon-color: #94a3b8;
+}
+
+/* ============================================
+   DARK THEME SPECIFIC STYLES
+   ============================================ */
+
+/* Body background */
+[data-theme="dark"] body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Card styling */
+[data-theme="dark"] .card,
+[data-theme="dark"] .device-card,
+[data-theme="dark"] .stat-card,
+[data-theme="dark"] .voice-card,
+[data-theme="dark"] .chart-card,
+[data-theme="dark"] .settings-card {
+    background: var(--bg-card);
+    border: var(--card-border);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .device-card:hover,
+[data-theme="dark"] .stat-card:hover {
+    box-shadow: var(--shadow-md);
+    background: var(--bg-hover);
+}
+
+/* Welcome card */
+[data-theme="dark"] .welcome-card {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="dark"] .welcome-card h2,
+[data-theme="dark"] .welcome-card p {
+    color: white;
+}
+
+/* Stat card */
+[data-theme="dark"] .stat-icon {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="dark"] .stat-value {
+    color: var(--primary-light);
+}
+
+/* Device card */
+[data-theme="dark"] .device-card.active {
+    background: linear-gradient(135deg, rgba(72, 149, 239, 0.1), rgba(181, 23, 158, 0.1));
+    border: 2px solid var(--success);
+}
+
+[data-theme="dark"] .device-card.active .device-state {
+    background: var(--success);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .device-name {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .device-room {
+    color: var(--text-muted);
+}
+
+/* Auto badge */
+[data-theme="dark"] .auto-badge.auto-on {
+    background: var(--warning);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .auto-badge.auto-off {
+    background: var(--text-muted);
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .auto-toggle {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .auto-toggle:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Buttons */
+[data-theme="dark"] .btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    background: var(--gradient-primary-reverse);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+[data-theme="dark"] .btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+[data-theme="dark"] .btn-danger:hover {
+    background: var(--danger-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-danger);
+}
+
+/* Voice card */
+[data-theme="dark"] .voice-card {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="dark"] .voice-display {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+[data-theme="dark"] .voice-wave .wave-bar {
+    background: white;
+}
+
+/* Emergency card */
+[data-theme="dark"] .emergency-card {
+    background: linear-gradient(135deg, #ef476f, #c41e45);
+    color: white;
+}
+
+/* Input fields */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(72, 149, 239, 0.2);
+}
+
+/* Input groups */
+[data-theme="dark"] .input-group {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .input-group i {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .input-group:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(72, 149, 239, 0.2);
+}
+
+/* Toggle switch */
+[data-theme="dark"] .slider {
+    background-color: var(--border-dark);
+}
+
+[data-theme="dark"] .slider:before {
+    background-color: var(--text-light);
+}
+
+[data-theme="dark"] input:checked + .slider {
+    background-color: var(--success);
+}
+
+/* Progress bar */
+[data-theme="dark"] .progress-bar {
+    background: var(--gradient-primary);
+}
+
+[data-theme="dark"] .progress {
+    background: var(--bg-tertiary);
+}
+
+/* Toast notifications */
+[data-theme="dark"] .toast {
+    background: var(--bg-card);
+    border-left-color: var(--primary);
+    box-shadow: var(--shadow-lg);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .toast.success {
+    border-left-color: var(--success);
+}
+
+[data-theme="dark"] .toast.error {
+    border-left-color: var(--danger);
+}
+
+[data-theme="dark"] .toast.warning {
+    border-left-color: var(--warning);
+}
+
+[data-theme="dark"] .toast-close {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .toast-close:hover {
+    color: var(--danger);
+}
+
+/* Modal */
+[data-theme="dark"] .modal {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-2xl);
+}
+
+[data-theme="dark"] .modal-close {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .modal-close:hover {
+    color: var(--danger);
+}
+
+/* Activity log */
+[data-theme="dark"] .activity-log {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .log-entry {
+    border-bottom-color: var(--border-light);
+}
+
+[data-theme="dark"] .log-time {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .log-message {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .log-source {
+    color: var(--primary-light);
+}
+
+/* Sidebar */
+[data-theme="dark"] .sidebar {
+    background: var(--bg-secondary);
+    border-right-color: var(--border-color);
+}
+
+[data-theme="dark"] .sidebar-header {
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .logo-text p {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .user-profile {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .user-profile:hover {
+    background: var(--gradient-primary);
+}
+
+[data-theme="dark"] .user-profile:hover .user-info .name,
+[data-theme="dark"] .user-profile:hover .user-info .role {
+    color: white;
+}
+
+[data-theme="dark"] .user-info .name {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .user-info .role {
+    color: var(--text-muted);
+}
+
+/* Navigation */
+[data-theme="dark"] .nav-item {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .nav-item:hover {
+    background: var(--bg-tertiary);
+    color: var(--primary-light);
+}
+
+[data-theme="dark"] .nav-item.active {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="dark"] .nav-badge {
+    background: var(--warning);
+    color: var(--text-dark);
+}
+
+/* Top bar */
+[data-theme="dark"] .top-bar {
+    background: var(--bg-secondary);
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .page-title {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Voice button */
+[data-theme="dark"] .voice-btn {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+    color: var(--primary-light);
+}
+
+[data-theme="dark"] .voice-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+[data-theme="dark"] .voice-btn.listening {
+    background: var(--danger);
+    color: white;
+}
+
+/* Language switcher */
+[data-theme="dark"] .language-switcher {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .lang-btn {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .lang-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Theme toggle */
+[data-theme="dark"] .theme-toggle {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+/* Scrollbar */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-light);
+}
+
+/* Selection */
+[data-theme="dark"] ::selection {
+    background: var(--primary);
+    color: white;
+}
+
+/* Links */
+[data-theme="dark"] a {
+    color: var(--link-color);
+}
+
+[data-theme="dark"] a:hover {
+    color: var(--primary-light);
+}
+
+/* Login card */
+[data-theme="dark"] .login-card {
+    background: var(--bg-card);
+    box-shadow: var(--shadow-2xl);
+}
+
+[data-theme="dark"] .login-header h2 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .login-header p {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .login-logo {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="dark"] .login-btn {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+[data-theme="dark"] .login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+[data-theme="dark"] .login-footer {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .login-demo {
+    border-top-color: var(--border-color);
+}
+
+/* Settings items */
+[data-theme="dark"] .setting-item {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .setting-item:hover {
+    border-color: var(--primary);
+    transform: translateX(4px);
+}
+
+[data-theme="dark"] .setting-label {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .setting-desc {
+    color: var(--text-muted);
+}
+
+/* Dropdown */
+[data-theme="dark"] select {
+    background-color: var(--bg-tertiary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] select option {
+    background-color: var(--bg-secondary);
+}
+
+/* Button outline */
+[data-theme="dark"] .button-outline {
+    border-color: var(--primary);
+    color: var(--primary-light);
+}
+
+[data-theme="dark"] .button-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Tables */
+[data-theme="dark"] thead {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] th {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] th,
+[data-theme="dark"] td {
+    border-bottom-color: var(--border-light);
+}
+
+[data-theme="dark"] tbody tr:hover {
+    background: var(--bg-hover);
+}
+
+/* Badges */
+[data-theme="dark"] .badge-primary {
+    background: var(--primary);
+    color: white;
+}
+
+[data-theme="dark"] .badge-success {
+    background: var(--success);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .badge-danger {
+    background: var(--danger);
+    color: white;
+}
+
+[data-theme="dark"] .badge-warning {
+    background: var(--warning);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .badge-info {
+    background: var(--info);
+    color: var(--text-dark);
+}
+
+/* Tooltips */
+[data-theme="dark"] .tooltip::after {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+/* Charts */
+[data-theme="dark"] .chart-card {
+    background: var(--bg-card);
+}
+
+[data-theme="dark"] .chart-container canvas {
+    filter: brightness(0.9);
+}
+
+/* ============================================
+   DARK THEME RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    [data-theme="dark"] .sidebar {
+        background: var(--bg-secondary);
+    }
+    
+    [data-theme="dark"] .sidebar.open {
+        box-shadow: var(--shadow-lg);
+    }
+}
+
+/* ============================================
+   DARK THEME PRINT STYLES
+   ============================================ */
+@media print {
+    [data-theme="dark"] body {
+        background: white;
+        color: black;
+    }
+    
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .device-card {
+        border: 1px solid #ccc;
+        box-shadow: none;
+        background: white;
+    }
+    
+    [data-theme="dark"] .sidebar,
+    [data-theme="dark"] .top-actions,
+    [data-theme="dark"] .voice-card,
+    [data-theme="dark"] .emergency-card {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   DARK THEME ACCESSIBILITY
+   ============================================ */
+
+/* High contrast in dark theme */
+@media (prefers-contrast: high) {
+    [data-theme="dark"] {
+        --primary: #6caeff;
+        --border-color: #ffffff;
+        --text-primary: #ffffff;
+        --bg-primary: #000000;
+    }
+    
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .device-card,
+    [data-theme="dark"] .stat-card {
+        border: 2px solid #ffffff;
+    }
+}
+
+/* Reduced motion in dark theme */
+@media (prefers-reduced-motion: reduce) {
+    [data-theme="dark"] *,
+    [data-theme="dark"] *::before,
+    [data-theme="dark"] *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   DARK THEME ANIMATIONS
+   ============================================ */
+
+/* Pulse animation for dark theme */
+@keyframes darkPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(72, 149, 239, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(72, 149, 239, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(72, 149, 239, 0);
+    }
+}
+
+[data-theme="dark"] .pulse-primary {
+    animation: darkPulse 2s infinite;
+}
+
+/* Glow animation for dark theme */
+@keyframes darkGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(72, 149, 239, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(72, 149, 239, 0.7);
+    }
+}
+
+[data-theme="dark"] .glow-primary {
+    animation: darkGlow 1s ease-in-out infinite alternate;
+}
+
+/* Skeleton loading for dark theme */
+[data-theme="dark"] .skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--bg-tertiary) 25%,
+        var(--bg-secondary) 50%,
+        var(--bg-tertiary) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeletonDark 1.5s ease-in-out infinite;
+}
+
+@keyframes skeletonDark {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ============================================
+   DARK THEME UTILITY OVERRIDES
+   ============================================ */
+
+/* Glass morphism in dark theme */
+[data-theme="dark"] .glass {
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neumorphism in dark theme */
+[data-theme="dark"] .neumorph {
+    background: var(--bg-secondary);
+    box-shadow: 9px 9px 16px rgba(0, 0, 0, 0.3), -9px -9px 16px rgba(255, 255, 255, 0.05);
+}
+
+/* Code blocks in dark theme */
+[data-theme="dark"] code,
+[data-theme="dark"] pre {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+/* Horizontal rule in dark theme */
+[data-theme="dark"] hr {
+    border-top-color: var(--border-color);
+}

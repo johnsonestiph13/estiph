@@ -1,0 +1,785 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - AMOLED THEME
+   Pure Black Background for OLED/AMOLED Displays
+   Maximum Battery Savings & Eye Comfort
+   ============================================ */
+
+[data-theme="amoled"] {
+    /* ===== PRIMARY COLOR (Vibrant Cyan - Pops on Black) ===== */
+    --primary: #00e5ff;
+    --primary-rgb: 0, 229, 255;
+    --primary-dark: #00c4e0;
+    --primary-darker: #00a3c0;
+    --primary-light: #33eaff;
+    --primary-lighter: #66efff;
+    --primary-soft: rgba(0, 229, 255, 0.12);
+    
+    /* ===== SECONDARY COLOR (Neon Purple) ===== */
+    --secondary: #b000ff;
+    --secondary-rgb: 176, 0, 255;
+    --secondary-dark: #9a00e0;
+    --secondary-darker: #8400c0;
+    --secondary-light: #c033ff;
+    --secondary-lighter: #d066ff;
+    --secondary-soft: rgba(176, 0, 255, 0.12);
+    
+    /* ===== SUCCESS COLOR (Neon Green) ===== */
+    --success: #00ff88;
+    --success-rgb: 0, 255, 136;
+    --success-dark: #00e070;
+    --success-darker: #00c060;
+    --success-light: #33ffa0;
+    --success-lighter: #66ffb8;
+    --success-soft: rgba(0, 255, 136, 0.12);
+    
+    /* ===== DANGER/ERROR COLOR (Neon Red) ===== */
+    --danger: #ff3366;
+    --danger-rgb: 255, 51, 102;
+    --danger-dark: #e02e58;
+    --danger-darker: #c02848;
+    --danger-light: #ff5c85;
+    --danger-lighter: #ff85a3;
+    --danger-soft: rgba(255, 51, 102, 0.12);
+    
+    /* ===== WARNING COLOR (Neon Amber) ===== */
+    --warning: #ffaa00;
+    --warning-rgb: 255, 170, 0;
+    --warning-dark: #e09800;
+    --warning-darker: #c08000;
+    --warning-light: #ffbb33;
+    --warning-lighter: #ffcc66;
+    --warning-soft: rgba(255, 170, 0, 0.12);
+    
+    /* ===== INFO COLOR (Neon Blue) ===== */
+    --info: #00aaff;
+    --info-rgb: 0, 170, 255;
+    --info-dark: #0098e0;
+    --info-darker: #0086c0;
+    --info-light: #33bbff;
+    --info-lighter: #66ccff;
+    --info-soft: rgba(0, 170, 255, 0.12);
+    
+    /* ===== BACKGROUND COLORS (Pure Black - #000000) ===== */
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --bg-tertiary: #111111;
+    --bg-quaternary: #1a1a1a;
+    --bg-card: #0a0a0a;
+    --bg-hover: rgba(255, 255, 255, 0.03);
+    --bg-active: rgba(0, 229, 255, 0.08);
+    --bg-overlay: rgba(0, 0, 0, 0.95);
+    --bg-glass: rgba(0, 0, 0, 0.95);
+    
+    /* ===== TEXT COLORS (Pure White for Max Contrast) ===== */
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --text-disabled: #606060;
+    --text-light: #ffffff;
+    --text-dark: #000000;
+    --text-link: #00e5ff;
+    --text-link-hover: #66efff;
+    
+    /* ===== BORDER COLORS (Subtle) ===== */
+    --border-color: #1a1a1a;
+    --border-light: #222222;
+    --border-dark: #111111;
+    --border-focus: #00e5ff;
+    --border-error: #ff3366;
+    --border-success: #00ff88;
+    
+    /* ===== GRADIENTS (Neon) ===== */
+    --gradient-primary: linear-gradient(135deg, #00e5ff, #b000ff);
+    --gradient-primary-reverse: linear-gradient(135deg, #b000ff, #00e5ff);
+    --gradient-success: linear-gradient(135deg, #00ff88, #00e5ff);
+    --gradient-danger: linear-gradient(135deg, #ff3366, #ffaa00);
+    --gradient-dark: linear-gradient(135deg, #000000, #0a0a0a);
+    --gradient-light: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+    --gradient-neon: linear-gradient(135deg, #00e5ff, #00ff88, #ffaa00);
+    
+    /* ===== SHADOWS (Minimal - Darker) ===== */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.6);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.7);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.8);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+    --shadow-primary: 0 0 20px rgba(0, 229, 255, 0.3);
+    --shadow-success: 0 0 20px rgba(0, 255, 136, 0.3);
+    --shadow-danger: 0 0 20px rgba(255, 51, 102, 0.3);
+    
+    /* ===== AMOLED SPECIFIC ===== */
+    --card-border: 1px solid #1a1a1a;
+    --input-bg: #0a0a0a;
+    --input-border: 1px solid #222222;
+    --button-text: #000000;
+    --link-color: #00e5ff;
+    --icon-color: #e0e0e0;
+    --glow-intensity: 0.7;
+}
+
+/* ============================================
+   AMOLED THEME SPECIFIC STYLES
+   ============================================ */
+
+/* Force pure black backgrounds everywhere possible */
+[data-theme="amoled"] body,
+[data-theme="amoled"] .app,
+[data-theme="amoled"] .main-content {
+    background: var(--bg-primary);
+}
+
+/* Card styling - Minimal borders, no shadows */
+[data-theme="amoled"] .card,
+[data-theme="amoled"] .device-card,
+[data-theme="amoled"] .stat-card,
+[data-theme="amoled"] .voice-card,
+[data-theme="amoled"] .chart-card,
+[data-theme="amoled"] .settings-card {
+    background: var(--bg-card);
+    border: var(--card-border);
+    box-shadow: none;
+}
+
+[data-theme="amoled"] .card:hover,
+[data-theme="amoled"] .device-card:hover,
+[data-theme="amoled"] .stat-card:hover {
+    background: var(--bg-hover);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+/* Welcome card - Neon gradient */
+[data-theme="amoled"] .welcome-card {
+    background: var(--gradient-primary);
+    color: var(--text-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="amoled"] .welcome-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+[data-theme="amoled"] .welcome-card h2,
+[data-theme="amoled"] .welcome-card p {
+    color: var(--text-dark);
+}
+
+/* Stat card - Neon accents */
+[data-theme="amoled"] .stat-icon {
+    background: var(--gradient-primary);
+    color: var(--text-dark);
+    box-shadow: var(--shadow-primary);
+}
+
+[data-theme="amoled"] .stat-value {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+[data-theme="amoled"] .stat-label {
+    color: var(--text-muted);
+}
+
+/* Device card - Neon borders on active */
+[data-theme="amoled"] .device-card {
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .device-card.active {
+    background: var(--bg-active);
+    border: 1px solid var(--primary);
+    box-shadow: var(--shadow-primary);
+}
+
+[data-theme="amoled"] .device-card.active .device-state {
+    background: var(--primary);
+    color: var(--text-dark);
+    box-shadow: var(--shadow-primary);
+}
+
+[data-theme="amoled"] .device-name {
+    color: var(--text-primary);
+}
+
+[data-theme="amoled"] .device-room {
+    color: var(--text-muted);
+}
+
+[data-theme="amoled"] .device-state {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+/* Auto badge - Neon glow */
+[data-theme="amoled"] .auto-badge.auto-on {
+    background: var(--warning);
+    color: var(--text-dark);
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+}
+
+[data-theme="amoled"] .auto-badge.auto-off {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .auto-toggle {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .auto-toggle:hover {
+    background: var(--primary);
+    color: var(--text-dark);
+    box-shadow: var(--shadow-primary);
+}
+
+/* Buttons - Neon glow on hover */
+[data-theme="amoled"] .btn-primary,
+[data-theme="amoled"] .control-btn.btn-primary {
+    background: var(--gradient-primary);
+    color: var(--text-dark);
+    font-weight: bold;
+    border: none;
+}
+
+[data-theme="amoled"] .btn-primary:hover,
+[data-theme="amoled"] .control-btn.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+[data-theme="amoled"] .btn-danger,
+[data-theme="amoled"] .control-btn.btn-danger {
+    background: var(--danger);
+    color: var(--text-dark);
+    font-weight: bold;
+}
+
+[data-theme="amoled"] .btn-danger:hover,
+[data-theme="amoled"] .control-btn.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-danger);
+}
+
+/* Voice card - Neon gradient */
+[data-theme="amoled"] .voice-card {
+    background: var(--gradient-primary);
+    color: var(--text-dark);
+}
+
+[data-theme="amoled"] .voice-display {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="amoled"] .voice-wave .wave-bar {
+    background: var(--text-dark);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Emergency card - Pulsing neon red */
+[data-theme="amoled"] .emergency-card {
+    background: var(--danger);
+    color: var(--text-dark);
+    animation: amoledPulse 2s infinite;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="amoled"] .emergency-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-danger);
+}
+
+@keyframes amoledPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 51, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 51, 102, 0);
+    }
+}
+
+[data-theme="amoled"] .emergency-icon {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Input fields - Minimal borders */
+[data-theme="amoled"] input,
+[data-theme="amoled"] textarea,
+[data-theme="amoled"] select {
+    background: var(--input-bg);
+    border: var(--input-border);
+    color: var(--text-primary);
+}
+
+[data-theme="amoled"] input:focus,
+[data-theme="amoled"] textarea:focus,
+[data-theme="amoled"] select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
+}
+
+/* Input groups */
+[data-theme="amoled"] .input-group {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .input-group i {
+    color: var(--text-muted);
+}
+
+[data-theme="amoled"] .input-group:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
+}
+
+/* Toggle switch - Neon when active */
+[data-theme="amoled"] .slider {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .slider:before {
+    background-color: var(--text-secondary);
+}
+
+[data-theme="amoled"] input:checked + .slider {
+    background-color: var(--success);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+[data-theme="amoled"] input:checked + .slider:before {
+    background-color: var(--text-dark);
+    transform: translateX(24px);
+}
+
+/* Progress bar - Neon gradient */
+[data-theme="amoled"] .progress {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .progress-bar {
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-primary);
+}
+
+/* Toast notifications - Neon accents */
+[data-theme="amoled"] .toast {
+    background: var(--bg-card);
+    border-left: 4px solid var(--primary);
+    border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+}
+
+[data-theme="amoled"] .toast.success {
+    border-left-color: var(--success);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+}
+
+[data-theme="amoled"] .toast.error {
+    border-left-color: var(--danger);
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.2);
+}
+
+[data-theme="amoled"] .toast.warning {
+    border-left-color: var(--warning);
+    box-shadow: 0 0 20px rgba(255, 170, 0, 0.2);
+}
+
+/* Modal */
+[data-theme="amoled"] .modal {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-2xl);
+}
+
+[data-theme="amoled"] .modal-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .modal-footer {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Activity log */
+[data-theme="amoled"] .activity-log {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .log-entry {
+    border-bottom: 1px solid var(--border-light);
+}
+
+[data-theme="amoled"] .log-time {
+    color: var(--text-muted);
+}
+
+[data-theme="amoled"] .log-message {
+    color: var(--text-secondary);
+}
+
+[data-theme="amoled"] .log-source {
+    color: var(--primary);
+}
+
+/* Sidebar */
+[data-theme="amoled"] .sidebar {
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .sidebar-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .logo-icon {
+    background: var(--gradient-primary);
+    color: var(--text-dark);
+    box-shadow: var(--shadow-primary);
+}
+
+[data-theme="amoled"] .logo-text h1 {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+[data-theme="amoled"] .logo-text p {
+    color: var(--text-muted);
+}
+
+[data-theme="amoled"] .user-profile {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .user-profile:hover {
+    background: var(--gradient-primary);
+    border-color: transparent;
+}
+
+[data-theme="amoled"] .user-profile:hover .user-info .name,
+[data-theme="amoled"] .user-profile:hover .user-info .role {
+    color: var(--text-dark);
+}
+
+[data-theme="amoled"] .user-avatar {
+    background: var(--gradient-primary);
+    color: var(--text-dark);
+}
+
+[data-theme="amoled"] .user-info .name {
+    color: var(--text-primary);
+}
+
+[data-theme="amoled"] .user-info .role {
+    color: var(--text-muted);
+}
+
+/* Navigation */
+[data-theme="amoled"] .nav-item {
+    color: var(--text-secondary);
+}
+
+[data-theme="amoled"] .nav-item:hover {
+    background: var(--bg-tertiary);
+    color: var(--primary);
+}
+
+[data-theme="amoled"] .nav-item.active {
+    background: var(--gradient-primary);
+    color: var(--text-dark);
+    box-shadow: var(--shadow-primary);
+}
+
+[data-theme="amoled"] .nav-badge {
+    background: var(--warning);
+    color: var(--text-dark);
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+}
+
+/* Top bar */
+[data-theme="amoled"] .top-bar {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .page-title {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Voice button */
+[data-theme="amoled"] .voice-btn {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--primary);
+}
+
+[data-theme="amoled"] .voice-btn:hover {
+    background: var(--primary);
+    color: var(--text-dark);
+    box-shadow: var(--shadow-primary);
+}
+
+[data-theme="amoled"] .voice-btn.listening {
+    background: var(--danger);
+    color: var(--text-dark);
+    box-shadow: var(--shadow-danger);
+}
+
+/* Language switcher */
+[data-theme="amoled"] .language-switcher {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .lang-btn {
+    color: var(--text-secondary);
+}
+
+[data-theme="amoled"] .lang-btn.active {
+    background: var(--primary);
+    color: var(--text-dark);
+    box-shadow: var(--shadow-primary);
+}
+
+/* Theme toggle */
+[data-theme="amoled"] .theme-toggle {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .theme-toggle:hover {
+    background: var(--gradient-primary);
+    color: var(--text-dark);
+    box-shadow: var(--shadow-primary);
+}
+
+/* Scrollbar - Minimal */
+[data-theme="amoled"] ::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="amoled"] ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+[data-theme="amoled"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-light);
+}
+
+/* Selection */
+[data-theme="amoled"] ::selection {
+    background: var(--primary);
+    color: var(--text-dark);
+}
+
+/* Links */
+[data-theme="amoled"] a {
+    color: var(--link-color);
+}
+
+[data-theme="amoled"] a:hover {
+    color: var(--primary-light);
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+/* Login card */
+[data-theme="amoled"] .login-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-2xl);
+}
+
+[data-theme="amoled"] .login-logo {
+    background: var(--gradient-primary);
+    color: var(--text-dark);
+    box-shadow: var(--shadow-primary);
+}
+
+[data-theme="amoled"] .login-btn {
+    background: var(--gradient-primary);
+    color: var(--text-dark);
+    font-weight: bold;
+}
+
+[data-theme="amoled"] .login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+/* Settings items */
+[data-theme="amoled"] .setting-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] .setting-item:hover {
+    border-color: var(--primary);
+    background: var(--bg-hover);
+    box-shadow: var(--shadow-primary);
+}
+
+[data-theme="amoled"] .setting-label {
+    color: var(--text-primary);
+}
+
+[data-theme="amoled"] .setting-desc {
+    color: var(--text-muted);
+}
+
+/* Tables */
+[data-theme="amoled"] thead {
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="amoled"] th {
+    color: var(--text-secondary);
+}
+
+[data-theme="amoled"] td {
+    border-bottom: 1px solid var(--border-light);
+}
+
+[data-theme="amoled"] tbody tr:hover {
+    background: var(--bg-hover);
+}
+
+/* ============================================
+   AMOLED THEME RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    [data-theme="amoled"] .sidebar {
+        background: var(--bg-secondary);
+        border-right: 1px solid var(--border-color);
+    }
+}
+
+/* ============================================
+   AMOLED THEME PRINT STYLES
+   ============================================ */
+@media print {
+    [data-theme="amoled"] body {
+        background: white;
+        color: black;
+    }
+    
+    [data-theme="amoled"] .card,
+    [data-theme="amoled"] .device-card {
+        border: 1px solid #ccc;
+        background: white;
+    }
+}
+
+/* ============================================
+   AMOLED THEME ACCESSIBILITY
+   ============================================ */
+
+/* High contrast for AMOLED */
+@media (prefers-contrast: high) {
+    [data-theme="amoled"] {
+        --border-color: #ffffff;
+        --text-primary: #ffffff;
+    }
+    
+    [data-theme="amoled"] .card,
+    [data-theme="amoled"] .device-card {
+        border: 2px solid white;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    [data-theme="amoled"] *,
+    [data-theme="amoled"] *::before,
+    [data-theme="amoled"] *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   AMOLED THEME ANIMATIONS
+   ============================================ */
+
+/* Neon pulse for AMOLED */
+@keyframes amoledNeonPulse {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 229, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 229, 255, 0.8);
+    }
+}
+
+[data-theme="amoled"] .neon-pulse {
+    animation: amoledNeonPulse 1.5s ease-in-out infinite alternate;
+}
+
+/* Breathing glow */
+@keyframes amoledBreathing {
+    0% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+[data-theme="amoled"] .breathing {
+    animation: amoledBreathing 2s ease-in-out infinite alternate;
+}
+
+/* ============================================
+   AMOLED POWER SAVING OPTIMIZATIONS
+   ============================================ */
+
+/* Disable unnecessary animations when battery saver is on */
+@media (prefers-reduced-motion: reduce) {
+    [data-theme="amoled"] .neon-pulse,
+    [data-theme="amoled"] .breathing {
+        animation: none;
+    }
+}
+
+/* Pure black backgrounds for maximum power saving */
+[data-theme="amoled"] .bg-pure-black {
+    background-color: #000000;
+}
+
+/* Minimal gradients - use solid colors when possible */
+@media (prefers-color-scheme: dark) {
+    [data-theme="amoled"] .gradient-minimal {
+        background: var(--primary);
+    }
+}

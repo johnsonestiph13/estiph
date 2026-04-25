@@ -1,0 +1,836 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - DEVICES PAGE STYLES
+   Complete styling for device management interface
+   ============================================ */
+
+/* ============================================
+   DEVICES LAYOUT
+   ============================================ */
+
+.devices-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    animation: devicesFadeIn 0.5s ease;
+}
+
+@keyframes devicesFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   DEVICES HEADER
+   ============================================ */
+
+.devices-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.devices-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.devices-title i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.devices-title h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
+
+.devices-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.add-device-btn {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.add-device-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+/* ============================================
+   SEARCH & FILTERS
+   ============================================ */
+
+.devices-filters {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.search-bar {
+    position: relative;
+    margin-bottom: var(--spacing-md);
+}
+
+.search-bar i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 16px 12px 42px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: all var(--transition);
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.filter-tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: var(--bg-tertiary);
+    border: none;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.filter-tab:hover {
+    background: var(--bg-hover);
+    color: var(--primary);
+}
+
+.filter-tab.active {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+/* ============================================
+   DEVICES STATS
+   ============================================ */
+
+.devices-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.device-stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-md);
+    text-align: center;
+    transition: all var(--transition);
+}
+
+.device-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.device-stat-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.device-stat-value {
+    font-size: 1.5rem;
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+}
+
+.device-stat-label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-xs);
+}
+
+/* ============================================
+   DEVICES GRID
+   ============================================ */
+
+.devices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Enhanced Device Card */
+.device-card-enhanced {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all var(--transition);
+    position: relative;
+}
+
+.device-card-enhanced:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.device-card-enhanced.active {
+    border: 2px solid var(--success);
+}
+
+/* Device Card Header */
+.device-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.device-type-icon {
+    font-size: 1.5rem;
+}
+
+.device-status {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+
+.device-status.online {
+    background: var(--success-soft);
+    color: var(--success);
+}
+
+.device-status.offline {
+    background: var(--danger-soft);
+    color: var(--danger);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-dot.online {
+    background: var(--success);
+    box-shadow: 0 0 5px var(--success);
+}
+
+.status-dot.offline {
+    background: var(--danger);
+}
+
+/* Device Card Body */
+.device-card-body {
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.device-icon-large {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.device-name-large {
+    font-size: 1.1rem;
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-xs);
+}
+
+.device-room {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+/* Power & Energy Info */
+.device-power-info {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.power-item {
+    text-align: center;
+}
+
+.power-label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+}
+
+.power-value {
+    font-size: 0.9rem;
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+}
+
+/* Device State Button */
+.device-state-btn {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: 0.9rem;
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.device-state-btn.on {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.device-state-btn.off {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.device-state-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Device Card Footer */
+.device-card-footer {
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auto-mode-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.auto-mode-label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+.device-settings-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-md);
+    transition: all var(--transition);
+}
+
+.device-settings-btn:hover {
+    color: var(--primary);
+    background: var(--bg-hover);
+}
+
+/* Auto Mode Badge on Card */
+.auto-badge-card {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: var(--font-semibold);
+    z-index: 10;
+}
+
+.auto-badge-card.auto-on {
+    background: var(--warning);
+    color: var(--text-dark);
+}
+
+.auto-badge-card.auto-off {
+    background: var(--text-muted);
+    color: white;
+}
+
+/* ============================================
+   DEVICE DETAILS MODAL
+   ============================================ */
+
+.device-modal {
+    max-width: 500px;
+    width: 90%;
+}
+
+.device-modal-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.device-modal-icon {
+    font-size: 2.5rem;
+}
+
+.device-modal-info {
+    flex: 1;
+}
+
+.device-modal-name {
+    font-size: 1.2rem;
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-xs);
+}
+
+.device-modal-room {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* Device Stats Grid */
+.device-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.device-stat-item {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.device-stat-item-label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.device-stat-item-value {
+    font-size: 1.1rem;
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+}
+
+/* Device Controls */
+.device-controls {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.device-control-btn {
+    flex: 1;
+    padding: var(--spacing-md);
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.device-control-btn.on {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.device-control-btn.off {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.device-control-btn.schedule {
+    background: var(--info);
+    color: white;
+}
+
+/* Device Schedule */
+.device-schedule {
+    margin-bottom: var(--spacing-lg);
+}
+
+.schedule-title {
+    font-size: 0.85rem;
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.schedule-list {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-sm);
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.schedule-time {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.schedule-action {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: var(--success-soft);
+    color: var(--success);
+}
+
+/* ============================================
+   DEVICE GROUPS
+   ============================================ */
+
+.device-groups-section {
+    margin-top: var(--spacing-xl);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.section-header h3 {
+    font-size: 1rem;
+    font-weight: var(--font-semibold);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.create-group-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.groups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.group-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-md);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.group-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.group-icon {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.group-name {
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--spacing-xs);
+}
+
+.group-count {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   BULK ACTIONS
+   ============================================ */
+
+.bulk-actions-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    box-shadow: var(--shadow-lg);
+    z-index: 100;
+}
+
+.bulk-actions-count {
+    font-size: 0.8rem;
+    font-weight: var(--font-semibold);
+}
+
+.bulk-action-btn {
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.bulk-action-btn.on {
+    background: var(--success);
+    color: white;
+}
+
+.bulk-action-btn.off {
+    background: var(--danger);
+    color: white;
+}
+
+.bulk-action-btn.delete {
+    background: var(--danger);
+    color: white;
+}
+
+.bulk-action-btn.cancel {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+/* Checkbox for bulk select */
+.device-checkbox {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* ============================================
+   RESPONSIVE DEVICES PAGE
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .devices-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .devices-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .devices-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .devices-actions {
+        justify-content: center;
+    }
+    
+    .devices-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .devices-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-tabs {
+        justify-content: center;
+    }
+    
+    .device-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .device-controls {
+        flex-direction: column;
+    }
+    
+    .groups-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .bulk-actions-bar {
+        left: 10px;
+        right: 10px;
+        transform: none;
+        width: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .devices-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .device-card-footer {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .auto-mode-toggle {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* ============================================
+   DARK MODE DEVICES PAGE
+   ============================================ */
+[data-theme="dark"] .device-card-enhanced,
+[data-theme="dark"] .device-stat-card,
+[data-theme="dark"] .group-card,
+[data-theme="dark"] .devices-filters {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .device-card-header {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .bulk-actions-bar {
+    background: var(--bg-secondary);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes deviceAdded {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.device-card-new {
+    animation: deviceAdded 0.3s ease;
+}
+
+@keyframes devicePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.device-updated {
+    animation: devicePulse 0.3s ease;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    .devices-actions,
+    .devices-filters,
+    .device-settings-btn,
+    .device-controls,
+    .bulk-actions-bar,
+    .create-group-btn {
+        display: none;
+    }
+    
+    .device-card-enhanced {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        border: 1px solid #ccc;
+    }
+    
+    .devices-stats {
+        break-inside: avoid;
+    }
+}

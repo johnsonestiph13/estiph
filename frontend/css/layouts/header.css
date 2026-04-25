@@ -1,0 +1,615 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - HEADER LAYOUTS
+   Complete header & top bar styling for application
+   ============================================ */
+
+/* ============================================
+   HEADER BASE
+   ============================================ */
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    z-index: var(--z-header);
+    transition: all var(--transition);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    gap: var(--spacing-md);
+}
+
+/* ============================================
+   TOP BAR (Main Header)
+   ============================================ */
+
+.top-bar {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    transition: all var(--transition);
+}
+
+.top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.top-bar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+/* ============================================
+   MENU TOGGLE BUTTON
+   ============================================ */
+
+.menu-toggle-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition);
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle-btn:hover {
+    background: var(--bg-tertiary);
+    transform: scale(1.05);
+}
+
+.menu-toggle-btn:active {
+    transform: scale(0.95);
+}
+
+/* ============================================
+   PAGE TITLE
+   ============================================ */
+
+.page-title {
+    font-size: 1.3rem;
+    font-weight: var(--font-bold);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0;
+    transition: all var(--transition);
+}
+
+.page-title i {
+    margin-right: var(--spacing-sm);
+    color: var(--primary);
+}
+
+/* ============================================
+   HEADER ACTIONS
+   ============================================ */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+/* Voice Button */
+.voice-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--primary);
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.voice-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.05);
+    border-color: var(--primary);
+}
+
+.voice-btn.listening {
+    background: var(--danger);
+    color: white;
+    animation: pulse 1.5s infinite;
+}
+
+.voice-btn.listening::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 50%;
+    border: 2px solid var(--danger);
+    animation: ripple 1.5s infinite;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    gap: 4px;
+    background: var(--bg-tertiary);
+    padding: 4px;
+    border-radius: 40px;
+}
+
+.lang-btn {
+    padding: 6px 14px;
+    border: none;
+    background: transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: var(--font-semibold);
+    font-size: 0.8rem;
+    transition: all var(--transition);
+    color: var(--text-secondary);
+}
+
+.lang-btn:hover {
+    background: var(--bg-hover);
+    color: var(--primary);
+}
+
+.lang-btn.active {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+/* ============================================
+   USER MENU
+   ============================================ */
+
+.user-menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.user-menu-trigger {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition);
+}
+
+.user-menu-trigger:hover {
+    background: var(--bg-tertiary);
+}
+
+.user-avatar-small {
+    width: 36px;
+    height: 36px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-bold);
+    font-size: 0.9rem;
+    color: white;
+}
+
+.user-name {
+    font-size: 0.85rem;
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+}
+
+.user-menu-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: var(--spacing-sm);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all var(--transition);
+    z-index: var(--z-dropdown);
+}
+
+.user-menu:hover .user-menu-dropdown,
+.user-menu-dropdown:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all var(--transition);
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background: var(--bg-hover);
+    color: var(--primary);
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: var(--spacing-xs) 0;
+}
+
+/* ============================================
+   NOTIFICATION BELL
+   ============================================ */
+
+.notification-bell {
+    position: relative;
+    cursor: pointer;
+}
+
+.notification-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-btn:hover {
+    background: var(--bg-hover);
+    color: var(--primary);
+    transform: scale(1.05);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--danger);
+    color: white;
+    font-size: 0.6rem;
+    font-weight: var(--font-bold);
+    padding: 2px 6px;
+    border-radius: 20px;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* ============================================
+   SEARCH BAR
+   ============================================ */
+
+.search-bar {
+    position: relative;
+    width: 300px;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 16px 8px 40px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    transition: all var(--transition);
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-soft);
+    width: 350px;
+}
+
+/* ============================================
+   BREADCRUMB
+   ============================================ */
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    padding: var(--spacing-sm) 0;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.breadcrumb-item a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.breadcrumb-item a:hover {
+    color: var(--primary);
+}
+
+.breadcrumb-item.active {
+    color: var(--primary);
+    font-weight: var(--font-medium);
+}
+
+.breadcrumb-separator {
+    color: var(--text-muted);
+    font-size: 0.7rem;
+}
+
+/* ============================================
+   HEADER VARIANTS
+   ============================================ */
+
+/* Transparent header */
+.header-transparent {
+    background: transparent;
+    border-bottom-color: transparent;
+    box-shadow: none;
+}
+
+/* Fixed header */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+/* With sidebar offset */
+.main-content .header {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+}
+
+.sidebar-collapsed .main-content .header {
+    margin-left: var(--sidebar-collapsed);
+    width: calc(100% - var(--sidebar-collapsed));
+}
+
+/* Dark header */
+.header-dark {
+    background: var(--bg-primary);
+    border-bottom-color: var(--border-dark);
+}
+
+.header-dark .page-title {
+    color: var(--text-light);
+}
+
+/* ============================================
+   RESPONSIVE HEADER
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .search-bar {
+        width: 250px;
+    }
+    
+    .search-bar input:focus {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .menu-toggle-btn {
+        display: flex;
+    }
+    
+    .page-title {
+        font-size: 1.1rem;
+    }
+    
+    .search-bar {
+        display: none;
+    }
+    
+    .user-name {
+        display: none;
+    }
+    
+    .top-bar-center {
+        display: none;
+    }
+    
+    .main-content .header {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .header-actions {
+        gap: var(--spacing-sm);
+    }
+    
+    .voice-btn {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .notification-btn {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .lang-btn {
+        padding: 4px 10px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .page-title {
+        font-size: 1rem;
+    }
+    
+    .language-switcher {
+        gap: 2px;
+    }
+    
+    .lang-btn {
+        padding: 4px 8px;
+        font-size: 0.65rem;
+    }
+    
+    .voice-btn,
+    .notification-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ============================================
+   HEADER ANIMATIONS
+   ============================================ */
+
+@keyframes headerSlideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.header-animate {
+    animation: headerSlideDown 0.3s ease;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* ============================================
+   SCROLLED HEADER STATE
+   ============================================ */
+
+.header-scrolled {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   DARK MODE HEADER
+   ============================================ */
+[data-theme="dark"] .header,
+[data-theme="dark"] .top-bar {
+    background: var(--bg-secondary);
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .user-menu-dropdown {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .search-bar input {
+    background: var(--bg-tertiary);
+}
+
+/* ============================================
+   PRINT HEADER STYLES
+   ============================================ */
+@media print {
+    .header,
+    .top-bar,
+    .header-actions,
+    .user-menu,
+    .notification-bell,
+    .language-switcher {
+        display: none !important;
+    }
+    
+    .main-content .header {
+        margin: 0;
+        padding: 0;
+    }
+}

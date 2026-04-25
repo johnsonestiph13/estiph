@@ -1,0 +1,947 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - AUTOMATION PAGE STYLES
+   Complete styling for automation rules & schedules
+   ============================================ */
+
+/* ============================================
+   AUTOMATION LAYOUT
+   ============================================ */
+
+.automation-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    animation: automationFadeIn 0.5s ease;
+}
+
+@keyframes automationFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Automation grid layout */
+.automation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.automation-full {
+    grid-column: span 2;
+}
+
+/* Responsive automation layout */
+@media (max-width: 1024px) {
+    .automation-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .automation-full {
+        grid-column: span 1;
+    }
+}
+
+/* ============================================
+   AUTOMATION HEADER
+   ============================================ */
+
+.automation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.automation-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.automation-title i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.automation-title h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
+
+.automation-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.create-rule-btn {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.create-rule-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+/* ============================================
+   AUTOMATION STATS
+   ============================================ */
+
+.automation-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.automation-stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-md);
+    text-align: center;
+    transition: all var(--transition);
+}
+
+.automation-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.automation-stat-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.automation-stat-value {
+    font-size: 1.5rem;
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+}
+
+.automation-stat-label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-top: var(--spacing-xs);
+}
+
+/* ============================================
+   AUTOMATION RULES LIST
+   ============================================ */
+
+.automation-rules-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* Rule Card */
+.rule-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all var(--transition);
+    position: relative;
+}
+
+.rule-card:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.rule-card.active {
+    border-left: 4px solid var(--success);
+}
+
+.rule-card.inactive {
+    border-left: 4px solid var(--danger);
+    opacity: 0.7;
+}
+
+/* Rule Header */
+.rule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-light);
+    cursor: pointer;
+}
+
+.rule-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex: 1;
+}
+
+.rule-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.rule-name {
+    font-weight: var(--font-semibold);
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.rule-description {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.rule-status {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+/* Status Badge */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: var(--font-semibold);
+}
+
+.status-badge.active {
+    background: var(--success);
+    color: white;
+}
+
+.status-badge.inactive {
+    background: var(--danger);
+    color: white;
+}
+
+.status-badge.pending {
+    background: var(--warning);
+    color: var(--text-dark);
+}
+
+/* Toggle Switch */
+.rule-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.rule-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--border-dark);
+    transition: var(--transition);
+    border-radius: 34px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: var(--transition);
+    border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+    background-color: var(--success);
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(26px);
+}
+
+/* Expand/Collapse Icon */
+.rule-expand {
+    color: var(--text-muted);
+    transition: transform var(--transition);
+}
+
+.rule-header.expanded .rule-expand {
+    transform: rotate(180deg);
+}
+
+/* Rule Body (Expandable) */
+.rule-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.rule-body.expanded {
+    max-height: 500px;
+}
+
+.rule-content {
+    padding: var(--spacing-lg);
+}
+
+/* Rule Section */
+.rule-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.rule-section-title {
+    font-size: 0.8rem;
+    font-weight: var(--font-semibold);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rule-section-content {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+}
+
+/* Condition/Trigger Box */
+.condition-box {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.condition-type {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: var(--font-semibold);
+    color: var(--primary);
+}
+
+.condition-details {
+    flex: 1;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+}
+
+.condition-value {
+    font-weight: var(--font-semibold);
+    color: var(--primary);
+}
+
+/* Action Box */
+.action-box {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.action-device {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    padding: 6px 12px;
+}
+
+.action-device-icon {
+    font-size: 1rem;
+}
+
+.action-device-name {
+    font-size: 0.8rem;
+    font-weight: var(--font-semibold);
+}
+
+.action-command {
+    background: var(--primary-soft);
+    border-radius: var(--radius-md);
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: var(--font-semibold);
+}
+
+/* Schedule Info */
+.schedule-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.schedule-time {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    padding: 6px 12px;
+}
+
+.schedule-time i {
+    color: var(--primary);
+    font-size: 0.8rem;
+}
+
+.schedule-days {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.day-badge {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    padding: 4px 8px;
+    font-size: 0.7rem;
+}
+
+.day-badge.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Rule Footer */
+.rule-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-light);
+    margin-top: var(--spacing-md);
+}
+
+.rule-action-btn {
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.rule-action-btn.edit {
+    color: var(--info);
+}
+
+.rule-action-btn.edit:hover {
+    background: var(--info-soft);
+}
+
+.rule-action-btn.delete {
+    color: var(--danger);
+}
+
+.rule-action-btn.delete:hover {
+    background: var(--danger-soft);
+}
+
+.rule-action-btn.duplicate {
+    color: var(--success);
+}
+
+.rule-action-btn.duplicate:hover {
+    background: var(--success-soft);
+}
+
+/* ============================================
+   CREATE/EDIT RULE MODAL
+   ============================================ */
+
+.rule-modal {
+    max-width: 600px;
+    width: 90%;
+}
+
+.rule-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.form-label {
+    font-weight: var(--font-semibold);
+    font-size: 0.85rem;
+    color: var(--text-primary);
+}
+
+.form-label i {
+    color: var(--primary);
+    margin-right: var(--spacing-xs);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: all var(--transition);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Condition Builder */
+.condition-builder {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+}
+
+.condition-row {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.condition-row select,
+.condition-row input {
+    flex: 1;
+    min-width: 120px;
+}
+
+/* Action Builder */
+.action-builder {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+}
+
+.action-row {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.action-row select {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Schedule Builder */
+.schedule-builder {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+}
+
+.time-input {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.time-input input {
+    width: 80px;
+    text-align: center;
+}
+
+.days-selector {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-md);
+}
+
+.day-checkbox {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.day-checkbox label {
+    cursor: pointer;
+}
+
+/* Modal Actions */
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.modal-btn-cancel {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: none;
+}
+
+.modal-btn-cancel:hover {
+    background: var(--border-color);
+}
+
+.modal-btn-save {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+}
+
+.modal-btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+/* ============================================
+   AUTOMATION LOGS
+   ============================================ */
+
+.automation-logs {
+    margin-top: var(--spacing-lg);
+}
+
+.logs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.logs-title {
+    font-weight: var(--font-semibold);
+    font-size: 1rem;
+}
+
+.clear-logs-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: color var(--transition);
+}
+
+.clear-logs-btn:hover {
+    color: var(--danger);
+}
+
+.logs-list {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.log-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 1px solid var(--border-light);
+    transition: background var(--transition);
+}
+
+.log-item:hover {
+    background: var(--bg-hover);
+}
+
+.log-time {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    min-width: 80px;
+}
+
+.log-rule {
+    font-size: 0.8rem;
+    font-weight: var(--font-semibold);
+    color: var(--primary);
+    min-width: 120px;
+}
+
+.log-action {
+    flex: 1;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.log-status {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.log-status.success {
+    background: var(--success);
+}
+
+.log-status.failed {
+    background: var(--danger);
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+
+.automation-empty {
+    text-align: center;
+    padding: var(--spacing-2xl);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-color);
+}
+
+.automation-empty i {
+    font-size: 3rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-md);
+    opacity: 0.5;
+}
+
+.automation-empty p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.create-first-btn {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.create-first-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-primary);
+}
+
+/* ============================================
+   RESPONSIVE AUTOMATION
+   ============================================ */
+
+@media (max-width: 768px) {
+    .automation-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .rule-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+    
+    .rule-status {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .condition-box,
+    .action-box,
+    .schedule-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .automation-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .automation-actions {
+        justify-content: center;
+    }
+    
+    .logs-header {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: stretch;
+        text-align: center;
+    }
+    
+    .log-item {
+        flex-wrap: wrap;
+    }
+    
+    .log-time,
+    .log-rule {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .automation-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .rule-content {
+        padding: var(--spacing-md);
+    }
+    
+    .rule-section-content {
+        padding: var(--spacing-sm);
+    }
+    
+    .condition-row,
+    .action-row {
+        flex-direction: column;
+    }
+    
+    .days-selector {
+        flex-direction: column;
+    }
+}
+
+/* ============================================
+   DARK MODE AUTOMATION
+   ============================================ */
+[data-theme="dark"] .rule-card,
+[data-theme="dark"] .automation-stat-card,
+[data-theme="dark"] .automation-empty {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .rule-header {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .condition-builder,
+[data-theme="dark"] .action-builder,
+[data-theme="dark"] .schedule-builder {
+    background: var(--bg-tertiary);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes ruleAdded {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.rule-card-new {
+    animation: ruleAdded 0.3s ease;
+}
+
+@keyframes statusPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.rule-status-updating {
+    animation: statusPulse 0.5s ease;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    .automation-actions,
+    .rule-toggle,
+    .rule-expand,
+    .rule-footer,
+    .clear-logs-btn {
+        display: none;
+    }
+    
+    .rule-body {
+        max-height: none;
+        overflow: visible;
+    }
+    
+    .rule-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        border: 1px solid #ccc;
+    }
+    
+    .automation-stats {
+        break-inside: avoid;
+    }
+}

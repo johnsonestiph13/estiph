@@ -1,0 +1,662 @@
+/* ============================================
+   ESTIF HOME ULTIMATE - DARK MODE SUPPORT
+   System Preference Detection & Smooth Transitions
+   Supports: prefers-color-scheme, manual override, and automatic detection
+   ============================================ */
+
+/* ============================================
+   SYSTEM PREFERENCE DETECTION
+   Automatically apply dark mode based on OS settings
+   ============================================ */
+
+/* Default: No preference - use light theme */
+:root {
+    color-scheme: light dark;
+}
+
+/* Auto-detect system dark mode preference */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-tertiary: #334155;
+        --text-primary: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --border-color: #334155;
+    }
+}
+
+/* Auto-detect system light mode preference */
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8f9fa;
+        --bg-tertiary: #f1f3f5;
+        --text-primary: #212529;
+        --text-secondary: #6c757d;
+        --border-color: #dee2e6;
+    }
+}
+
+/* ============================================
+   THEME TRANSITION SMOOTHING
+   Smooth transitions when switching themes
+   ============================================ */
+
+/* Apply transitions to theme-aware elements */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+    transition: 
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        fill 0.3s ease,
+        stroke 0.3s ease,
+        box-shadow 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+/* Disable transitions during theme switch to prevent flicker */
+.no-transition,
+.no-transition * {
+    transition: none !important;
+}
+
+/* ============================================
+   THEME PERSISTENCE
+   Save and restore theme preference
+   ============================================ */
+
+/* Theme preference saved in localStorage */
+[data-theme="light"] {
+    color-scheme: light;
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+[data-theme="amoled"] {
+    color-scheme: dark;
+}
+
+[data-theme="high-contrast"] {
+    color-scheme: light dark;
+}
+
+[data-theme="sepia"] {
+    color-scheme: light;
+}
+
+[data-theme="colorblind"] {
+    color-scheme: light;
+}
+
+/* ============================================
+   FORCED COLORS MODE (Windows High Contrast)
+   Support for Windows High Contrast Mode
+   ============================================ */
+
+@media (forced-colors: active) {
+    /* Use system colors when forced colors mode is active */
+    [data-theme="light"],
+    [data-theme="dark"],
+    [data-theme="amoled"],
+    [data-theme="high-contrast"],
+    [data-theme="sepia"],
+    [data-theme="colorblind"] {
+        --primary: CanvasText;
+        --secondary: CanvasText;
+        --success: CanvasText;
+        --danger: CanvasText;
+        --warning: CanvasText;
+        --info: CanvasText;
+        --bg-primary: Canvas;
+        --bg-secondary: Canvas;
+        --text-primary: CanvasText;
+        --text-secondary: CanvasText;
+        --border-color: CanvasText;
+    }
+    
+    /* Remove shadows and effects in forced colors mode */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        filter: none !important;
+    }
+    
+    /* Ensure borders are visible */
+    .card,
+    .device-card,
+    .stat-card,
+    button,
+    input,
+    select,
+    textarea {
+        border: 1px solid CanvasText !important;
+    }
+}
+
+/* ============================================
+   DARK MODE SPECIFIC ADJUSTMENTS
+   Optimizations for dark theme readability
+   ============================================ */
+
+/* Reduce brightness of images in dark mode */
+@media (prefers-color-scheme: dark) {
+    img:not([data-light-mode]),
+    video:not([data-light-mode]),
+    iframe:not([data-light-mode]) {
+        filter: brightness(0.9) contrast(1.1);
+    }
+}
+
+/* Increase contrast for text on dark backgrounds */
+[data-theme="dark"] body,
+[data-theme="amoled"] body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Adjust link underlines for dark mode */
+[data-theme="dark"] a,
+[data-theme="amoled"] a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+/* Improve readability of code blocks in dark mode */
+[data-theme="dark"] pre,
+[data-theme="dark"] code,
+[data-theme="amoled"] pre,
+[data-theme="amoled"] code {
+    filter: brightness(1.1);
+}
+
+/* ============================================
+   DARK MODE CHART & GRAPH ADJUSTMENTS
+   Optimize charts for dark backgrounds
+   ============================================ */
+
+/* Adjust chart colors for dark mode */
+[data-theme="dark"] canvas,
+[data-theme="amoled"] canvas {
+    filter: brightness(0.9) contrast(1.2);
+}
+
+/* Chart tooltips in dark mode */
+[data-theme="dark"] .chartjs-tooltip,
+[data-theme="amoled"] .chartjs-tooltip {
+    background: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* ============================================
+   DARK MODE FORM ELEMENTS
+   Ensure form elements are readable in dark mode
+   ============================================ */
+
+/* Date picker, color picker, etc. */
+[data-theme="dark"] input[type="date"],
+[data-theme="dark"] input[type="time"],
+[data-theme="dark"] input[type="datetime-local"],
+[data-theme="dark"] input[type="month"],
+[data-theme="dark"] input[type="week"],
+[data-theme="amoled"] input[type="date"],
+[data-theme="amoled"] input[type="time"],
+[data-theme="amoled"] input[type="datetime-local"],
+[data-theme="amoled"] input[type="month"],
+[data-theme="amoled"] input[type="week"] {
+    color-scheme: dark;
+}
+
+/* Range input in dark mode */
+[data-theme="dark"] input[type="range"],
+[data-theme="amoled"] input[type="range"] {
+    background: transparent;
+}
+
+[data-theme="dark"] input[type="range"]::-webkit-slider-runnable-track,
+[data-theme="amoled"] input[type="range"]::-webkit-slider-runnable-track {
+    background: var(--bg-tertiary);
+}
+
+/* Progress element in dark mode */
+[data-theme="dark"] progress,
+[data-theme="amoled"] progress {
+    background-color: var(--bg-tertiary);
+}
+
+[data-theme="dark"] progress::-webkit-progress-bar,
+[data-theme="amoled"] progress::-webkit-progress-bar {
+    background-color: var(--bg-tertiary);
+}
+
+[data-theme="dark"] progress::-webkit-progress-value,
+[data-theme="amoled"] progress::-webkit-progress-value {
+    background-color: var(--primary);
+}
+
+/* ============================================
+   DARK MODE MEDIA EMBEDS
+   Adjust embedded content for dark mode
+   ============================================ */
+
+/* YouTube embeds, iframes in dark mode */
+[data-theme="dark"] iframe[src*="youtube"],
+[data-theme="dark"] iframe[src*="vimeo"],
+[data-theme="amoled"] iframe[src*="youtube"],
+[data-theme="amoled"] iframe[src*="vimeo"] {
+    filter: brightness(0.9);
+}
+
+/* ============================================
+   THEME TOGGLE BUTTON STYLES
+   Visual feedback for theme switching
+   ============================================ */
+
+/* Theme toggle button animation */
+.theme-toggle {
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle .fa-sun,
+.theme-toggle .fa-moon {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Rotate animation when switching themes */
+.theme-toggle.switching .fa-sun,
+.theme-toggle.switching .fa-moon {
+    animation: themeIconSpin 0.5s ease;
+}
+
+@keyframes themeIconSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Theme toggle active state */
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+/* ============================================
+   FLASH PREVENTION
+   Prevent white flash when loading dark theme
+   ============================================ */
+
+/* Apply theme immediately to prevent flash */
+html {
+    background-color: var(--bg-primary);
+}
+
+/* Critical CSS for theme to prevent flash */
+.theme-critical {
+    transition: none !important;
+}
+
+/* ============================================
+   DARK MODE PRINT SUPPORT
+   Ensure dark mode prints correctly
+   ============================================ */
+
+@media print {
+    /* Force light mode for printing */
+    [data-theme="dark"] body,
+    [data-theme="amoled"] body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .device-card,
+    [data-theme="amoled"] .card,
+    [data-theme="amoled"] .device-card {
+        background: white !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+    }
+    
+    [data-theme="dark"] .text-primary,
+    [data-theme="dark"] .text-secondary,
+    [data-theme="amoled"] .text-primary,
+    [data-theme="amoled"] .text-secondary {
+        color: black !important;
+    }
+}
+
+/* ============================================
+   DARK MODE ACCESSIBILITY
+   Additional accessibility improvements for dark mode
+   ============================================ */
+
+/* Ensure sufficient contrast in dark mode */
+[data-theme="dark"] .text-muted,
+[data-theme="amoled"] .text-muted {
+    color: #94a3b8; /* WCAG AA compliant on dark backgrounds */
+}
+
+/* Focus indicators in dark mode */
+[data-theme="dark"] :focus-visible,
+[data-theme="amoled"] :focus-visible {
+    outline-color: var(--primary);
+    outline-offset: 2px;
+}
+
+/* Selection color in dark mode */
+[data-theme="dark"] ::selection,
+[data-theme="amoled"] ::selection {
+    background: var(--primary);
+    color: var(--text-dark);
+}
+
+/* Placeholder text in dark mode */
+[data-theme="dark"] ::placeholder,
+[data-theme="amoled"] ::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+/* Disabled elements in dark mode */
+[data-theme="dark"] :disabled,
+[data-theme="amoled"] :disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ============================================
+   DARK MODE CUSTOM SCROLLBAR
+   Optimized scrollbar for dark backgrounds
+   ============================================ */
+
+[data-theme="dark"] ::-webkit-scrollbar,
+[data-theme="amoled"] ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track,
+[data-theme="amoled"] ::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+    border-radius: 10px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb,
+[data-theme="amoled"] ::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover,
+[data-theme="amoled"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-light);
+}
+
+/* Firefox scrollbar */
+[data-theme="dark"] *,
+[data-theme="amoled"] * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--bg-tertiary);
+}
+
+/* ============================================
+   DARK MODE LOADING STATES
+   ============================================ */
+
+/* Skeleton loading in dark mode */
+[data-theme="dark"] .skeleton,
+[data-theme="amoled"] .skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--bg-tertiary) 25%,
+        var(--bg-secondary) 50%,
+        var(--bg-tertiary) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeletonDarkLoading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeletonDarkLoading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Spinner in dark mode */
+[data-theme="dark"] .spinner,
+[data-theme="amoled"] .spinner {
+    border-color: var(--bg-tertiary);
+    border-top-color: var(--primary);
+}
+
+/* ============================================
+   DARK MODE RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+/* Tablet adjustments */
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+    [data-theme="dark"] .sidebar,
+    [data-theme="amoled"] .sidebar {
+        background: var(--bg-secondary);
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) and (prefers-color-scheme: dark) {
+    [data-theme="dark"] .modal,
+    [data-theme="amoled"] .modal {
+        background: var(--bg-card);
+    }
+}
+
+/* ============================================
+   THEME PREFERENCE INDICATOR
+   Visual indicator for current theme
+   ============================================ */
+
+/* Theme badge */
+.theme-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.theme-badge.light {
+    background: #f8f9fa;
+    color: #212529;
+    border: 1px solid #dee2e6;
+}
+
+.theme-badge.dark {
+    background: #1e293b;
+    color: #f1f5f9;
+    border: 1px solid #334155;
+}
+
+.theme-badge.amoled {
+    background: #000000;
+    color: #00e5ff;
+    border: 1px solid #00e5ff;
+}
+
+.theme-badge.high-contrast {
+    background: #000000;
+    color: #ffff00;
+    border: 2px solid #ffff00;
+}
+
+.theme-badge.sepia {
+    background: #f4ecd8;
+    color: #3b2a1a;
+    border: 1px solid #c4b59a;
+}
+
+.theme-badge.colorblind {
+    background: #faf9f6;
+    color: #2c7da0;
+    border: 1px solid #2c7da0;
+}
+
+/* ============================================
+   DARK MODE DEBUGGING
+   Helper classes for theme debugging
+   ============================================ */
+
+/* Debug mode - shows current theme */
+.debug-theme::after {
+    content: attr(data-theme);
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-family: monospace;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* ============================================
+   THEME EVENT HANDLERS (JavaScript hooks)
+   CSS custom properties for theme detection
+   ============================================ */
+
+/* Theme detection indicator */
+html {
+    --theme-active: 'light';
+}
+
+[data-theme="dark"] {
+    --theme-active: 'dark';
+}
+
+[data-theme="amoled"] {
+    --theme-active: 'amoled';
+}
+
+[data-theme="high-contrast"] {
+    --theme-active: 'high-contrast';
+}
+
+[data-theme="sepia"] {
+    --theme-active: 'sepia';
+}
+
+[data-theme="colorblind"] {
+    --theme-active: 'colorblind';
+}
+
+/* ============================================
+   PERFECT DARK MODE FOR ALL ELEMENTS
+   Ensure all elements are properly styled
+   ============================================ */
+
+/* Cards and containers */
+[data-theme="dark"] .card,
+[data-theme="dark"] .container,
+[data-theme="dark"] .box,
+[data-theme="amoled"] .card,
+[data-theme="amoled"] .container,
+[data-theme="amoled"] .box {
+    background-color: var(--bg-card);
+}
+
+/* Dropdown menus */
+[data-theme="dark"] .dropdown-menu,
+[data-theme="amoled"] .dropdown-menu {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+/* Tooltips */
+[data-theme="dark"] .tooltip,
+[data-theme="amoled"] .tooltip {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+/* Popovers */
+[data-theme="dark"] .popover,
+[data-theme="amoled"] .popover {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+
+/* Accordions */
+[data-theme="dark"] .accordion-item,
+[data-theme="amoled"] .accordion-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+/* Tabs */
+[data-theme="dark"] .tab,
+[data-theme="amoled"] .tab {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .tab.active,
+[data-theme="amoled"] .tab.active {
+    border-bottom-color: var(--primary);
+    color: var(--primary);
+}
+
+/* ============================================
+   DARK MODE PERFORMANCE OPTIMIZATIONS
+   Reduce GPU usage in dark mode
+   ============================================ */
+
+/* Reduce animations on low-end devices in dark mode */
+@media (prefers-color-scheme: dark) and (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Optimize backdrop filters for dark mode */
+[data-theme="dark"] .glass,
+[data-theme="amoled"] .glass {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* ============================================
+   EMERGENCY DARK MODE FALLBACK
+   If JavaScript fails, ensure dark mode still works
+   ============================================ */
+
+/* Fallback for no JavaScript */
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme]) {
+        background: #0f172a;
+        color: #f1f5f9;
+    }
+    
+    html:not([data-theme]) .card,
+    html:not([data-theme]) .device-card {
+        background: #1e293b;
+        border-color: #334155;
+    }
+}
